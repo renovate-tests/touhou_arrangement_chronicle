@@ -1,0 +1,7 @@
+gemfile: Gemfile
+PreCommit:
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop', '--auto-correct', '$(git diff master --name-only)']
+  AuthorName:
+    enabled: false

@@ -27,5 +27,21 @@ module TouhouArrangementChronicle
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.skip_routes true
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.template_engine :haml
+      g.test_framework :rspec,
+                       fixture: true,
+                       fixture_replacement: :factory_bot,
+                       controller_specs: false,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       integration_tool: false
+    end
   end
 end
