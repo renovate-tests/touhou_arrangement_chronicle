@@ -35,13 +35,13 @@ module TouhouArrangementChronicle
       g.helper false
       g.template_engine :haml
       g.test_framework :rspec,
-        fixture: true,
-        fixture_replacement: :factory_bot,
-        controller_specs: false,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false,
-        integration_tool: false
+                       fixture: true,
+                       fixture_replacement: :factory_bot,
+                       controller_specs: false,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       integration_tool: false
     end
   end
 end
