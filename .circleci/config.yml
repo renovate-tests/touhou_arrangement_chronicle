@@ -1,0 +1,47 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+       - image: circleci/ruby:2.5.1-node-browsers
+         environment:
+           BUNDLE_JOBS: 3
+           BUNDLE_RETRY: 3
+           BUNDLE_PATH: vendor/bundle
+           RAILS_ENV: test
+       - image: postgres:alpine
+    steps:
+      - checkout
+      - run: sudo gem update --system
+
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+      # Restore yarn /webpacker cache
+      - restore_cache:
+          keys:
+            - v1-yarn-{{ checksum "yarn.lock" }}
+            - v1-yarn-
+
+      - run: ./bin/setup
+
+      # Store bundle cache
+      - save_cache:
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: v1-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run: bundle exec rubocop --parallel
+      - run: bundle exec rake
