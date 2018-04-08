@@ -18,6 +18,10 @@ group :development do
   gem 'annotate'
   gem 'byebug', platform: :mri, group: :test
   gem 'listen'
+  gem 'pry', group: :test
+  gem 'pry-byebug', group: :test
+  gem 'pry-doc', group: :test
+  gem 'pry-rails', group: :test
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'web-console'
