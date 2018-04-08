@@ -6,27 +6,23 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.6'
+
+gem 'hamlit-rails'
+gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'jbuilder', '~> 2.5'
-gem 'hamlit-rails'
-
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'byebug', platform: :mri, group: :test
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do
   gem 'factory_bot_rails', group: :development
   gem 'rspec-rails', group: :development
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
