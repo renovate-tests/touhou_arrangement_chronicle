@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+system("rails r 'puts Rails.application.encrypted(\"#{ARGV[0]}\").read'")
