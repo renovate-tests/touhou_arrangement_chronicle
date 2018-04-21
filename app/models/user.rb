@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id               :uuid             not null, primary key
-#  username         :string           not null
+#  name             :string           not null
 #  email            :string
 #  crypted_password :string
 #  salt             :string
@@ -13,6 +13,7 @@
 # Indexes
 #
 #  index_users_on_email  (email) UNIQUE
+#  index_users_on_name   (name) UNIQUE
 #
 
 class User < ApplicationRecord

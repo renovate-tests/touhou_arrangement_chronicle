@@ -17,13 +17,14 @@ ActiveRecord::Schema.define(version: 2018_04_21_023817) do
   enable_extension "plpgsql"
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "username", null: false
+    t.string "name", null: false
     t.string "email"
     t.string "crypted_password"
     t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
 end
