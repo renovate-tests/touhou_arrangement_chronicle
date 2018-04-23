@@ -18,4 +18,11 @@
 
 class User < ApplicationRecord
   authenticates_with_sorcery!
+
+  validates :name, presence: true
+  validates :name, length: { in: 2..20 }, format: { with: /\A[\w_.-]+\z/ }, uniqueness: true, allow_blank: true
+  validates :email, presence: true
+  validates :email, uniqueness: true, allow_blank: true
+  validates :password, presence: true
+  validates :password, length: { in: 4..72 }, allow_blank: true, if: -> { new_record? || changes[:crypted_password] }
 end

@@ -16,6 +16,12 @@
           %span.navbar-item
             東方編曲録
         .navbar-end
-          %span.navbar-item
-            %a.fa.fa-user{:href => "#"} ログイン
-    = yield
+          - if current_user
+          - else
+            %span.navbar-item
+              = button_to 'ユーザー登録', new_user_path, { method: 'get', class: 'button is-success is-outlined' }
+            %span.navbar-item
+              %a.fa.fa-user{:href => "#"} ログイン
+    %section.section
+      .content
+        = yield
