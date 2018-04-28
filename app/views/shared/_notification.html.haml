@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  %div{class: "#{flash_class(key)}"}
+    %button.delete.close-notification
+    = value

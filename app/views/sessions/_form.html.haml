@@ -1,0 +1,13 @@
+= form_with(url: login_path, local: true) do |f|
+  .field
+    %p.control.has-icons-left
+      = f.text_field :name_or_email, class: 'input is-medium', placeholder: 'ユーザー名または、メールアドレス', required: true
+      %span.icon.is-small.is-left
+        %i.fa.fa-user
+  .field
+    %p.control.has-icons-left
+      = f.password_field :password, class: 'input is-medium', placeholder: 'パスワード', required: true
+      %span.icon.is-small.is-left
+        %i.fa.fa-lock
+  .actions
+    = f.submit 'ログイン', class: 'button is-primary is-large is-fullwidth'

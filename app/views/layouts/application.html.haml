@@ -17,11 +17,14 @@
             東方編曲録
         .navbar-end
           - if current_user
+            %span.navbar-item
+              = button_to 'ログアウト', logout_path, { method: 'delete', class: 'button is-outlined' }
           - else
             %span.navbar-item
               = button_to 'ユーザー登録', new_user_path, { method: 'get', class: 'button is-success is-outlined' }
             %span.navbar-item
-              %a.fa.fa-user{:href => "#"} ログイン
+              = link_to 'ログイン', login_path, { method: 'get', class: 'fa fa-user' }
     %section.section
+      = render 'shared/notification'
       .content
         = yield
