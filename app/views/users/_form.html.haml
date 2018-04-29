@@ -1,18 +1,30 @@
 = form_with(model: @user, local: true) do |f|
   .field
-    %p.control.has-icons-left
+    .control.has-icons-left
       = f.text_field :name, class: 'input is-medium', placeholder: 'ユーザー名', required: true
       %span.icon.is-small.is-left
         %i.fa.fa-user
+    - if @user.errors.full_messages_for(:name)
+      %p.help.is-danger
+        - @user.errors.full_messages_for(:name).each do |error|
+          = error
   .field
-    %p.control.has-icons-left
+    .control.has-icons-left
       = f.email_field :email, class: 'input is-medium', placeholder: 'メールアドレス', required: true
       %span.icon.is-small.is-left
         %i.fa.fa-envelope
+    - if @user.errors.full_messages_for(:email)
+      %p.help.is-danger
+        - @user.errors.full_messages_for(:email).each do |error|
+          = error
   .field
-    %p.control.has-icons-left
+    .control.has-icons-left
       = f.password_field :password, class: 'input is-medium', placeholder: 'パスワード', required: true
       %span.icon.is-small.is-left
         %i.fa.fa-lock
+    - if @user.errors.full_messages_for(:password)
+      %p.help.is-danger
+        - @user.errors.full_messages_for(:password).each do |error|
+          = error
   .actions
     = f.submit 'ユーザー登録', class: 'button is-primary is-large is-fullwidth'
