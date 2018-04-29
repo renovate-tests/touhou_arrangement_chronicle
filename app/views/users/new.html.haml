@@ -1,8 +1,12 @@
-.container
-  %h1 ユーザー登録
-  %hr
-  .columns.is-mobile.is-centered
-    .column
-    .is-divider-vertical{ data: { content: 'OR' } }
-    .column
-      = render 'form'
+.columns.is-mobile.is-centered
+  .column.is-two-thirds
+    %p.is-size-3.has-text-centered 東方編曲録 へようこそ！
+    %p.is-size-5.has-text-centered 新規登録(無料)して利用開始しましょう。
+    %hr
+    .columns.is-mobile.is-centered
+      .column
+        .is-divider
+          = link_to 'ログイン', login_path
+      .is-divider-vertical{ data: { content: 'OR' } }
+      .column
+        = render 'form'

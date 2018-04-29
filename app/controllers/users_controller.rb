@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    render :new, layout: 'authentication'
   end
 
   def create
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: 'User was successfully created.'
     else
-      render :new
+      render :new, layout: 'authentication'
     end
   end
 

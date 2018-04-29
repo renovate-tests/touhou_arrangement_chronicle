@@ -1,22 +1,22 @@
 class SessionsController < ApplicationController
   def new
     redirect_back_or_to(root_path) if current_user
+    render :new, layout: 'authentication'
   end
 
   def create
     if @user = login(params[:name_or_email], params[:password])
-      redirect_back_or_to(root_path, notice: I18n.t('controllers.sessions.login.success'))
+      redirect_back_or_to(root_path, notice: "ログインしました")
     else
-      msg = I18n.t('controllers.sessions.login.failed')
-      flash.now[:error] = msg
-      render action: 'new'
+      flash.now[:error] = "ユーザー名かパスワードが間違っています"
+      render :new, layout: 'authentication'
     end
   end
 
   def destroy
     if current_user
       logout
-      redirect_to(root_path, notice: I18n.t('controllers.sessions.logout'))
+      redirect_to(root_path, notice: "ログアウトしました")
     else
       redirect_back_or_to(root_path)
     end
