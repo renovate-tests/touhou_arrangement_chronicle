@@ -1,4 +1,7 @@
 - flash.each do |key, value|
   %div{class: "#{flash_class(key)}"}
-    %button.delete
+    %button.delete.close-notification
     = value
+
+- content_for(:javascript) do
+  = javascript_pack_tag 'close_notification'
