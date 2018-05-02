@@ -36,6 +36,6 @@ class User < ApplicationRecord
   private
 
     def original_image
-      self.image&.gsub!('_normal.', '.')
+      self.image_path&.gsub!('_normal.', '.')
     end
 end

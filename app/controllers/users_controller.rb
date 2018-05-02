@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to root_path, notice: 'User was successfully created.'
+      redirect_to root_path, notice: I18n.t('controllers.users.create.success')
     else
       render :new, layout: 'authentication'
     end

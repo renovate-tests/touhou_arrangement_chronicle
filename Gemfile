@@ -39,6 +39,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'chromedriver-helper'
   gem 'factory_bot_rails', group: :development
   gem 'rspec-rails', group: :development
+  gem 'selenium-webdriver'
 end

@@ -7,3 +7,6 @@ ja:
       login:
         success: ログインしました
         failed: ユーザー名かパスワードが間違っています
+    users:
+      create:
+        success: ログインしました
