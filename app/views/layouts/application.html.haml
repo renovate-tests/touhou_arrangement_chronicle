@@ -21,7 +21,11 @@
             %span.navbar-item
               = button_to 'ユーザー登録', new_user_path, { method: 'get', class: 'button is-success is-outlined' }
             %span.navbar-item
-              = link_to 'ログイン', login_path, { method: 'get', class: 'fa fa-user' }
+              = link_to login_path, { method: 'get' } do
+                %span
+                  %i.fa.fa-user
+                %span
+                  ログイン
     %section.section
       = render 'shared/notification'
       .content
