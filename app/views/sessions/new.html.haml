@@ -1,6 +1,6 @@
 .columns.is-mobile.is-centered
   .column.is-two-thirds
-    %p.is-size-3.has-text-centered 東方編曲録 にログイン
+    %p.is-size-3.has-text-centered= t('.login_title')
     %hr
     .columns.is-mobile.is-centered
       .column
@@ -8,9 +8,9 @@
           %span.icon.is-medium
             %i.fa.fa-twitter
           %span
-            Twitterアカウントでログイン
+            = t('common.login_with_twitter')
         .is-divider
-          = link_to '新規登録', new_user_path
+          = link_to t('common.signup'), new_user_path
       .is-divider-vertical{ data: { content: 'OR' } }
       .column
         = render 'shared/notification'

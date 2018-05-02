@@ -1,0 +1,12 @@
+ja:
+  common:
+    app_name: 東方編曲録
+    sub_title: Arrangement Chronicle
+    app_fullname: 東方編曲録　〜 Arrangement Chronicle
+    page_title: "%{title} | 東方編曲録"
+    signup: 新規登録
+    user_signup: ユーザー登録
+    login: ログイン
+    login_with_twitter: Twitterアカウントでログイン
+    signup_with_twitter: Twitterアカウントで登録
+    logout: ログアウト

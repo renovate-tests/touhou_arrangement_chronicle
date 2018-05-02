@@ -3,13 +3,14 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %title TouhouArrangementChronicle
+    %title= t('common.app_name')
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = javascript_pack_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_pack_tag 'application'
   %body
     %section.section
       .content
         = yield
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
+    = yield :javascript

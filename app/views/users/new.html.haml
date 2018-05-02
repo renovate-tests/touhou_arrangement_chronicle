@@ -1,7 +1,7 @@
 .columns.is-mobile.is-centered
   .column.is-two-thirds
-    %p.is-size-3.has-text-centered 東方編曲録 へようこそ！
-    %p.is-size-5.has-text-centered 新規登録(無料)して利用開始しましょう。
+    %p.is-size-3.has-text-centered= t('.welcome_message')
+    %p.is-size-5.has-text-centered= t('.start_message')
     %hr
     .columns.is-mobile.is-centered
       .column
@@ -9,9 +9,9 @@
           %span.icon.is-medium
             %i.fa.fa-twitter
           %span
-            Twitterアカウントで登録
+            = t('common.signup_with_twitter')
         .is-divider
-          = link_to 'ログイン', login_path
+          = link_to t('common.login'), login_path
       .is-divider-vertical{ data: { content: 'OR' } }
       .column
         = render 'form'
