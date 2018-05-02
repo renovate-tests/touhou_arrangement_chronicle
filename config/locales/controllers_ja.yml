@@ -1,0 +1,9 @@
+ja:
+  controllers:
+    oauths:
+      logged_in: '%{provider}アカウントでログインしました'
+      failed: '%{provider}アカウントのログインに失敗しました'
+    sessions:
+      login:
+        success: ログインしました
+        failed: ユーザー名かパスワードが間違っています

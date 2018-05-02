@@ -30,6 +30,8 @@ group :development do
   gem 'pry-byebug', group: :test
   gem 'pry-doc', group: :test
   gem 'pry-rails', group: :test
+  gem 'pry-stack_explorer', group: :test
+  gem 'rails-env-credentials'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen'

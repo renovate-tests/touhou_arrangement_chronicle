@@ -4,6 +4,11 @@
     %hr
     .columns.is-mobile.is-centered
       .column
+        = link_to auth_at_provider_path(provider: :twitter), class: 'button is-medium is-fullwidth is-info' do
+          %span.icon.is-medium
+            %i.fa.fa-twitter
+          %span
+            Twitterアカウントでログイン
         .is-divider
           = link_to '新規登録', new_user_path
       .is-divider-vertical{ data: { content: 'OR' } }
