@@ -11,6 +11,10 @@
 #
 #  index_lyricists_on_artist_id  (artist_id) UNIQUE
 #
+# Foreign Keys
+#
+#  fk_rails_...  (artist_id => artists.id)
+#
 
 class Lyricist < ApplicationRecord
   include ArtistModule

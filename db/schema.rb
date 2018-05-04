@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_140027) do
+ActiveRecord::Schema.define(version: 2018_05_04_140532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -186,4 +186,9 @@ ActiveRecord::Schema.define(version: 2018_05_04_140027) do
     t.index ["artist_id"], name: "index_vocalists_on_artist_id", unique: true
   end
 
+  add_foreign_key "arrangers", "artists"
+  add_foreign_key "composers", "artists"
+  add_foreign_key "lyricists", "artists"
+  add_foreign_key "rearrangers", "artists"
+  add_foreign_key "vocalists", "artists"
 end

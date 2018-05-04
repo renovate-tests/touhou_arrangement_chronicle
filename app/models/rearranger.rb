@@ -11,6 +11,10 @@
 #
 #  index_rearrangers_on_artist_id  (artist_id) UNIQUE
 #
+# Foreign Keys
+#
+#  fk_rails_...  (artist_id => artists.id)
+#
 
 class Rearranger < ApplicationRecord
   include ArtistModule
