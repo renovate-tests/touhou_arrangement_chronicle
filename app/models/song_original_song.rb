@@ -22,4 +22,6 @@
 class SongOriginalSong < ApplicationRecord
   belongs_to :song
   belongs_to :original_song
+
+  counter_culture :original_song, column_name: 'songs_count', touch: true
 end

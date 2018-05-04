@@ -13,6 +13,7 @@
 #  is_hidden     :boolean          default(FALSE), not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  songs_count   :integer          default(0), not null
 #
 # Indexes
 #

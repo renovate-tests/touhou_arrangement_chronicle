@@ -22,4 +22,6 @@
 class SongComposer < ApplicationRecord
   belongs_to :song
   belongs_to :composer
+
+  counter_culture :composer, column_name: 'songs_count', touch: true
 end

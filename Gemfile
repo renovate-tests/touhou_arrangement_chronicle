@@ -10,6 +10,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 
 gem 'bootsnap'
+gem 'counter_culture'
 gem 'hamlit-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'moji'

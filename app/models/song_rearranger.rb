@@ -22,4 +22,6 @@
 class SongRearranger < ApplicationRecord
   belongs_to :song
   belongs_to :rearranger
+
+  counter_culture :rearranger, column_name: 'songs_count', touch: true
 end

@@ -2,10 +2,11 @@
 #
 # Table name: lyricists
 #
-#  id         :uuid             not null, primary key
-#  artist_id  :uuid             not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :uuid             not null, primary key
+#  artist_id   :uuid             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  songs_count :integer          default(0), not null
 #
 # Indexes
 #

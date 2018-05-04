@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_144518) do
+ActiveRecord::Schema.define(version: 2018_05_04_145052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["artist_id"], name: "index_arrangers_on_artist_id", unique: true
   end
 
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["artist_id"], name: "index_composers_on_artist_id", unique: true
   end
 
@@ -113,6 +115,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["artist_id"], name: "index_lyricists_on_artist_id", unique: true
   end
 
@@ -127,6 +130,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.boolean "is_hidden", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["code"], name: "index_original_songs_on_code", unique: true
     t.index ["original_code"], name: "index_original_songs_on_original_code"
   end
@@ -147,6 +151,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["artist_id"], name: "index_rearrangers_on_artist_id", unique: true
   end
 
@@ -237,6 +242,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_144518) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "songs_count", default: 0, null: false
     t.index ["artist_id"], name: "index_vocalists_on_artist_id", unique: true
   end
 
