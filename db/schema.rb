@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_052643) do
+ActiveRecord::Schema.define(version: 2018_05_04_061606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 2018_05_04_052643) do
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
     t.index ["user_id"], name: "index_authentications_on_user_id"
+  end
+
+  create_table "original_songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "code", null: false
+    t.string "title_ja"
+    t.string "title_en"
+    t.string "original_code", null: false
+    t.string "composer"
+    t.integer "track_number"
+    t.boolean "is_duplicate", default: false, null: false
+    t.boolean "is_hidden", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_original_songs_on_code", unique: true
+    t.index ["original_code"], name: "index_original_songs_on_original_code"
   end
 
   create_table "originals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
