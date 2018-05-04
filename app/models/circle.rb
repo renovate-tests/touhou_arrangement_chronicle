@@ -23,6 +23,7 @@
 class Circle < ApplicationRecord
   include CategoryModule
 
+  has_many :artists, inverse_of: :circle, dependent: :destroy
   has_many :discographies, inverse_of: :circle, dependent: :destroy
   has_many :songs, inverse_of: :circle, dependent: :destroy
 
