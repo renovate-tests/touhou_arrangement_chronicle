@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_084925) do
+ActiveRecord::Schema.define(version: 2018_05_04_100023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 2018_05_04_084925) do
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
     t.index ["user_id"], name: "index_authentications_on_user_id"
+  end
+
+  create_table "circles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name_ja", null: false
+    t.string "name_en"
+    t.string "circle_type", default: "general", null: false
+    t.string "site_url"
+    t.string "blog_url"
+    t.string "category", null: false
+    t.string "detail_category", null: false
+    t.text "note_ja"
+    t.text "note_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name_ja"], name: "index_circles_on_name_ja", unique: true
   end
 
   create_table "event_series", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
