@@ -24,6 +24,8 @@
 class Song < ApplicationRecord
   has_many :song_arrangers, dependent: :destroy
   has_many :arrangers, through: :song_arrangers
+  has_many :song_lyricists, dependent: :destroy
+  has_many :lyricists, through: :song_lyricists
   has_many :song_vocalists, dependent: :destroy
   has_many :vocalists, through: :song_vocalists
 

@@ -19,5 +19,8 @@
 class Lyricist < ApplicationRecord
   include ArtistModule
 
+  has_many :song_lyricists, dependent: :destroy
+  has_many :songs, through: :song_lyricists
+
   belongs_to :artist
 end
