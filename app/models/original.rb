@@ -34,4 +34,9 @@ class Original < ApplicationRecord
     dependent: :destroy
 
   scope :order_by_code_asc, -> { order("code ASC") }
+
+  validates :code, presence: true
+  validates :title_ja, presence: true
+  validates :short_title_ja, presence: true
+  validates :original_type, presence: true
 end
