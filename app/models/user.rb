@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id               :uuid             not null, primary key
-#  name             :string
+#  name             :string           not null
 #  email            :string
 #  crypted_password :string
 #  salt             :string

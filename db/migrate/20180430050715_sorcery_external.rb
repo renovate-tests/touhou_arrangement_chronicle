@@ -1,6 +1,6 @@
 class SorceryExternal < ActiveRecord::Migration[5.2]
   def change
-    create_table :authentications do |t|
+    create_table :authentications, id: :uuid do |t|
       t.references :user, null: false, type: :uuid, index: true
       t.string :provider, :uid, null: false
 

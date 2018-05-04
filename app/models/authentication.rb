@@ -2,7 +2,7 @@
 #
 # Table name: authentications
 #
-#  id         :integer          not null, primary key
+#  id         :uuid             not null, primary key
 #  user_id    :uuid             not null
 #  provider   :string           not null
 #  uid        :string           not null

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_02_031353) do
+ActiveRecord::Schema.define(version: 2018_04_30_052027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "authentications", force: :cascade do |t|
+  create_table "authentications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id", null: false
     t.string "provider", null: false
     t.string "uid", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_031353) do
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "email"
     t.string "crypted_password"
     t.string "salt"
