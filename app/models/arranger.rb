@@ -19,5 +19,8 @@
 class Arranger < ApplicationRecord
   include ArtistModule
 
+  has_many :song_arrangers, dependent: :destroy
+  has_many :songs, through: :song_arrangers
+
   belongs_to :artist
 end
