@@ -19,6 +19,8 @@
 #
 
 class Discography < ApplicationRecord
+  has_many :songs, inverse_of: :discography, dependent: :destroy
+
   belongs_to :circle, optional: true
   belongs_to :event, optional: true
 

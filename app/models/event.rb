@@ -23,6 +23,8 @@
 
 class Event < ApplicationRecord
   has_many :discographies, inverse_of: :event, dependent: :destroy
+  has_many :songs, inverse_of: :event, dependent: :destroy
+
   belongs_to :event_series
 
   delegate :title_ja, :title_en, to: :event_series, prefix: true, allow_nil: true
