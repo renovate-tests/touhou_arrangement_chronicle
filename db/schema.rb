@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_134333) do
+ActiveRecord::Schema.define(version: 2018_05_04_140027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_134333) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_arrangers_on_artist_id"
+    t.index ["artist_id"], name: "index_arrangers_on_artist_id", unique: true
   end
 
   create_table "artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_134333) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_composers_on_artist_id"
+    t.index ["artist_id"], name: "index_composers_on_artist_id", unique: true
   end
 
   create_table "discographies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_134333) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_lyricists_on_artist_id"
+    t.index ["artist_id"], name: "index_lyricists_on_artist_id", unique: true
   end
 
   create_table "original_songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_134333) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_rearrangers_on_artist_id"
+    t.index ["artist_id"], name: "index_rearrangers_on_artist_id", unique: true
   end
 
   create_table "songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -183,7 +183,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_134333) do
     t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_vocalists_on_artist_id"
+    t.index ["artist_id"], name: "index_vocalists_on_artist_id", unique: true
   end
 
 end

@@ -9,7 +9,7 @@
 #
 # Indexes
 #
-#  index_rearrangers_on_artist_id  (artist_id)
+#  index_rearrangers_on_artist_id  (artist_id) UNIQUE
 #
 
 class Rearranger < ApplicationRecord

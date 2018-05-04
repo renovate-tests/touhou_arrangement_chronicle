@@ -9,7 +9,7 @@
 #
 # Indexes
 #
-#  index_lyricists_on_artist_id  (artist_id)
+#  index_lyricists_on_artist_id  (artist_id) UNIQUE
 #
 
 class Lyricist < ApplicationRecord

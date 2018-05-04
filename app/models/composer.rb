@@ -9,7 +9,7 @@
 #
 # Indexes
 #
-#  index_composers_on_artist_id  (artist_id)
+#  index_composers_on_artist_id  (artist_id) UNIQUE
 #
 
 class Composer < ApplicationRecord

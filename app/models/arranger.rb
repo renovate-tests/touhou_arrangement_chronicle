@@ -9,7 +9,7 @@
 #
 # Indexes
 #
-#  index_arrangers_on_artist_id  (artist_id)
+#  index_arrangers_on_artist_id  (artist_id) UNIQUE
 #
 
 class Arranger < ApplicationRecord
