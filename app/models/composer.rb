@@ -19,5 +19,8 @@
 class Composer < ApplicationRecord
   include ArtistModule
 
+  has_many :song_composers, dependent: :destroy
+  has_many :songs, through: :song_composers
+
   belongs_to :artist
 end
