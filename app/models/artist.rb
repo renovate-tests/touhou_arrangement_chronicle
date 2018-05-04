@@ -28,6 +28,7 @@ class Artist < ApplicationRecord
   has_one :arranger, inverse_of: :artist, dependent: :destroy
   has_one :composer, inverse_of: :artist, dependent: :destroy
   has_one :lyricist, inverse_of: :artist, dependent: :destroy
+  has_one :rearranger, inverse_of: :artist, dependent: :destroy
   has_one :vocalist, inverse_of: :artist, dependent: :destroy
 
   belongs_to :circle, optional: true
