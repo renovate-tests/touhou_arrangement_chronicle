@@ -23,5 +23,7 @@
 class Circle < ApplicationRecord
   include CategoryModule
 
+  has_many :discographies, inverse_of: :circle, dependent: :destroy
+
   validates :name_ja, presence: true
 end
