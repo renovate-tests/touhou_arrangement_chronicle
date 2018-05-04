@@ -11,5 +11,7 @@
 #
 
 class EventSeries < ApplicationRecord
+  has_many :event, inverse_of: :event_series, dependent: :destroy
+
   validates :title_ja, presence: true
 end

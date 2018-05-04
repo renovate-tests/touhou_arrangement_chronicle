@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_075028) do
+ActiveRecord::Schema.define(version: 2018_05_04_084925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -32,6 +32,22 @@ ActiveRecord::Schema.define(version: 2018_05_04_075028) do
     t.integer "display_order", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title_ja", null: false
+    t.string "title_en"
+    t.string "display_title_ja", null: false
+    t.string "display_title_en"
+    t.uuid "event_series_id", null: false
+    t.integer "times"
+    t.integer "days", default: 1, null: false
+    t.date "date"
+    t.text "note_ja"
+    t.text "note_en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_series_id"], name: "index_events_on_event_series_id"
   end
 
   create_table "original_songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
