@@ -8,7 +8,7 @@ class Category
 
   class << self
     def select_category(name)
-      detail_category = nil
+      detail_category = ''
       if name.match?(%r{^[!-\/:-@\[-`\{\}-~]})
         category = 'symbol'
       elsif name =~ /^\d/ || name =~ /^[０-９]/
