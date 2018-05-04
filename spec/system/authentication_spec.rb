@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Authentication', type: :system do
-  let(:user){ User.create!(name: 'test_user001', email: 'example@example.com', password: 'password') }
+  let(:user) { User.create!(name: 'test_user001', email: 'example@example.com', password: 'password') }
   it 'ユーザー登録' do
     visit new_user_path
     fill_in 'user[name]', with: 'test_user001'
