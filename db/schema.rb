@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_143956) do
+ActiveRecord::Schema.define(version: 2018_05_04_144518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -177,6 +177,15 @@ ActiveRecord::Schema.define(version: 2018_05_04_143956) do
     t.index ["song_id"], name: "index_song_lyricists_on_song_id"
   end
 
+  create_table "song_original_songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "song_id", null: false
+    t.uuid "original_song_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["original_song_id"], name: "index_song_original_songs_on_original_song_id"
+    t.index ["song_id"], name: "index_song_original_songs_on_song_id"
+  end
+
   create_table "song_rearrangers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "song_id", null: false
     t.uuid "rearranger_id", null: false
@@ -241,6 +250,8 @@ ActiveRecord::Schema.define(version: 2018_05_04_143956) do
   add_foreign_key "song_composers", "songs"
   add_foreign_key "song_lyricists", "lyricists"
   add_foreign_key "song_lyricists", "songs"
+  add_foreign_key "song_original_songs", "original_songs"
+  add_foreign_key "song_original_songs", "songs"
   add_foreign_key "song_rearrangers", "rearrangers"
   add_foreign_key "song_rearrangers", "songs"
   add_foreign_key "song_vocalists", "songs"

@@ -21,6 +21,9 @@
 #
 
 class OriginalSong < ApplicationRecord
+  has_many :song_original_songs, dependent: :destroy
+  has_many :songs, through: :song_original_songs
+
   belongs_to :original, foreign_key: :original_code, primary_key: :code, inverse_of: :original_songs
 
   delegate :title_ja, :title_en, :short_title_ja, :short_title_en, :original_type,
