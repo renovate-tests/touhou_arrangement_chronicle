@@ -25,7 +25,12 @@ class OriginalSong < ApplicationRecord
 
   delegate :title_ja, :title_en, :short_title_ja, :short_title_en, :original_type,
     to: :original, prefix: true, allow_nil: true
+
   scope :duplicate, -> { where(is_duplicate: true) }
   scope :not_duplicate, -> { where(is_duplicate: false) }
   scope :order_by_track_number_asc, -> { order("track_number ASC") }
+
+  validates :code, presence: true
+  validates :title_ja, presence: true
+  validates :original_code, presence: true
 end
