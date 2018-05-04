@@ -19,5 +19,8 @@
 class Rearranger < ApplicationRecord
   include ArtistModule
 
+  has_many :song_rearrangers, dependent: :destroy
+  has_many :songs, through: :song_rearrangers
+
   belongs_to :artist
 end
