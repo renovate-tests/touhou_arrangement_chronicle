@@ -52,4 +52,9 @@ jobs:
           command: chromedriver -v
 
       - run: bundle exec rubocop --parallel
+
+      - run:
+          name: Start ChromeDriver
+          command: chromedriver
+
       - run: bundle exec rake
