@@ -25,6 +25,8 @@
 class Artist < ApplicationRecord
   include CategoryModule
 
+  has_one :vocalist, inverse_of: :artist, dependent: :destroy
+
   belongs_to :circle, optional: true
   belongs_to :user, optional: true
 
