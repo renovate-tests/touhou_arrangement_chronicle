@@ -55,6 +55,6 @@ jobs:
 
       - run:
           name: Start ChromeDriver
-          command: chromedriver
+          command: chromedriver &
 
       - run: bundle exec rake
