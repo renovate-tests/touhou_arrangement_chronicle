@@ -21,5 +21,7 @@
 #
 
 class Circle < ApplicationRecord
+  include CategoryModule
+
   validates :name_ja, presence: true
 end

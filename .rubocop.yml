@@ -20,3 +20,6 @@ AlignParameters:
 Rails/OutputSafety:
   Exclude:
     - 'config/application.rb'
+
+Metrics/PerceivedComplexity:
+  Max: 10
