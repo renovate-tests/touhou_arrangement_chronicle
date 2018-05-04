@@ -19,5 +19,8 @@
 class Vocalist < ApplicationRecord
   include ArtistModule
 
+  has_many :song_vocalists, dependent: :destroy
+  has_many :songs, through: :song_vocalists
+
   belongs_to :artist
 end

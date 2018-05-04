@@ -22,6 +22,9 @@
 #
 
 class Song < ApplicationRecord
+  has_many :song_vocalists, dependent: :destroy
+  has_many :vocalists, through: :song_vocalists
+
   belongs_to :circle, optional: true
   belongs_to :discography, optional: true
   belongs_to :event, optional: true

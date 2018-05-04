@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_140532) do
+ActiveRecord::Schema.define(version: 2018_05_04_141010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -150,6 +150,15 @@ ActiveRecord::Schema.define(version: 2018_05_04_140532) do
     t.index ["artist_id"], name: "index_rearrangers_on_artist_id", unique: true
   end
 
+  create_table "song_vocalists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "song_id", null: false
+    t.uuid "vocalist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_song_vocalists_on_song_id"
+    t.index ["vocalist_id"], name: "index_song_vocalists_on_vocalist_id"
+  end
+
   create_table "songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title_ja", null: false
     t.string "title_en"
@@ -190,5 +199,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_140532) do
   add_foreign_key "composers", "artists"
   add_foreign_key "lyricists", "artists"
   add_foreign_key "rearrangers", "artists"
+  add_foreign_key "song_vocalists", "songs"
+  add_foreign_key "song_vocalists", "vocalists"
   add_foreign_key "vocalists", "artists"
 end
