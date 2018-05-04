@@ -18,12 +18,20 @@ Bundler.require(*Rails.groups)
 
 module TouhouArrangementChronicle
   class Application < Rails::Application
+    config.i18n.default_locale = :ja
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.action_view.field_error_proc = proc do |html_tag, instance|
+      if instance.is_a?(ActionView::Helpers::Tags::Label)
+        html_tag.html_safe
+      else
+        Nokogiri::HTML.fragment(html_tag).search('input', 'textarea', 'select').add_class('is-danger').to_html.html_safe
+      end
+    end
 
     # Don't generate system test files.
     config.generators.system_tests = nil

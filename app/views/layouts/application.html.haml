@@ -3,19 +3,33 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %title TouhouArrangementChronicle
+    %title= t('common.app_name')
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = javascript_pack_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_pack_tag 'application'
   %body
     %header
       %nav.navbar.is-light
         .navbar-brand
           %span.navbar-item
-            東方編曲録
+            = t('common.app_name')
         .navbar-end
-          %span.navbar-item
-            %a.fa.fa-user{:href => "#"} ログイン
-    = yield
+          - if current_user
+            %span.navbar-item
+              = button_to t('common.logout'), logout_path, { method: 'delete', class: 'button is-outlined' }
+          - else
+            %span.navbar-item
+              = button_to t('common.user_signup'), new_user_path, { method: 'get', class: 'button is-success is-outlined' }
+            %span.navbar-item
+              = link_to login_path, { method: 'get' } do
+                %span
+                  %i.fa.fa-user
+                %span
+                  = t('common.login')
+    %section.section
+      = render 'shared/notification'
+      .content
+        = yield
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
+    = yield :javascript
