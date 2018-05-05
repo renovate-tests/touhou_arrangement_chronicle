@@ -1,4 +1,12 @@
 ja:
+  layouts:
+    header:
+      home: ホーム
+      about: About
+      profile: プロフィール
+      collections: コレクション
+      favorite: お気に入り
+      my_list: マイリスト
   sessions:
     new:
       login_title: 東方編曲録 にログイン

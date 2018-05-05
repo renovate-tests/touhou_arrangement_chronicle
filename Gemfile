@@ -11,6 +11,7 @@ gem 'rails', '~> 5.2.0'
 
 gem 'bootsnap'
 gem 'counter_culture'
+gem 'gravtastic'
 gem 'hamlit-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'moji'

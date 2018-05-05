@@ -7,4 +7,8 @@ module ApplicationHelper
     when 'alert' then "notification is-warning"
     end
   end
+
+  def profile_image
+    current_user.image_path || current_user.gravatar_url(default: 'mm')
+  end
 end

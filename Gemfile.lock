@@ -106,6 +106,7 @@ GEM
       romaji
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gravtastic (3.2.6)
     hamlit (2.8.8)
       temple (>= 0.8.0)
       thor
@@ -324,6 +325,7 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   gimei
+  gravtastic
   hamlit-rails
   jbuilder (~> 2.5)
   listen
