@@ -45,6 +45,8 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper' unless ENV.has_key?('CIRCLECI')
   gem 'factory_bot_rails', group: :development
+  gem 'ffaker', group: :development
+  gem 'gimei', group: :development
   gem 'rspec-rails', group: :development
   gem 'selenium-webdriver'
 end
