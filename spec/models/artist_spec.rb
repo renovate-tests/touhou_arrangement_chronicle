@@ -10,7 +10,7 @@ RSpec.describe Artist, type: :model do
   end
 
   describe 'belongs_to' do
-    it { is_expected.to belong_to(:circle) }
-    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:circle).optional }
+    it { is_expected.to belong_to(:user).optional }
   end
 end
