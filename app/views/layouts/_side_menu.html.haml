@@ -24,9 +24,10 @@
           %a= t('.arranger')
         %li
           %a= t('.lyricist')
-  %p.menu-label
-    Administrator
-  %ul.menu-list
-    %li
-      %a= t('.admin_panel')
+  - if current_user
+    %p.menu-label
+      Administrator
+    %ul.menu-list
+      %li
+        %a= t('.admin_panel')
 
