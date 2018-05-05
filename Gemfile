@@ -49,6 +49,6 @@ group :test do
   gem 'gimei', group: :development
   gem 'rspec-rails', group: :development
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers', branch: :master
   gem 'spring-commands-rspec', group: :development
 end
