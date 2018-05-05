@@ -49,4 +49,5 @@ group :test do
   gem 'gimei', group: :development
   gem 'rspec-rails', group: :development
   gem 'selenium-webdriver'
+  gem 'spring-commands-rspec', group: :development
 end
