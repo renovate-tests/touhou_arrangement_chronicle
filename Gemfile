@@ -10,12 +10,15 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 
 gem 'bootsnap'
+gem 'counter_culture'
 gem 'hamlit-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'moji'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rails-i18n'
 gem 'sass-rails', '~> 5.0'
+gem 'seed-fu'
 gem 'sorcery'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
@@ -42,6 +45,10 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper' unless ENV.has_key?('CIRCLECI')
   gem 'factory_bot_rails', group: :development
+  gem 'ffaker', group: :development
+  gem 'gimei', group: :development
   gem 'rspec-rails', group: :development
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers', branch: :master
+  gem 'spring-commands-rspec', group: :development
 end
