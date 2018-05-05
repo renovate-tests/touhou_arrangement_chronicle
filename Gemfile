@@ -9,6 +9,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.0'
 
+gem 'administrate'
 gem 'bootsnap'
 gem 'counter_culture'
 gem 'gravtastic'
