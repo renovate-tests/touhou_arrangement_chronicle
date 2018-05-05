@@ -3,33 +3,26 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %title= t('common.app_name')
+    %title= content_for?(:title) ? t('common.page_title', title: yield(:title)) : t('common.app_fullname')
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_pack_tag 'application'
   %body
     %header
-      %nav.navbar.is-light
-        .navbar-brand
-          %span.navbar-item
-            = t('common.app_name')
-        .navbar-end
-          - if current_user
-            %span.navbar-item
-              = button_to t('common.logout'), logout_path, { method: 'delete', class: 'button is-outlined' }
-          - else
-            %span.navbar-item
-              = button_to t('common.user_signup'), new_user_path, { method: 'get', class: 'button is-success is-outlined' }
-            %span.navbar-item
-              = link_to login_path, { method: 'get' } do
-                %span
-                  %i.fa.fa-user
-                %span
-                  = t('common.login')
-    %section.section
-      = render 'shared/notification'
-      .content
-        = yield
+      = render 'layouts/header'
+    #main.columns
+      .column.is-narrow.is-hidden-touch
+        .side_menu
+          .box
+            = render 'layouts/side_menu'
+      .column
+        .content
+          %section.section
+            = render 'shared/notification'
+            = yield
+    %footer.footer
+      = render 'layouts/footer'
     = javascript_include_tag 'application'
     = javascript_pack_tag 'application'
+    = javascript_pack_tag 'navbar-burger'
     = yield :javascript

@@ -1,0 +1,48 @@
+%nav.navbar.is-light
+  .navbar-brand
+    = link_to t('common.app_name'), root_path, { class: 'navbar-item has-text-dark' }
+    .navbar-burger.burger{ data: { target: 'navbar-menu' } }
+      %span
+      %span
+      %span
+  #navbar-menu.navbar-menu
+    .navbar-start
+      = link_to root_path, { class: 'navbar-item has-text-dark' } do
+        %span
+          %i.fa.fa-home
+        %span
+          = t('.home')
+      = link_to '#', { class: 'navbar-item has-text-dark' } do
+        %span
+          %i.fa.fa-info-circle
+        %span
+          = t('.about')
+    .navbar-end
+      - if current_user
+        %span.navbar-item.has-dropdown.is-hoverable
+          %a.navbar-link
+            = image_tag profile_image
+          .navbar-dropdown.is-right
+            .navbar-item
+              = "@#{current_user.name}"
+            %hr.navbar-divider
+            .navbar-item
+              = t('.profile')
+            .navbar-item
+              = t('.collections')
+            .navbar-item
+              = t('.favorite')
+            .navbar-item
+              = t('.my_list')
+            %hr.navbar-divider
+            .navbar-item
+              = link_to t('common.logout'), logout_path, { method: 'delete', class: 'has-text-dark' }
+      - else
+        %span.navbar-item
+          = button_to t('common.user_signup'), new_user_path, { method: 'get', class: 'button is-success is-outlined' }
+        %span.navbar-item
+          = link_to login_path, { method: 'get' } do
+            %span
+              %i.fa.fa-user
+            %span
+              = t('common.login')

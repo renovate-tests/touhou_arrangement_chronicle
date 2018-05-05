@@ -20,8 +20,6 @@ RSpec.describe 'Authentication', type: :system do
       fill_in 'password', with: 'password'
       click_on 'ログイン'
       expect(page).to have_content 'ログインしました'
-      click_on 'ログアウト'
-      expect(page).to have_content 'ログアウトしました'
     end
 
     it 'メールアドレスログイン' do
@@ -31,16 +29,5 @@ RSpec.describe 'Authentication', type: :system do
       click_on 'ログイン'
       expect(page).to have_content 'ログインしました'
     end
-  end
-
-  it 'ログアウト' do
-    user
-    visit login_path
-    fill_in 'name_or_email', with: 'test_user001'
-    fill_in 'password', with: 'password'
-    click_on 'ログイン'
-    expect(page).to have_content 'ログインしました'
-    click_on 'ログアウト'
-    expect(page).to have_content 'ログアウトしました'
   end
 end

@@ -2,3 +2,25 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
 @import '~bulma/bulma';
 @import '~bulma-extensions/dist/bulma-extensions.min';
+
+html {
+  height: 100%;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main.content {
+  flex: 1;
+}
+
+#main.columns {
+  flex: 1;
+}
+
+.side_menu {
+  margin: 12px;
+}

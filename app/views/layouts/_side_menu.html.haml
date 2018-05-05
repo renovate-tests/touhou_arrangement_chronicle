@@ -1,0 +1,33 @@
+%aside.menu
+  %p.menu-label
+    Search
+  %ul.menu-list
+    %li
+      %a= t('.search')
+    %li
+      %a= t('.detail_search')
+  %p.menu-label
+    General
+  %ul.menu-list
+    %li
+      %a= t('.original_song')
+    %li
+      %a= t('.event')
+    %li
+      %a= t('.circle')
+    %li
+      %a= t('.artist')
+      %ul
+        %li
+          %a= t('.vocalist')
+        %li
+          %a= t('.arranger')
+        %li
+          %a= t('.lyricist')
+  - if current_user
+    %p.menu-label
+      Administrator
+    %ul.menu-list
+      %li
+        %a= t('.admin_panel')
+

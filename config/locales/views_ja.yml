@@ -1,4 +1,23 @@
 ja:
+  layouts:
+    header:
+      home: ホーム
+      about: About
+      profile: プロフィール
+      collections: コレクション
+      favorite: お気に入り
+      my_list: マイリスト
+    side_menu:
+      search: 検索
+      detail_search: 詳細検索
+      original_song: 原曲別
+      event: イベント別
+      circle: サークル別
+      artist: アーティスト別
+      vocalist: ボーカリスト別
+      arranger: 編曲者別
+      lyricist: 作詞者別
+      admin_panel: 管理画面
   sessions:
     new:
       login_title: 東方編曲録 にログイン
