@@ -13,6 +13,14 @@ body{
   flex-direction: column;
 }
 
-.content {
+#main.content {
   flex: 1;
+}
+
+#main.columns {
+  flex: 1;
+}
+
+.side_menu {
+  margin: 12px;
 }
