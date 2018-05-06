@@ -2,8 +2,195 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      arranger: 編曲者
+      artist: アーティスト  #g
+      authentication: 認証  #g
+      circle: サークル  #g
+      composer: 作曲者
+      discography: ディスコグラフィー  #g
+      event: イベント  #g
+      event_series: イベントシリーズ  #g
+      lyricist: 作詞者
+      original: 原作
+      original_song: 原曲
+      rearranger: 再編曲者
+      song: 曲
+      song_arranger: 曲-編曲者
+      song_composer: 曲-作曲者
+      song_lyricist: 曲-作詞者
+      song_original_song: 曲-原曲
+      song_rearranger: 曲-再編曲者
+      song_vocalist: 曲-ボーカリスト
+      vocalist: ボーカリスト  #g
+
+    attributes:
+      arranger:
+        artist: アーティスト
+        songs: 曲  #g
+
+      artist:
+        blog_url: ブログのURL  #g
+        category: カテゴリー  #g
+        circle: :activerecord.models.circle  #g
+        composer: :activerecord.models.composer  #g
+        detail_category: 詳細カテゴリ  #g
+        lyricist: :activerecord.models.lyricist  #g
+        name_en: 名前(英名)
+        name_ja: 名前
+        note_en: メモ(英語)
+        note_ja: メモ
+        rearranger: :activerecord.models.rearranger  #g
+        site_url: サイトのURL  #g
+        user: :activerecord.models.user  #g
+        vocalist: :activerecord.models.vocalist  #g
+
+      authentication:
+        uid: uid
+        user: :activerecord.models.user  #g
+
+      circle:
+        blog_url: ブログのURL  #g
+        category: カテゴリー  #g
+        circle_type: サークル種別
+        detail_category: 詳細カテゴリ  #g
+        discographies: ディスコグラフィー  #g
+        name_en: 名前(英名)
+        name_ja: 名前
+        note_en: メモ(英語)
+        note_ja: メモ
+        site_url: サイトのURL  #g
+        songs: 曲  #g
+
+      composer:
+        song_composers: 曲-作曲者
+        songs: 曲  #g
+
+      discography:
+        event: :activerecord.models.event  #g
+        part_number: 番号
+        release_date: 頒布日
+        songs: 曲  #g
+        title_en: タイトル(英名)
+        title_ja: タイトル
+
+      event:
+        days: 開催期間
+        discographies: ディスコグラフィー  #g
+        display_title_en: 表示タイトル(英名)
+        display_title_ja: 表示タイトル
+        event_series: :activerecord.models.event_series  #g
+        note_en: メモ(英語)
+        note_ja: メモ
+        songs: 曲  #g
+        times: 回数
+        title_en: タイトル(英名)
+        title_ja: タイトル
+
+      event_series:
+        event: イベント  #g
+        title_en: タイトル(英名)
+        title_ja: タイトル
+
+      lyricist:
+        song_lyricists: 曲-作詞者
+        songs: 曲  #g
+
+      original:
+        original_songs: 原曲
+        original_type: 原作種別
+        short_title_en: 省略タイトル(英名)
+        short_title_ja: 省略タイトル
+        title_en: タイトル(英名)
+        title_ja: タイトル
+
+      original_song:
+        composer: 作曲者
+        is_duplicate: 重複
+        is_hidden: 非表示
+        original: :activerecord.models.original  #g
+        original_code: 原作コード
+        song_original_songs: 曲-原曲
+        songs: 曲  #g
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        track_number: トラック番号  #g
+
+      rearranger:
+        song_rearrangers: 曲-再編曲者
+        songs: 曲  #g
+
+      song:
+        bpm: BPM
+        circle: :activerecord.models.circle  #g
+        composers: 作曲者
+        discography: :activerecord.models.discography  #g
+        event: :activerecord.models.event  #g
+        length: 曲の長さ
+        lyricists: 作詞者
+        original_songs: 原曲
+        rearrangers: 再編曲者
+        song_arrangers: 曲-編曲者
+        song_composers: 曲-作曲者
+        song_lyricists: 曲-作詞者
+        song_original_songs: 曲-原曲
+        song_rearrangers: 曲-再編曲者
+        song_vocalists: 曲-ボーカリスト
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        track_number: トラック番号  #g
+        vocalists: ボーカリスト  #g
+
+      song_arranger:
+        song: :activerecord.models.song  #g
+
+      song_composer:
+        song: :activerecord.models.song  #g
+
+      song_lyricist:
+        song: :activerecord.models.song  #g
+
+      song_original_song:
+        song: :activerecord.models.song  #g
+
+      song_rearranger:
+        song: :activerecord.models.song  #g
+
+      song_vocalist:
+        vocalist: :activerecord.models.vocalist  #g
+
+      user:
+        authentications: 認証  #g
+        crypted_password: 暗号化されたパスワード  #g
+        email: メールアドレス
+        image_path: 画像パス  #g
+        name: ユーザー名
+        nick_name: ニックネーム  #g
+        salt: salt
+        password: パスワード
+
+      vocalist:
+        song_vocalists: 曲-ボーカリスト
+        songs: 曲  #g
 
   attributes:
     name: ユーザー名
     email: メールアドレス
     password: パスワード
+
+  arranger: :activerecord.models.arranger  #g
+  artist: :activerecord.models.artist  #g
+
+  song_arrangers: 曲-編曲者
+  provider: プロバイダ  #g
+  artists: アーティスト  #g
+  artist: :activerecord.models.artist  #g
+  circle: :activerecord.models.circle  #g
+  date: 日付  #g
+  display_order: 表示順  #g
+  code: コード  #g
+  arrangers: 編曲者
+  composer: :activerecord.models.composer  #g
+  lyricist: :activerecord.models.lyricist  #g
+  original_song: :activerecord.models.original_song  #g
+  rearranger: :activerecord.models.rearranger  #g
+  song: :activerecord.models.song  #g

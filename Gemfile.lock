@@ -133,6 +133,8 @@ GEM
       railties (>= 4.0.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    i18n_generators (2.1.1)
+      rails (>= 3.0.0)
     iniparse (1.4.4)
     io-like (0.3.0)
     jbuilder (2.7.0)
@@ -362,6 +364,7 @@ DEPENDENCIES
   gimei
   gravtastic
   hamlit-rails
+  i18n_generators
   jbuilder (~> 2.5)
   listen
   moji
