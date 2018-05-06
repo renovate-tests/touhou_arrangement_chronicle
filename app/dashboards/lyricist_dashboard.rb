@@ -8,13 +8,12 @@ class LyricistDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    song_lyricists: Field::HasMany,
-    songs: Field::HasMany,
-    artist: Field::BelongsTo,
     id: Field::String.with_options(searchable: false),
+    artist: Field::BelongsTo,
+    songs: Field::HasMany,
+    songs_count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    songs_count: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES

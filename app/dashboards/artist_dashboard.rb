@@ -8,13 +8,6 @@ class ArtistDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    arranger: Field::HasOne,
-    composer: Field::HasOne,
-    lyricist: Field::HasOne,
-    rearranger: Field::HasOne,
-    vocalist: Field::HasOne,
-    circle: Field::BelongsTo,
-    user: Field::BelongsTo,
     id: Field::String.with_options(searchable: false),
     name_ja: Field::String,
     name_en: Field::String,
@@ -24,6 +17,13 @@ class ArtistDashboard < Administrate::BaseDashboard
     note_en: Field::Text,
     category: Field::I18nEnum.with_options(class_name: 'Artist'),
     detail_category: Field::String,
+    arranger: Field::HasOne,
+    composer: Field::HasOne,
+    lyricist: Field::HasOne,
+    rearranger: Field::HasOne,
+    vocalist: Field::HasOne,
+    circle: Field::BelongsTo,
+    user: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

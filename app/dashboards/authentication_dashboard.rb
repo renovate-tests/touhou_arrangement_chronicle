@@ -8,8 +8,8 @@ class AuthenticationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
     id: Field::String.with_options(searchable: false),
+    user: Field::BelongsTo,
     provider: Field::String,
     uid: Field::String,
     created_at: Field::DateTime,
@@ -29,8 +29,8 @@ class AuthenticationDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :user,
     :id,
+    :user,
     :provider,
     :uid,
     :created_at,

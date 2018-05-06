@@ -8,20 +8,18 @@ class OriginalSongDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    song_original_songs: Field::HasMany,
-    songs: Field::HasMany,
-    original: Field::BelongsTo.with_options(primary_key: :code, foreign_key: :original_code),
     id: Field::String.with_options(searchable: false),
     code: Field::String,
+    original: Field::BelongsTo.with_options(primary_key: :code, foreign_key: :original_code),
     title_ja: Field::String,
     title_en: Field::String,
     composer: Field::String,
     track_number: Field::Number,
     is_duplicate: Field::Boolean,
     is_hidden: Field::Boolean,
+    songs_count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    songs_count: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES

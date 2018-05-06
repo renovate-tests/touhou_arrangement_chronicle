@@ -8,17 +8,15 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    artists: Field::HasMany,
-    authentications: Field::HasMany,
     id: Field::String.with_options(searchable: false),
     name: Field::String,
+    nick_name: Field::String,
     email: Field::String,
-    crypted_password: Field::String,
-    salt: Field::String,
+    image_path: Field::String,
+    artists: Field::HasMany,
+    authentications: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    image_path: Field::String,
-    nick_name: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES

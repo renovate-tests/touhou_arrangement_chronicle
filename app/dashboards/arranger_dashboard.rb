@@ -10,7 +10,6 @@ class ArrangerDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::String.with_options(searchable: false),
     artist: Field::BelongsTo,
-    song_arrangers: Field::HasMany,
     songs: Field::HasMany,
     songs_count: Field::Number,
     created_at: Field::DateTime,

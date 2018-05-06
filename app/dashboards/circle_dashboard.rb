@@ -8,19 +8,19 @@ class CircleDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    artists: Field::HasMany,
-    discographies: Field::HasMany,
-    songs: Field::HasMany,
     id: Field::String.with_options(searchable: false),
     name_ja: Field::String,
     name_en: Field::String,
-    circle_type: Field::I18nEnum.with_options(class_name: 'Circle'),
     site_url: Field::String,
     blog_url: Field::String,
-    category: Field::I18nEnum.with_options(class_name: 'Artist'),
-    detail_category: Field::String,
     note_ja: Field::Text,
     note_en: Field::Text,
+    discographies: Field::HasMany,
+    category: Field::I18nEnum.with_options(class_name: 'Artist'),
+    detail_category: Field::String,
+    artists: Field::HasMany,
+    songs: Field::HasMany,
+    circle_type: Field::I18nEnum.with_options(class_name: 'Circle'),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

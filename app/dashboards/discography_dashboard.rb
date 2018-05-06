@@ -8,14 +8,14 @@ class DiscographyDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    songs: Field::HasMany,
-    circle: Field::BelongsTo,
-    event: Field::BelongsTo,
     id: Field::String.with_options(searchable: false),
+    circle: Field::BelongsTo,
     title_ja: Field::String,
     title_en: Field::String,
     release_date: Field::DateTime,
     part_number: Field::Number,
+    event: Field::BelongsTo,
+    songs: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

@@ -8,7 +8,6 @@ class OriginalDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    original_songs: Field::HasMany,
     id: Field::String.with_options(searchable: false),
     code: Field::String,
     title_ja: Field::String,
@@ -16,6 +15,7 @@ class OriginalDashboard < Administrate::BaseDashboard
     short_title_ja: Field::String,
     short_title_en: Field::String,
     original_type: Field::I18nEnum.with_options(class_name: 'Original'),
+    original_songs: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

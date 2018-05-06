@@ -8,9 +8,9 @@ class SongOriginalSongDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    id: Field::String.with_options(searchable: false),
     song: Field::BelongsTo,
     original_song: Field::BelongsTo,
-    id: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

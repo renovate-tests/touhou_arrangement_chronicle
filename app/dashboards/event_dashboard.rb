@@ -8,10 +8,8 @@ class EventDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    discographies: Field::HasMany,
-    songs: Field::HasMany,
-    event_series: Field::BelongsTo,
     id: Field::String.with_options(searchable: false),
+    event_series: Field::BelongsTo,
     title_ja: Field::String,
     title_en: Field::String,
     display_title_ja: Field::String,

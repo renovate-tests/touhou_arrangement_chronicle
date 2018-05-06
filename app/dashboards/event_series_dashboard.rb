@@ -8,11 +8,11 @@ class EventSeriesDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    event: Field::HasMany,
     id: Field::String.with_options(searchable: false),
     title_ja: Field::String,
     title_en: Field::String,
     display_order: Field::Number,
+    event: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
