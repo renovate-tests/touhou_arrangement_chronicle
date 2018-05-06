@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       I18n.load_path.uniq!
       I18n.reload!
     end
+
+    def not_authenticated
+      redirect_to root_path
+    end
 end
