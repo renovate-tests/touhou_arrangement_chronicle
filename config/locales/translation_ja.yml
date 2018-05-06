@@ -27,29 +27,36 @@ ja:
       arranger:
         songs: :activerecord.models.song
         artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
         songs_count: 曲数
 
       artist:
         arranger: :activerecord.models.arranger
+        arranger_id: :activerecord.models.arranger
         blog_url: ブログのURL  #g
         category: カテゴリー  #g
         circle: :activerecord.models.circle  #g
+        circle_id: :activerecord.models.circle
         composer: :activerecord.models.composer  #g
         detail_category: 詳細カテゴリ  #g
         lyricist: :activerecord.models.lyricist  #g
+        lyricist_id: :activerecord.models.lyricist
         name_en: 名前(英名)
         name_ja: 名前
         note_en: メモ(英語)
         note_ja: メモ
         rearranger: :activerecord.models.rearranger  #g
+        rearranger_id: :activerecord.models.rearranger
         site_url: サイトのURL  #g
         user: :activerecord.models.user  #g
+        user_id: :activerecord.models.user
         vocalist: :activerecord.models.vocalist  #g
 
       authentication:
         uid: uid
         provider: プロバイダー
         user: :activerecord.models.user  #g
+        user_id: :activerecord.models.user
 
       circle:
         blog_url: ブログのURL  #g
@@ -66,19 +73,21 @@ ja:
         artists: :activerecord.models.artist
 
       composer:
-        song_composers: 曲-作曲者
         songs: :activerecord.models.song
         artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
         songs_count: 曲数
 
       discography:
         event: :activerecord.models.event  #g
+        event_id: :activerecord.models.event
         part_number: 番号
         release_date: 頒布日
         songs: :activerecord.models.song
         title_en: タイトル(英名)
         title_ja: タイトル
         circle: :activerecord.models.circle
+        circle_id: :activerecord.models.circle
 
       event:
         days: n日目
@@ -86,6 +95,7 @@ ja:
         display_title_en: 表示タイトル(英名)
         display_title_ja: 表示タイトル
         event_series: :activerecord.models.event_series  #g
+        event_series_id: :activerecord.models.event_series
         note_en: メモ(英語)
         note_ja: メモ
         songs: :activerecord.models.song
@@ -95,15 +105,15 @@ ja:
         date: 開催日
 
       event_series:
-        event: イベント  #g
+        event: :activerecord.models.event
         title_en: タイトル(英名)
         title_ja: タイトル
         display_order: 表示順
 
       lyricist:
-        song_lyricists: 曲-作詞者
         songs: :activerecord.models.song
         artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
         songs_count: 曲数
 
       original:
@@ -130,21 +140,25 @@ ja:
         songs_count: 曲数
 
       rearranger:
-        song_rearrangers: 曲-再編曲者
         songs: :activerecord.models.song
         artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
         songs_count: 曲数
 
       song:
         arrangers: :activerecord.models.arranger
         bpm: BPM
         circle: :activerecord.models.circle  #g
+        circle_id: :activerecord.models.circle
         composers: :activerecord.models.composer
         discography: :activerecord.models.discography  #g
+        discography_id: :activerecord.models.discography
         event: :activerecord.models.event  #g
+        event_id: :activerecord.models.event
         length: 曲の長さ
         lyricists: :activerecord.models.lyricist
         original_songs: :activerecord.models.original_song
+        original_song_ids: :activerecord.models.original_song
         rearrangers: :activerecord.models.rearranger
         song_arrangers: 曲-編曲者
         song_composers: 曲-作曲者
@@ -159,27 +173,39 @@ ja:
 
       song_arranger:
         song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
         arranger: :activerecord.models.arranger
+        arranger_id: :activerecord.models.arranger
 
       song_composer:
         song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
         composer: :activerecord.models.composer
+        composer_id: :activerecord.models.composer
 
       song_lyricist:
         song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
         lyricist: :activerecord.models.lyricist
+        lyricist_id: :activerecord.models.lyricist
 
       song_original_song:
         song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
         original_song: :activerecord.models.original_song
+        original_song_id: :activerecord.models.original_song
 
       song_rearranger:
         song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
         rearranger: :activerecord.models.rearranger
+        rearranger_id: :activerecord.models.rearranger
 
       song_vocalist:
         song: :activerecord.models.song
+        song_id: :activerecord.models.song
         vocalist: :activerecord.models.vocalist  #g
+        vocalist_id: :activerecord.models.vocalist
 
       user:
         authentications: 認証  #g
@@ -193,33 +219,10 @@ ja:
         artists: :activerecord.models.artist
 
       vocalist:
-        song_vocalists: 曲-ボーカリスト
         songs: :activerecord.models.song
         artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
         songs_count: 曲数
-
-  attributes:
-    name: ユーザー名
-    email: メールアドレス
-    password: パスワード
-
-  arranger: :activerecord.models.arranger  #g
-  artist: :activerecord.models.artist  #g
-
-  song_arrangers: 曲-編曲者
-  provider: プロバイダ  #g
-  artists: アーティスト  #g
-  artist: :activerecord.models.artist  #g
-  circle: :activerecord.models.circle  #g
-  date: 日付  #g
-  display_order: 表示順  #g
-  code: コード  #g
-  arrangers: 編曲者
-  composer: :activerecord.models.composer  #g
-  lyricist: :activerecord.models.lyricist  #g
-  original_song: :activerecord.models.original_song  #g
-  rearranger: :activerecord.models.rearranger  #g
-  song: :activerecord.models.song  #g
 
   helpers:
     label:
