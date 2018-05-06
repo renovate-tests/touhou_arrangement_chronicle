@@ -23,38 +23,32 @@ class LyricistDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :song_lyricists,
-    :songs,
     :artist,
-    :id,
+    :songs,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :song_lyricists,
-    :songs,
-    :artist,
     :id,
+    :artist,
+    :songs,
+    :songs_count,
     :created_at,
     :updated_at,
-    :songs_count,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :song_lyricists,
-    :songs,
     :artist,
-    :songs_count,
   ].freeze
 
   # Overwrite this method to customize how lyricists are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(lyricist)
-  #   "Lyricist ##{lyricist.id}"
-  # end
+  def display_resource(lyricist)
+    lyricist.name_ja
+  end
 end

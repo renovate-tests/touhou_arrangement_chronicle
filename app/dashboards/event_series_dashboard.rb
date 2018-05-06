@@ -23,20 +23,19 @@ class EventSeriesDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :event,
-    :id,
     :title_ja,
-    :title_en,
+    :display_order,
+    :event,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :event,
     :id,
     :title_ja,
     :title_en,
     :display_order,
+    :event,
     :created_at,
     :updated_at,
   ].freeze
@@ -45,7 +44,6 @@ class EventSeriesDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :event,
     :title_ja,
     :title_en,
     :display_order,
@@ -54,7 +52,7 @@ class EventSeriesDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how event series are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event_series)
-  #   "EventSeries ##{event_series.id}"
-  # end
+  def display_resource(event_series)
+    event_series.title_ja
+  end
 end

@@ -23,9 +23,7 @@ class AuthenticationDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
-    :id,
     :provider,
-    :uid,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

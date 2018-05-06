@@ -26,16 +26,15 @@ class OriginalDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :original_songs,
-    :id,
     :code,
     :title_ja,
+    :original_type,
+    :original_songs,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :original_songs,
     :id,
     :code,
     :title_ja,
@@ -43,6 +42,7 @@ class OriginalDashboard < Administrate::BaseDashboard
     :short_title_ja,
     :short_title_en,
     :original_type,
+    :original_songs,
     :created_at,
     :updated_at,
   ].freeze
@@ -51,7 +51,6 @@ class OriginalDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :original_songs,
     :code,
     :title_ja,
     :title_en,
@@ -63,7 +62,7 @@ class OriginalDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how originals are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(original)
-  #   "Original ##{original.id}"
-  # end
+  def display_resource(original)
+    original.title_ja
+  end
 end

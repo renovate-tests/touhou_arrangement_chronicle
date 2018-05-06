@@ -34,22 +34,14 @@ class ArtistDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :arranger,
-    :composer,
-    :lyricist,
-    :rearranger,
+    :name_ja,
+    :category,
+    :detail_category,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :arranger,
-    :composer,
-    :lyricist,
-    :rearranger,
-    :vocalist,
-    :circle,
-    :user,
     :id,
     :name_ja,
     :name_en,
@@ -59,6 +51,13 @@ class ArtistDashboard < Administrate::BaseDashboard
     :note_en,
     :category,
     :detail_category,
+    :arranger,
+    :composer,
+    :lyricist,
+    :rearranger,
+    :vocalist,
+    :circle,
+    :user,
     :created_at,
     :updated_at,
   ].freeze
@@ -67,27 +66,25 @@ class ArtistDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :arranger,
-    :composer,
-    :lyricist,
-    :rearranger,
-    :vocalist,
-    :circle,
-    :user,
     :name_ja,
     :name_en,
     :site_url,
     :blog_url,
     :note_ja,
     :note_en,
-    :category,
-    :detail_category,
+    :composer,
+    :arranger,
+    :rearranger,
+    :vocalist,
+    :lyricist,
+    :circle,
+    :user,
   ].freeze
 
   # Overwrite this method to customize how artists are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(artist)
-  #   "Artist ##{artist.id}"
-  # end
+  def display_resource(artist)
+    artist.name_ja
+  end
 end

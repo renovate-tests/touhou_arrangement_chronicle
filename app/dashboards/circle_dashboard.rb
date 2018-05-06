@@ -31,28 +31,30 @@ class CircleDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :name_ja,
+    :category,
+    :detail_category,
     :artists,
     :discographies,
     :songs,
-    :id,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :artists,
-    :discographies,
-    :songs,
     :id,
     :name_ja,
     :name_en,
-    :circle_type,
     :site_url,
     :blog_url,
-    :category,
-    :detail_category,
     :note_ja,
     :note_en,
+    :discographies,
+    :category,
+    :detail_category,
+    :artists,
+    :songs,
+    :circle_type,
     :created_at,
     :updated_at,
   ].freeze
@@ -61,24 +63,19 @@ class CircleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :artists,
-    :discographies,
-    :songs,
     :name_ja,
     :name_en,
-    :circle_type,
     :site_url,
     :blog_url,
-    :category,
-    :detail_category,
     :note_ja,
     :note_en,
+    :circle_type,
   ].freeze
 
   # Overwrite this method to customize how circles are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(circle)
-  #   "Circle ##{circle.id}"
-  # end
+  def display_resource(circle)
+    circle.name_ja
+  end
 end

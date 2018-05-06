@@ -39,34 +39,29 @@ class SongDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :song_arrangers,
-    :arrangers,
-    :song_composers,
-    :composers,
+    :title_ja,
+    :circle,
+    :discography,
+    :event,
+    :track_number,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :song_arrangers,
-    :arrangers,
-    :song_composers,
-    :composers,
-    :song_lyricists,
-    :lyricists,
-    :song_original_songs,
-    :original_songs,
-    :song_rearrangers,
-    :rearrangers,
-    :song_vocalists,
-    :vocalists,
-    :circle,
-    :discography,
-    :event,
     :id,
     :title_ja,
     :title_en,
     :track_number,
+    :circle,
+    :discography,
+    :event,
+    :original_songs,
+    :vocalists,
+    :composers,
+    :arrangers,
+    :rearrangers,
+    :lyricists,
     :length,
     :bpm,
     :created_at,
@@ -77,24 +72,18 @@ class SongDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :song_arrangers,
-    :arrangers,
-    :song_composers,
-    :composers,
-    :song_lyricists,
-    :lyricists,
-    :song_original_songs,
-    :original_songs,
-    :song_rearrangers,
-    :rearrangers,
-    :song_vocalists,
-    :vocalists,
-    :circle,
-    :discography,
-    :event,
     :title_ja,
     :title_en,
     :track_number,
+    :circle,
+    :discography,
+    :event,
+    :original_songs,
+    :vocalists,
+    :composers,
+    :arrangers,
+    :rearrangers,
+    :lyricists,
     :length,
     :bpm,
   ].freeze
@@ -102,7 +91,7 @@ class SongDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how songs are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(song)
-  #   "Song ##{song.id}"
-  # end
+  def display_resource(song)
+    song.title_ja
+  end
 end

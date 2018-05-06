@@ -31,19 +31,17 @@ class EventDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :discographies,
-    :songs,
+    :title_ja,
     :event_series,
-    :id,
+    :times,
+    :date,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :discographies,
-    :songs,
-    :event_series,
     :id,
+    :event_series,
     :title_ja,
     :title_en,
     :display_title_ja,
@@ -61,13 +59,11 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :discographies,
-    :songs,
-    :event_series,
     :title_ja,
     :title_en,
     :display_title_ja,
     :display_title_en,
+    :event_series,
     :times,
     :days,
     :date,
@@ -78,7 +74,7 @@ class EventDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event)
-  #   "Event ##{event.id}"
-  # end
+  def display_resource(event)
+    event.title_ja
+  end
 end

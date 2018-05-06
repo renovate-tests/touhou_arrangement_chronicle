@@ -23,38 +23,32 @@ class ComposerDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :song_composers,
-    :songs,
     :artist,
-    :id,
+    :songs,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :song_composers,
-    :songs,
-    :artist,
     :id,
+    :artist,
+    :songs,
+    :songs_count,
     :created_at,
     :updated_at,
-    :songs_count,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :song_composers,
-    :songs,
     :artist,
-    :songs_count,
   ].freeze
 
   # Overwrite this method to customize how composers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(composer)
-  #   "Composer ##{composer.id}"
-  # end
+  def display_resource(composer)
+    composer.name_ja
+  end
 end

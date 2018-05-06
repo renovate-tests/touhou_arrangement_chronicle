@@ -10,12 +10,11 @@ class OriginalSongDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     song_original_songs: Field::HasMany,
     songs: Field::HasMany,
-    original: Field::BelongsTo,
+    original: Field::BelongsTo.with_options(primary_key: :code, foreign_key: :original_code),
     id: Field::String.with_options(searchable: false),
     code: Field::String,
     title_ja: Field::String,
     title_en: Field::String,
-    original_code: Field::String,
     composer: Field::String,
     track_number: Field::Number,
     is_duplicate: Field::Boolean,
@@ -31,54 +30,49 @@ class OriginalSongDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :song_original_songs,
-    :songs,
+    :title_ja,
     :original,
-    :id,
+    :composer,
+    :track_number,
+    :is_duplicate,
+    :is_hidden,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :song_original_songs,
-    :songs,
-    :original,
     :id,
     :code,
+    :original,
     :title_ja,
     :title_en,
-    :original_code,
     :composer,
     :track_number,
     :is_duplicate,
     :is_hidden,
+    :songs_count,
     :created_at,
     :updated_at,
-    :songs_count,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :song_original_songs,
-    :songs,
-    :original,
     :code,
+    :original,
     :title_ja,
     :title_en,
-    :original_code,
     :composer,
     :track_number,
     :is_duplicate,
     :is_hidden,
-    :songs_count,
   ].freeze
 
   # Overwrite this method to customize how original songs are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(original_song)
-  #   "OriginalSong ##{original_song.id}"
-  # end
+  def display_resource(original_song)
+    original_song.title_ja
+  end
 end
