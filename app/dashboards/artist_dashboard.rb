@@ -22,7 +22,7 @@ class ArtistDashboard < Administrate::BaseDashboard
     blog_url: Field::String,
     note_ja: Field::Text,
     note_en: Field::Text,
-    category: Field::String,
+    category: Field::I18nEnum.with_options(class_name: 'Artist'),
     detail_category: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

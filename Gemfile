@@ -10,6 +10,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 
 gem 'administrate'
+gem 'administrate-field-i18n_enum'
 gem 'bootsnap'
 gem 'counter_culture'
 gem 'gravtastic'

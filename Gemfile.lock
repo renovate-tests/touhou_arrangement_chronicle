@@ -63,6 +63,9 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    administrate-field-i18n_enum (0.1.6)
+      administrate
+      rails (>= 4.2)
     after_commit_action (1.1.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -353,6 +356,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-i18n_enum
   annotate
   bootsnap
   byebug

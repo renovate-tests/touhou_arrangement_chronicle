@@ -15,7 +15,7 @@ class OriginalDashboard < Administrate::BaseDashboard
     title_en: Field::String,
     short_title_ja: Field::String,
     short_title_en: Field::String,
-    original_type: Field::String.with_options(searchable: false),
+    original_type: Field::I18nEnum.with_options(class_name: 'Original'),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

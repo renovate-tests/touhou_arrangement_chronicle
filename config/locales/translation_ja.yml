@@ -227,3 +227,34 @@ ja:
   helpers:
     label:
       <<: *attributes
+
+  category: &category
+    symbol: 記号
+    number: 数字
+    hiragana: ひらがな
+    katakana: カタカナ
+    kanji: 漢字
+    alphabet: 英字
+    other: その他
+
+  artist:
+    category:
+      <<: *category
+
+  original:
+    original_type:
+      pc98: PC-98作品
+      windows: Windows作品
+      zuns_music_collection: ZUN's Music Collection
+      akyus_untouched_score: 幻樂団の歴史　～ Akyu's Untouched Score
+      commercial_books: 商業書籍
+      other: その他
+
+  circle:
+    category:
+      <<: *category
+    circle_type:
+      originator: 本家
+      general: 一般
+      union: 合同
+      enterprise: 企業
