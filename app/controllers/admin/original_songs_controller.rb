@@ -1,5 +1,7 @@
 module Admin
   class OriginalSongsController < Admin::ApplicationController
+    before_action :default_params
+
     # To customize the behavior of this controller,
     # you can overwrite any of the RESTful actions. For example:
     #
@@ -26,5 +28,10 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+
+    def default_params
+      params[:order] ||= "code"
+      params[:direction] ||= "asc"
+    end
   end
 end
