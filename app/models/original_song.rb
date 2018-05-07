@@ -38,6 +38,7 @@ class OriginalSong < ApplicationRecord
   validates :title_ja, presence: true
   validates :original_code, presence: true
   validates :track_number, presence: true
+  validates :track_number, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
   before_save :set_code
 
   private
