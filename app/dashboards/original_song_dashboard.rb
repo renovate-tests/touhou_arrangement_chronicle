@@ -17,6 +17,7 @@ class OriginalSongDashboard < Administrate::BaseDashboard
     track_number: Field::Number,
     is_duplicate: Field::Boolean,
     is_hidden: Field::Boolean,
+    songs: Field::HasMany,
     songs_count: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -35,6 +36,7 @@ class OriginalSongDashboard < Administrate::BaseDashboard
     :track_number,
     :is_duplicate,
     :is_hidden,
+    :songs,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -49,6 +51,7 @@ class OriginalSongDashboard < Administrate::BaseDashboard
     :track_number,
     :is_duplicate,
     :is_hidden,
+    :songs,
     :songs_count,
     :created_at,
     :updated_at,
