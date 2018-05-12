@@ -19,8 +19,9 @@ RSpec.describe OriginalSong, type: :model do
   end
 
   describe 'validation' do
-    it { is_expected.to validate_presence_of(:code) }
     it { is_expected.to validate_presence_of(:title_ja) }
     it { is_expected.to validate_presence_of(:original_code) }
+    it { is_expected.to validate_presence_of(:track_number) }
+    it { is_expected.to validate_numericality_of(:track_number).is_greater_than(0).is_less_than(100) }
   end
 end
