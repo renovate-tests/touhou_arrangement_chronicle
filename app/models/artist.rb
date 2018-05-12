@@ -19,6 +19,7 @@
 # Indexes
 #
 #  index_artists_on_circle_id  (circle_id)
+#  index_artists_on_name_ja    (name_ja) UNIQUE
 #  index_artists_on_user_id    (user_id)
 #
 

@@ -2,8 +2,267 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      arranger: 編曲者
+      artist: アーティスト  #g
+      authentication: 認証  #g
+      circle: サークル  #g
+      composer: 作曲者
+      discography: ディスコグラフィー  #g
+      event: イベント  #g
+      event_series: イベントシリーズ  #g
+      lyricist: 作詞者
+      original: 原作
+      original_song: 原曲
+      rearranger: 再編曲者
+      song: 曲
+      song_arranger: 曲-編曲者
+      song_composer: 曲-作曲者
+      song_lyricist: 曲-作詞者
+      song_original_song: 曲-原曲
+      song_rearranger: 曲-再編曲者
+      song_vocalist: 曲-ボーカリスト
+      vocalist: ボーカリスト  #g
 
-  attributes:
-    name: ユーザー名
-    email: メールアドレス
-    password: パスワード
+    attributes: &attributes
+      arranger:
+        songs: :activerecord.models.song
+        artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
+        songs_count: 曲数
+
+      artist:
+        arranger: :activerecord.models.arranger
+        arranger_id: :activerecord.models.arranger
+        blog_url: ブログのURL  #g
+        category: カテゴリー  #g
+        circle: :activerecord.models.circle  #g
+        circle_id: :activerecord.models.circle
+        composer: :activerecord.models.composer  #g
+        detail_category: 詳細カテゴリ  #g
+        lyricist: :activerecord.models.lyricist  #g
+        lyricist_id: :activerecord.models.lyricist
+        name_en: 名前(英名)
+        name_ja: 名前
+        note_en: メモ(英語)
+        note_ja: メモ
+        rearranger: :activerecord.models.rearranger  #g
+        rearranger_id: :activerecord.models.rearranger
+        site_url: サイトのURL  #g
+        user: :activerecord.models.user  #g
+        user_id: :activerecord.models.user
+        vocalist: :activerecord.models.vocalist  #g
+
+      authentication:
+        uid: uid
+        provider: プロバイダー
+        user: :activerecord.models.user  #g
+        user_id: :activerecord.models.user
+
+      circle:
+        blog_url: ブログのURL  #g
+        category: カテゴリー  #g
+        circle_type: サークル種別
+        detail_category: 詳細カテゴリ  #g
+        discographies: ディスコグラフィー  #g
+        name_en: 名前(英名)
+        name_ja: 名前
+        note_en: メモ(英語)
+        note_ja: メモ
+        site_url: サイトのURL  #g
+        songs: :activerecord.models.song
+        artists: :activerecord.models.artist
+
+      composer:
+        songs: :activerecord.models.song
+        artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
+        songs_count: 曲数
+
+      discography:
+        event: :activerecord.models.event  #g
+        event_id: :activerecord.models.event
+        part_number: 番号
+        release_date: 頒布日
+        songs: :activerecord.models.song
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        circle: :activerecord.models.circle
+        circle_id: :activerecord.models.circle
+
+      event:
+        days: n日目
+        discographies: ディスコグラフィー  #g
+        display_title_en: 表示タイトル(英名)
+        display_title_ja: 表示タイトル
+        event_series: :activerecord.models.event_series  #g
+        event_series_id: :activerecord.models.event_series
+        note_en: メモ(英語)
+        note_ja: メモ
+        songs: :activerecord.models.song
+        times: 回数
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        date: 開催日
+
+      event_series:
+        event: :activerecord.models.event
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        display_order: 表示順
+
+      lyricist:
+        songs: :activerecord.models.song
+        artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
+        songs_count: 曲数
+
+      original:
+        code: コード
+        original_songs: 原曲
+        original_type: 原作種別
+        short_title_en: 省略タイトル(英名)
+        short_title_ja: 省略タイトル
+        title_en: タイトル(英名)
+        title_ja: タイトル
+
+      original_song:
+        code: コード
+        composer: 作曲者
+        is_duplicate: 重複
+        is_hidden: 非表示
+        original: :activerecord.models.original  #g
+        original_code: 原作コード
+        song_original_songs: 曲-原曲
+        songs: :activerecord.models.song
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        track_number: トラック番号  #g
+        songs_count: 曲数
+
+      rearranger:
+        songs: :activerecord.models.song
+        artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
+        songs_count: 曲数
+
+      song:
+        arrangers: :activerecord.models.arranger
+        bpm: BPM
+        circle: :activerecord.models.circle  #g
+        circle_id: :activerecord.models.circle
+        composers: :activerecord.models.composer
+        discography: :activerecord.models.discography  #g
+        discography_id: :activerecord.models.discography
+        event: :activerecord.models.event  #g
+        event_id: :activerecord.models.event
+        length: 曲の長さ
+        lyricists: :activerecord.models.lyricist
+        original_songs: :activerecord.models.original_song
+        original_song_ids: :activerecord.models.original_song
+        rearrangers: :activerecord.models.rearranger
+        song_arrangers: 曲-編曲者
+        song_composers: 曲-作曲者
+        song_lyricists: 曲-作詞者
+        song_original_songs: 曲-原曲
+        song_rearrangers: 曲-再編曲者
+        song_vocalists: 曲-ボーカリスト
+        title_en: タイトル(英名)
+        title_ja: タイトル
+        track_number: トラック番号  #g
+        vocalists: :activerecord.models.vocalist  #g
+
+      song_arranger:
+        song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
+        arranger: :activerecord.models.arranger
+        arranger_id: :activerecord.models.arranger
+
+      song_composer:
+        song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
+        composer: :activerecord.models.composer
+        composer_id: :activerecord.models.composer
+
+      song_lyricist:
+        song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
+        lyricist: :activerecord.models.lyricist
+        lyricist_id: :activerecord.models.lyricist
+
+      song_original_song:
+        song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
+        original_song: :activerecord.models.original_song
+        original_song_id: :activerecord.models.original_song
+
+      song_rearranger:
+        song: :activerecord.models.song  #g
+        song_id: :activerecord.models.song
+        rearranger: :activerecord.models.rearranger
+        rearranger_id: :activerecord.models.rearranger
+
+      song_vocalist:
+        song: :activerecord.models.song
+        song_id: :activerecord.models.song
+        vocalist: :activerecord.models.vocalist  #g
+        vocalist_id: :activerecord.models.vocalist
+
+      user:
+        authentications: 認証  #g
+        crypted_password: 暗号化されたパスワード  #g
+        email: メールアドレス
+        image_path: 画像パス  #g
+        name: ユーザー名
+        nick_name: ニックネーム  #g
+        salt: salt
+        password: パスワード
+        artists: :activerecord.models.artist
+
+      vocalist:
+        songs: :activerecord.models.song
+        artist: :activerecord.models.artist
+        artist_id: :activerecord.models.artist
+        songs_count: 曲数
+
+  helpers:
+    label:
+      <<: *attributes
+    page_entries_info:
+      more_pages:
+        display_entries: "<b>%{total}</b>中の%{entry_name}を表示しています <b>%{first} - %{last}</b>"
+      one_page:
+        display_entries:
+          one: "<b>%{count}</b>レコード表示中です %{entry_name}"
+          other: "<b>%{count}</b>レコード表示中です %{entry_name}"
+          zero: "レコードが見つかりませんでした %{entry_name}"
+
+  category: &category
+    symbol: 記号
+    number: 数字
+    hiragana: ひらがな
+    katakana: カタカナ
+    kanji: 漢字
+    alphabet: 英字
+    other: その他
+
+  artist:
+    category:
+      <<: *category
+
+  original:
+    original_type:
+      pc98: PC-98作品
+      windows: Windows作品
+      zuns_music_collection: ZUN's Music Collection
+      akyus_untouched_score: 幻樂団の歴史　～ Akyu's Untouched Score
+      commercial_books: 商業書籍
+      other: その他
+
+  circle:
+    category:
+      <<: *category
+    circle_type:
+      originator: 本家
+      general: 一般
+      union: 合同
+      enterprise: 企業

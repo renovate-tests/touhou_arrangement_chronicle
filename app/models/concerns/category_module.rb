@@ -2,6 +2,15 @@ module CategoryModule
   extend ActiveSupport::Concern
   included do
     before_create :set_category
+    enum category: {
+      symbol: 'symbol',
+      number: 'number',
+      hiragana: 'hiragana',
+      katakana: 'katakana',
+      kanji: 'kanji',
+      alphabet: 'alphabet',
+      other: 'other',
+    }
   end
 
   def set_category

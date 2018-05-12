@@ -28,4 +28,11 @@ class Circle < ApplicationRecord
   has_many :songs, inverse_of: :circle, dependent: :destroy
 
   validates :name_ja, presence: true
+
+  enum circle_type: {
+    originator: 'originator',
+    general: 'general',
+    union: 'union',
+    enterprise: 'enterprise',
+  }
 end

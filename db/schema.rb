@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_145052) do
+ActiveRecord::Schema.define(version: 2018_05_06_151619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_145052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["circle_id"], name: "index_artists_on_circle_id"
+    t.index ["name_ja"], name: "index_artists_on_name_ja", unique: true
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_145052) do
     t.datetime "updated_at", null: false
     t.integer "songs_count", default: 0, null: false
     t.index ["code"], name: "index_original_songs_on_code", unique: true
+    t.index ["original_code", "track_number"], name: "index_original_songs_on_original_code_and_track_number", unique: true
     t.index ["original_code"], name: "index_original_songs_on_original_code"
   end
 

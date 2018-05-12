@@ -17,8 +17,9 @@
 #
 # Indexes
 #
-#  index_original_songs_on_code           (code) UNIQUE
-#  index_original_songs_on_original_code  (original_code)
+#  index_original_songs_on_code                            (code) UNIQUE
+#  index_original_songs_on_original_code                   (original_code)
+#  index_original_songs_on_original_code_and_track_number  (original_code,track_number) UNIQUE
 #
 
 class OriginalSong < ApplicationRecord
@@ -34,7 +35,15 @@ class OriginalSong < ApplicationRecord
   scope :not_duplicate, -> { where(is_duplicate: false) }
   scope :order_by_track_number_asc, -> { order("track_number ASC") }
 
-  validates :code, presence: true
   validates :title_ja, presence: true
   validates :original_code, presence: true
+  validates :track_number, presence: true
+  validates :track_number, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
+  before_save :set_code
+
+  private
+
+    def set_code
+      self.code = "#{original_code}#{"%02d" % track_number}"
+    end
 end
