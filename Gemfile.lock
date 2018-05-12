@@ -122,6 +122,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
+    fast_jsonapi (1.1.1)
+      activesupport (>= 4.2)
     ffaker (2.9.0)
     ffi (1.9.23)
     gimei (0.3.0)
@@ -371,6 +373,7 @@ DEPENDENCIES
   counter_culture
   enum_help
   factory_bot_rails
+  fast_jsonapi
   ffaker
   gimei
   gravtastic
