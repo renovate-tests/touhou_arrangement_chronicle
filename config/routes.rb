@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: :new_user
   post '/registration', to: 'users#create', as: :users
 
-  resources :original_songs, only: %i(index)
-  resources :events, only: %i(index)
-  resources :circles, only: %i(index)
-  resources :artists, only: %i(index)
-  resources :vocalists, only: %i(index)
-  resources :arrangers, only: %i(index)
-  resources :lyricists, only: %i(index)
+  resources :original_songs, only: %i[index]
+  resources :events, only: %i[index]
+  resources :circles, only: %i[index]
+  resources :artists, only: %i[index]
+  resources :vocalists, only: %i[index]
+  resources :arrangers, only: %i[index]
+  resources :lyricists, only: %i[index]
 
   namespace :admin do
     resources :arrangers

@@ -13,6 +13,6 @@ module ApplicationHelper
   end
 
   def current_class?(path)
-    request.path == path ? 'is-active' : ''
+    (request.path == path) ? 'is-active' : ''
   end
 end
