@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :circles, only: %i(index)
   resources :artists, only: %i(index)
   resources :vocalists, only: %i(index)
+  resources :arrangers, only: %i(index)
 
   namespace :admin do
     resources :arrangers

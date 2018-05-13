@@ -26,6 +26,9 @@ ja:
       arranger: 編曲者別
       lyricist: 作詞者別
       admin_panel: 管理画面
+  arrangers:
+    index:
+      title: 編曲者別
   artists:
     index:
       title: アーティスト別
