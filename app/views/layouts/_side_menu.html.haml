@@ -19,7 +19,7 @@
       = link_to t('.artist'), artists_path, { class: current_class?(artists_path) }
       %ul
         %li
-          %a= t('.vocalist')
+          = link_to t('.vocalist'), vocalists_path, { class: current_class?(vocalists_path) }
         %li
           %a= t('.arranger')
         %li
