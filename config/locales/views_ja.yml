@@ -6,6 +6,7 @@ ja:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "..."
+
   layouts:
     header:
       home: ホーム
@@ -25,6 +26,9 @@ ja:
       arranger: 編曲者別
       lyricist: 作詞者別
       admin_panel: 管理画面
+  original_songs:
+    index:
+      title: 原曲別
   sessions:
     new:
       login_title: 東方編曲録 にログイン

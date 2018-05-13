@@ -1,0 +1,6 @@
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
+      %li
+        %a= t("original.original_type.#{type}")

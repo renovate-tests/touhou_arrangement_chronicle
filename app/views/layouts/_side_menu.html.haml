@@ -10,7 +10,7 @@
     General
   %ul.menu-list
     %li
-      %a= t('.original_song')
+      = link_to t('.original_song'), original_songs_path, { class: current_class?(original_songs_path) }
     %li
       %a= t('.event')
     %li
