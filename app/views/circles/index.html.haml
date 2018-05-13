@@ -1,0 +1,6 @@
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - Category::KIND.each do |category|
+      %li
+        %a= t("category.#{category}")

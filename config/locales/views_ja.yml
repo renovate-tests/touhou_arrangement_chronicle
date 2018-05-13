@@ -26,6 +26,9 @@ ja:
       arranger: 編曲者別
       lyricist: 作詞者別
       admin_panel: 管理画面
+  circles:
+    index:
+      title: サークル別
   events:
     index:
       title: イベント別
