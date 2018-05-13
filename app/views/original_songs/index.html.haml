@@ -4,5 +4,13 @@
 .tabs
   %ul
     - %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
-      %li
+      %li{ "v-bind:class": "type === '#{type}' ? 'is-active':''","v-on:click": "setOriginalType('#{type}')" }
         %a= t("original.original_type.#{type}")
+- %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
+  %span{ "v-if": "type === '#{type}'" }
+    %ul
+      - @originals.select{|original| original.original_type == type.to_s }.each do |original|
+        %li= original.title_ja
+
+= content_for :javascript do
+  = javascript_pack_tag 'original_songs/index'
