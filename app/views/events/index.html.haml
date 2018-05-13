@@ -1,0 +1,8 @@
+- content_for :title do
+  = t('.title')
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - %i(event_series date).each do |menu|
+      %li
+        %a= t(".#{menu}")

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/registration', to: 'users#create', as: :users
 
   resources :original_songs, only: %i(index)
+  resources :events, only: %i(index)
 
   namespace :admin do
     resources :arrangers

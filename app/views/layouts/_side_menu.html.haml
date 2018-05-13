@@ -12,7 +12,7 @@
     %li
       = link_to t('.original_song'), original_songs_path, { class: current_class?(original_songs_path) }
     %li
-      %a= t('.event')
+      = link_to t('.event'), events_path, { class: current_class?(events_path) }
     %li
       %a= t('.circle')
     %li
