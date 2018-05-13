@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :artists, only: %i(index)
   resources :vocalists, only: %i(index)
   resources :arrangers, only: %i(index)
+  resources :lyricists, only: %i(index)
 
   namespace :admin do
     resources :arrangers

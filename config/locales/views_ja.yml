@@ -40,6 +40,9 @@ ja:
       title: イベント別
       event_series: シリーズ別
       date: 日付別
+  lyricists:
+    index:
+      title: 作詞者別
   original_songs:
     index:
       title: 原曲別

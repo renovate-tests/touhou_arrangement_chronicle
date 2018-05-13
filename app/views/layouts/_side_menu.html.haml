@@ -23,7 +23,7 @@
         %li
           = link_to t('.arranger'), arrangers_path, { class: current_class?(arrangers_path) }
         %li
-          %a= t('.lyricist')
+          = link_to t('.lyricist'), lyricists_path, { class: current_class?(lyricists_path) }
   - if current_user
     %p.menu-label
       Administrator
