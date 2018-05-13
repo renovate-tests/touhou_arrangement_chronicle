@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :original_songs, only: %i(index)
   resources :events, only: %i(index)
   resources :circles, only: %i(index)
+  resources :artists, only: %i(index)
 
   namespace :admin do
     resources :arrangers

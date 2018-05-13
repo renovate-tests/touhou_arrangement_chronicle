@@ -16,7 +16,7 @@
     %li
       = link_to t('.circle'), circles_path, { class: current_class?(circles_path) }
     %li
-      %a= t('.artist')
+      = link_to t('.artist'), artists_path, { class: current_class?(artists_path) }
       %ul
         %li
           %a= t('.vocalist')
