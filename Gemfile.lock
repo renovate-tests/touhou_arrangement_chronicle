@@ -126,6 +126,8 @@ GEM
       activesupport (>= 4.2)
     ffaker (2.9.0)
     ffi (1.9.23)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     gimei (0.3.0)
       romaji
     globalid (0.4.1)
@@ -375,6 +377,7 @@ DEPENDENCIES
   factory_bot_rails
   fast_jsonapi
   ffaker
+  friendly_id
   gimei
   gravtastic
   hamlit-rails
