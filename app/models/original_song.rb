@@ -41,9 +41,36 @@ class OriginalSong < ApplicationRecord
   validates :track_number, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
   before_save :set_code
 
+  extend FriendlyId
+  friendly_id :title_ja
+
+  class << self
+    def all_includes
+      includes(
+        :original,
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            :discography,
+            :event,
+            { lyricists: [:artist] },
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+      )
+    end
+  end
+
   private
 
     def set_code
       self.code = "#{original_code}#{"%02d" % track_number}"
+    end
+
+    def original_title_and_original_song_title
+      "#{original.short_title_ja}-#{title_ja}"
     end
 end

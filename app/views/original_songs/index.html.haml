@@ -8,9 +8,20 @@
         %a= t("original.original_type.#{type}")
 - %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
   %span{ "v-if": "type === '#{type}'" }
-    %ul
-      - @originals.select{|original| original.original_type == type.to_s }.each do |original|
-        %li= original.title_ja
+    - @originals.select{|original| original.original_type == type.to_s }.each do |original|
+      - next if original.original_songs.all?{|original_song| original_song.is_duplicate }
+      .columns
+        .column.is-11
+          .card
+            %header.card-header
+              %p.card-header-title
+                = original.title_ja
+            .card-content
+              %ul
+                - original.original_songs.each do |original_song|
+                  - next if original_song.is_duplicate
+                  %li
+                    = link_to original_song.title_ja, original_song_path(original_song)
 
 = content_for :javascript do
   = javascript_pack_tag 'original_songs/index'

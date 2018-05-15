@@ -1,6 +1,8 @@
+- subtitle ||= nil
 %section.hero
   .hero-body
-    .container
-      %h1.title
-        = title
+    %h1.title
+      = title
+    - if subtitle.present?
       %h2.subtitle
+        = subtitle

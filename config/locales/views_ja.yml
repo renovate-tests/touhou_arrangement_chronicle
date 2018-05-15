@@ -46,6 +46,19 @@ ja:
   original_songs:
     index:
       title: 原曲別
+    show:
+      title: 原曲別 - %{song_title}
+      circle_name: サークル名
+      song_title: 曲名
+      discography_title: ディスコグラフィ
+      vocalists: ボーカリスト
+      composers: 作曲者
+      arrangers: 編曲者
+      rearrangers: 再編曲者
+      lyricists: 作詞者
+      original_songs: 原曲
+      event_title: イベント名
+      release_date: 頒布日
   sessions:
     new:
       login_title: 東方編曲録 にログイン
