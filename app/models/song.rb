@@ -39,5 +39,9 @@ class Song < ApplicationRecord
   belongs_to :discography, optional: true
   belongs_to :event, optional: true
 
+  delegate :name_ja, to: :circle, allow_nil: true, prefix: true
+  delegate :title_ja, to: :discography, allow_nil: true, prefix: true
+  delegate :title_ja, to: :event, allow_nil: true, prefix: true
+
   validates :title_ja, presence: true
 end

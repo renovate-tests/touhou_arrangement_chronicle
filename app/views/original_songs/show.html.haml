@@ -20,14 +20,14 @@
       %tbody
         - @original_song.songs.each do |song|
           %tr
-            %td= song&.circle&.name_ja
+            %td= song&.circle_name_ja
             %td= song&.title_ja
-            %td= song&.discography&.title_ja
-            %td= safe_join song&.vocalists&.map{|v| v.name_ja }, '<br />'.html_safe
-            %td= safe_join(song&.composers&.map{|c| c.name_ja }, '<br />'.html_safe).presence || safe_join(song&.original_songs&.map{|os| os.composer }.uniq, '<br />'.html_safe)
-            %td= safe_join song&.arrangers&.map{|a| a.name_ja }, '<br />'.html_safe
-            %td= safe_join song&.rearrangers&.map{|ra| ra.name_ja }, '<br />'.html_safe
-            %td= safe_join song&.lyricists&.map{|l| l.name_ja }, '<br />'.html_safe
-            %td= safe_join song&.original_songs&.map{|os| os.title_ja }, '<br />'.html_safe
-            %td= song&.event&.title_ja
-            %td= song&.discography&.release_date
+            %td= song&.discography_title_ja
+            %td= song&.vocalists_list
+            %td= song&.composers_list
+            %td= song&.arrangers_list
+            %td= song&.rearrangers_list
+            %td= song&.lyricists_list
+            %td= song&.original_songs_list
+            %td= song&.event_title_ja
+            %td= song&.release_date

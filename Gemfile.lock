@@ -33,6 +33,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_decorator (1.0.0)
     activejob (5.2.0)
       activesupport (= 5.2.0)
       globalid (>= 0.3.6)
@@ -366,6 +367,7 @@ PLATFORMS
 
 DEPENDENCIES
   action_args
+  active_decorator
   activerecord-import
   administrate
   administrate-field-i18n_enum
