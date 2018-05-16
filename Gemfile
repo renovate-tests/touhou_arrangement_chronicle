@@ -9,6 +9,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.0'
 
+gem 'action_args'
 gem 'activerecord-import'
 gem 'administrate'
 gem 'administrate-field-i18n_enum'

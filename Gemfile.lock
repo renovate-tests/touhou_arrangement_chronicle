@@ -9,6 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    action_args (2.3.1)
     actioncable (5.2.0)
       actionpack (= 5.2.0)
       nio4r (~> 2.0)
@@ -364,6 +365,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_args
   activerecord-import
   administrate
   administrate-field-i18n_enum

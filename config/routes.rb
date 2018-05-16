@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: :new_user
   post '/registration', to: 'users#create', as: :users
 
-  resources :original_songs, only: %i[index show], id: %r{[^\/]+}
+  get '/original_songs', to: 'original_songs#index'
+  get '/original_songs/:original_short_title/:original_song_title', to: 'original_songs#show', as: :original_song, original_song_title: %r{[^\/]+}
+
   resources :events, only: %i[index]
   resources :circles, only: %i[index]
   resources :artists, only: %i[index]
