@@ -3,6 +3,24 @@
 = render 'layouts/hero', title: t('.title')
 .tabs
   %ul
-    - Category::KIND.each do |category|
-      %li
+    - Category::DISPLAY_KIND.each do |category|
+      %li{ "v-bind:class": "category === '#{category}' ? 'is-active':''","v-on:click": "setCategory('#{category}')" }
         %a= t("category.#{category}")
+
+%span{ "v-if": "category === 'kana'" }
+  .tabs
+    %ul
+      - Category::DISPLAY_KANA_LIST.each do |kana|
+        %li{ "v-bind:class": "detail_category === '#{kana}' ? 'is-active':''","v-on:click": "setDetailCategory('#{kana}')" }
+          %a= kana
+
+%span{ "v-if": "category === 'alphabet'" }
+  .tabs
+    %ul
+      - Category::ALPHABET_LIST.each do |alphabet|
+        %li{ "v-bind:class": "detail_category === '#{alphabet}' ? 'is-active':''","v-on:click": "setDetailCategory('#{alphabet}')" }
+          %a= alphabet
+
+
+= content_for :javascript do
+  = javascript_pack_tag 'category'

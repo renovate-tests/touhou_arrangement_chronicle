@@ -2,7 +2,9 @@ class Category
   include ActiveModel::Model
 
   KIND = %w[symbol number hiragana katakana kanji alphabet].freeze
+  DISPLAY_KIND = %w[symbol number alphabet kana kanji].freeze
   KANA_LIST = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん'.split('')
+  DISPLAY_KANA_LIST = 'あかさたなはまやらわ'.split('')
   ALPHABET_LIST = ('A'..'Z').to_a
   LIST = KANA_LIST + ALPHABET_LIST
 

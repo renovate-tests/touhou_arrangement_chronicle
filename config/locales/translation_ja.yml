@@ -239,6 +239,7 @@ ja:
   category: &category
     symbol: 記号
     number: 数字
+    kana: かな(ひらがな・カタカナ)
     hiragana: ひらがな
     katakana: カタカナ
     kanji: 漢字
