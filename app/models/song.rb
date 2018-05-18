@@ -44,4 +44,20 @@ class Song < ApplicationRecord
   delegate :title_ja, to: :event, allow_nil: true, prefix: true
 
   validates :title_ja, presence: true
+
+  class << self
+    def all_includes
+      includes(
+        { arrangers: [:artist] },
+        :circle,
+        { composers: [:artist] },
+        :discography,
+        :event,
+        { lyricists: [:artist] },
+        :original_songs,
+        { rearrangers: [:artist] },
+        { vocalists: [:artist] },
+      )
+    end
+  end
 end
