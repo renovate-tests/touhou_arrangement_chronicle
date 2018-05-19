@@ -7,5 +7,27 @@
       %li{ "v-bind:class": "menu === '#{menu}' ? 'is-active':''","v-on:click": "setMenu('#{menu}')" }
         %a= t(".#{menu}")
 
+%span{ "v-if": "menu === 'event_series'" }
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %p
+            = t('.event_series')
+        - @event_series.each do |series|
+          .panel-block
+            = series.title_ja
+
+%span{ "v-if": "menu === 'date'" }
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %p
+            = t('.date')
+        - @event_years.each do |event_year|
+          .panel-block
+            = event_year
+
 = content_for :javascript do
   = javascript_pack_tag 'events/index'
