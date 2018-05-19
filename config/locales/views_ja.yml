@@ -35,6 +35,8 @@ ja:
   circles:
     index:
       title: サークル別
+      no_circle: サークルがありません
+      column: 行
   events:
     index:
       title: イベント別

@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   resources :arrangers, only: %i[index]
   resources :lyricists, only: %i[index]
 
+  namespace :api, { format: :json } do
+    namespace :v1 do
+      resources :circles, only: %i[index]
+    end
+  end
+
   namespace :admin do
     resources :arrangers
     resources :artists
