@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :artists, only: %i[index]
       resources :circles, only: %i[index]
+      resources :vocalists, only: %i[index]
     end
   end
 

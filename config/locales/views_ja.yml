@@ -33,10 +33,11 @@ ja:
     index:
       title: アーティスト別
       column: 行
+      no_artist: アーティストが見つかりません
   circles:
     index:
       title: サークル別
-      no_circle: サークルがありません
+      no_circle: サークルが見つかりません
       column: 行
   events:
     index:
@@ -81,3 +82,4 @@ ja:
   vocalists:
     index:
       title: ボーカリスト別
+      no_vocalist: ボーカリストが見つかりません
