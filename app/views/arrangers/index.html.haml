@@ -4,22 +4,41 @@
 .tabs
   %ul
     - Category::DISPLAY_KIND.each do |category|
-      %li{ "v-bind:class": "category === '#{category}' ? 'is-active':''","v-on:click": "setCategory('#{category}')" }
+      - category_i18n = t("category.#{category}")
+      %li{ "v-bind:class": "category === '#{category}' ? 'is-active':''","v-on:click": "setCategory('#{category}', '#{category_i18n}')" }
         %a= t("category.#{category}")
 
-%span{ "v-if": "category === 'kana'" }
-  .tabs
-    %ul
-      - Category::DISPLAY_KANA_LIST.each do |kana|
-        %li{ "v-bind:class": "detail_category === '#{kana}' ? 'is-active':''","v-on:click": "setDetailCategory('#{kana}')" }
-          %a= kana
+.tabs{ "v-if": "category === 'kana'" }
+  %ul
+    - Category::DISPLAY_KANA_LIST.each do |kana|
+      %li{ "v-bind:class": "detail_category === '#{kana}' ? 'is-active':''","v-on:click": "setDetailCategory('#{kana}')" }
+        %a= kana
 
-%span{ "v-if": "category === 'alphabet'" }
-  .tabs
-    %ul
-      - Category::ALPHABET_LIST.each do |alphabet|
-        %li{ "v-bind:class": "detail_category === '#{alphabet}' ? 'is-active':''","v-on:click": "setDetailCategory('#{alphabet}')" }
-          %a= alphabet
+.tabs{ "v-if": "category === 'alphabet'" }
+  %ul
+    - Category::ALPHABET_LIST.each do |alphabet|
+      %li{ "v-bind:class": "detail_category === '#{alphabet}' ? 'is-active':''","v-on:click": "setDetailCategory('#{alphabet}')" }
+        %a= alphabet
+
+%span
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %span{ "v-if": "category === 'alphabet'" }
+            %p
+              {{ category_i18n + " - " + detail_category }}
+          %span{ "v-else-if": "category === 'kana'" }
+            %p
+              {{ category_i18n + " - " + detail_category }}
+              = t('.column')
+          %span{ "v-else": true }
+            %p
+              {{ category_i18n }}
+        .panel-block{ "v-if": "arrangers.length == 0" }
+          = t(".no_arranger")
+        .panel-block{ "v-for": "arranger in arrangers" }
+          {{ arranger.name_ja }}
 
 = content_for :javascript do
-  = javascript_pack_tag 'category'
+  = javascript_pack_tag 'arrangers/index'

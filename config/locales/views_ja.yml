@@ -29,6 +29,8 @@ ja:
   arrangers:
     index:
       title: 編曲者別
+      column: 行
+      no_arranger: 編曲者が見つかりません
   artists:
     index:
       title: アーティスト別
@@ -37,8 +39,8 @@ ja:
   circles:
     index:
       title: サークル別
-      no_circle: サークルが見つかりません
       column: 行
+      no_circle: サークルが見つかりません
   events:
     index:
       title: イベント別
@@ -82,4 +84,5 @@ ja:
   vocalists:
     index:
       title: ボーカリスト別
+      column: 行
       no_vocalist: ボーカリストが見つかりません
