@@ -39,6 +39,9 @@
           = t(".no_vocalist")
         .panel-block{ "v-for": "vocalist in vocalists" }
           {{ vocalist.name_ja }}
+          &nbsp;
+          %span.tag.is-rounded.is-success
+            {{ vocalist.songs_count }}
 
 = content_for :javascript do
   = javascript_pack_tag 'vocalists/index'
