@@ -8,7 +8,7 @@ module Api
         else
           @arrangers = Arranger.artist
         end
-        render json: @arrangers
+        render json: @arrangers&.sort_by(&:name_ja)
       end
     end
   end

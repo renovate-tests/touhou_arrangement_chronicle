@@ -8,7 +8,7 @@ module Api
         else
           @lyricists = Lyricist.artist
         end
-        render json: @lyricists
+        render json: @lyricists&.sort_by(&:name_ja)
       end
     end
   end

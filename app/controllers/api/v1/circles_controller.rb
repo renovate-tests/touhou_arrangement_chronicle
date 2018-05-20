@@ -6,9 +6,9 @@ module Api
           parameters = CirclesParameter.new(request.query_parameters).define_params
           @circles = Circle.where(parameters)
         else
-          @circles = Circle.order(:name_ja)
+          @circles = Circle.all
         end
-        render json: @circles
+        render json: @circles&.sort_by(&:name_ja)
       end
     end
   end
