@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :circles, only: %i[index]
       resources :vocalists, only: %i[index]
       resources :arrangers, only: %i[index]
+      resources :lyricists, only: %i[index]
     end
   end
 
