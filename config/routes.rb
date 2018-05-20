@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   namespace :api, { format: :json } do
     namespace :v1 do
+      resources :artists, only: %i[index]
       resources :circles, only: %i[index]
     end
   end

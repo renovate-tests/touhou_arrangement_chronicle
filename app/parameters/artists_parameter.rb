@@ -1,3 +1,3 @@
-class CirclesParameter
+class ArtistsParameter
   include CategoryParameter
 end

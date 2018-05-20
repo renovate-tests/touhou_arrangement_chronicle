@@ -32,6 +32,7 @@ ja:
   artists:
     index:
       title: アーティスト別
+      column: 行
   circles:
     index:
       title: サークル別
