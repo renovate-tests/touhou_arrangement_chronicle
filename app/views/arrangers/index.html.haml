@@ -37,11 +37,13 @@
               {{ category_i18n }}
         .panel-block{ "v-if": "arrangers.length == 0" }
           = t(".no_arranger")
-        .panel-block{ "v-for": "arranger in arrangers" }
+        %a.panel-block{ "v-for": "arranger in arrangers", "v-bind:href": "arranger.url", "v-if": "arranger.songs_count > 0" }
           {{ arranger.name_ja }}
           &nbsp;
           %span.tag.is-rounded.is-success
             {{ arranger.songs_count }}
+        .panel-block{ "v-else": true }
+          {{ arranger.name_ja }}
 
 = content_for :javascript do
   = javascript_pack_tag 'arrangers/index'

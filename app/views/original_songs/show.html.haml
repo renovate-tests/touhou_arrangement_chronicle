@@ -1,33 +1,4 @@
 - content_for :title do
   = t('.title', song_title: @original_song.title_ja)
 = render 'layouts/hero', title: t('.title', song_title: @original_song.title_ja), subtitle: @original_song.original_title_ja
-.columns
-  .column.is-11
-    %table.table.is-striped.is-hoverable
-      %thead
-        %tr
-          %th= t('.circle_name')
-          %th= t('.song_title')
-          %th= t('.discography_title')
-          %th= t('.vocalists')
-          %th= t('.composers')
-          %th= t('.arrangers')
-          %th= t('.rearrangers')
-          %th= t('.lyricists')
-          %th= t('.original_songs')
-          %th= t('.event_title')
-          %th= t('.release_date')
-      %tbody
-        - @original_song.songs.each do |song|
-          %tr
-            %td= song&.circle_name_ja
-            %td= song&.title_ja
-            %td= song&.discography_title_ja
-            %td= song&.vocalists_list
-            %td= song&.composers_list
-            %td= song&.arrangers_list
-            %td= song&.rearrangers_list
-            %td= song&.lyricists_list
-            %td= song&.original_songs_list
-            %td= song&.event_title_ja
-            %td= song&.release_date
+= render 'shared/songs', songs: @original_song.songs

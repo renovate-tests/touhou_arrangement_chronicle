@@ -37,11 +37,13 @@
               {{ category_i18n }}
         .panel-block{ "v-if": "lyricists.length == 0" }
           = t(".no_lyricist")
-        .panel-block{ "v-for": "lyricist in lyricists" }
+        %a.panel-block{ "v-for": "lyricist in lyricists", "v-bind:href": "lyricist.url", "v-if": "lyricist.songs_count > 0" }
           {{ lyricist.name_ja }}
           &nbsp;
           %span.tag.is-rounded.is-success
             {{ lyricist.songs_count }}
+        .panel-block{ "v-else": true }
+          {{ lyricist.name_ja }}
 
 = content_for :javascript do
   = javascript_pack_tag 'lyricists/index'

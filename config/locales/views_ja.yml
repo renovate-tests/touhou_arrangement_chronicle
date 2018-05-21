@@ -31,6 +31,8 @@ ja:
       title: 編曲者別
       column: 行
       no_arranger: 編曲者が見つかりません
+    show:
+      title: 編曲者別 - %{name}
   artists:
     index:
       title: アーティスト別
@@ -51,11 +53,21 @@ ja:
       title: 作詞者別
       column: 行
       no_lyricist: 作詞者が見つかりません
+    show:
+      title: 作詞者別 - %{name}
   original_songs:
     index:
       title: 原曲別
     show:
       title: 原曲別 - %{song_title}
+  sessions:
+    new:
+      login_title: 東方編曲録 にログイン
+    form:
+      name_or_email: ユーザー名または、メールアドレス
+      password: パスワード
+  shared:
+    songs:
       circle_name: サークル名
       song_title: 曲名
       discography_title: ディスコグラフィ
@@ -67,12 +79,6 @@ ja:
       original_songs: 原曲
       event_title: イベント名
       release_date: 頒布日
-  sessions:
-    new:
-      login_title: 東方編曲録 にログイン
-    form:
-      name_or_email: ユーザー名または、メールアドレス
-      password: パスワード
   users:
     form:
       name: ユーザー名
@@ -88,3 +94,5 @@ ja:
       title: ボーカリスト別
       column: 行
       no_vocalist: ボーカリストが見つかりません
+    show:
+      title: ボーカリスト別 - %{name}

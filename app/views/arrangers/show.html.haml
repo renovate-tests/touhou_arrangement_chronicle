@@ -1,0 +1,4 @@
+- content_for :title do
+  = t('.title', name: @arranger.name_ja)
+= render 'layouts/hero', title: t('.title', name: @arranger.name_ja), subtitle: t("category.#{@arranger.category}")
+= render 'shared/songs', songs: @arranger.songs

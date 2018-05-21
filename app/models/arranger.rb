@@ -24,4 +24,24 @@ class Arranger < ApplicationRecord
   has_many :songs, through: :song_arrangers
 
   belongs_to :artist
+
+  class << self
+    def all_includes
+      includes(
+        :artist,
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            :discography,
+            :event,
+            { lyricists: [:artist] },
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+      )
+    end
+  end
 end
