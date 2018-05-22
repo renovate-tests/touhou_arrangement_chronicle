@@ -1,0 +1,3 @@
+- content_for :title do
+  = t('.title', name: @artist.name_ja)
+= render 'layouts/hero', title: t('.title', name: @artist.name_ja), subtitle: t("category.#{@artist.category}")

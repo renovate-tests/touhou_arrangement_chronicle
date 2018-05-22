@@ -37,7 +37,7 @@
               {{ category_i18n }}
         .panel-block{ "v-if": "artists.length == 0" }
           = t(".no_artist")
-        .panel-block{ "v-for": "artist in artists" }
+        %a.panel-block{ "v-for": "artist in artists", "v-bind:href": "artist.url" }
           {{ artist.name_ja }}
 
 = content_for :javascript do

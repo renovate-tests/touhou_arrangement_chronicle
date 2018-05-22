@@ -38,6 +38,8 @@ ja:
       title: アーティスト別
       column: 行
       no_artist: アーティストが見つかりません
+    show:
+      title: アーティスト別 - %{name}
   circles:
     index:
       title: サークル別

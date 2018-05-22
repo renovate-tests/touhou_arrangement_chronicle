@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :events, only: %i[index]
   resources :circles, only: %i[index]
-  resources :artists, only: %i[index]
+  resources :artists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :arrangers, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :lyricists, only: %i[index show], param: :name, name: %r{[^\/]+}
