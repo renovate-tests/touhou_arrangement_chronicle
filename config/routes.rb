@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/original_songs/:original_short_title/:original_song_title', to: 'original_songs#show', as: :original_song, original_song_title: %r{[^\/]+}
 
   resources :events, only: %i[index]
-  resources :circles, only: %i[index]
+  resources :circles, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :artists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :arrangers, only: %i[index show], param: :name, name: %r{[^\/]+}

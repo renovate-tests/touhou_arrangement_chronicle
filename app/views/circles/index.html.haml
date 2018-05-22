@@ -37,7 +37,9 @@
               {{ category_i18n }}
         .panel-block{ "v-if": "circles.length == 0" }
           = t(".no_circle")
-        .panel-block{ "v-for": "circle in circles" }
+        %a.panel-block{ "v-for": "circle in circles", "v-bind:href": "circle.url" }
+          %span.panel-icon
+            %i.fa.fa-angle-right
           {{ circle.name_ja }}
 
 = content_for :javascript do

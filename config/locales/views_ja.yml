@@ -45,6 +45,8 @@ ja:
       title: サークル別
       column: 行
       no_circle: サークルが見つかりません
+    show:
+      title: サークル別 - %{name}
   events:
     index:
       title: イベント別
