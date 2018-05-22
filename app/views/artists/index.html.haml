@@ -38,6 +38,8 @@
         .panel-block{ "v-if": "artists.length == 0" }
           = t(".no_artist")
         %a.panel-block{ "v-for": "artist in artists", "v-bind:href": "artist.url" }
+          %span.panel-icon
+            %i.fa.fa-angle-right
           {{ artist.name_ja }}
 
 = content_for :javascript do

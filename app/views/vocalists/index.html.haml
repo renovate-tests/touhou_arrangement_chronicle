@@ -38,6 +38,8 @@
         .panel-block{ "v-if": "vocalists.length == 0" }
           = t(".no_vocalist")
         %a.panel-block{ "v-for": "vocalist in vocalists", "v-bind:href": "vocalist.url", "v-if": "vocalist.songs_count > 0" }
+          %span.panel-icon
+            %i.fa.fa-angle-right
           {{ vocalist.name_ja }}
           &nbsp;
           %span.tag.is-rounded.is-success

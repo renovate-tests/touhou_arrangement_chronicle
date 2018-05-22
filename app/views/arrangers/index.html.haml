@@ -38,6 +38,8 @@
         .panel-block{ "v-if": "arrangers.length == 0" }
           = t(".no_arranger")
         %a.panel-block{ "v-for": "arranger in arrangers", "v-bind:href": "arranger.url", "v-if": "arranger.songs_count > 0" }
+          %span.panel-icon
+            %i.fa.fa-angle-right
           {{ arranger.name_ja }}
           &nbsp;
           %span.tag.is-rounded.is-success
