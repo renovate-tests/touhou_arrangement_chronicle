@@ -33,6 +33,7 @@ ja:
       no_arranger: 編曲者が見つかりません
     show:
       title: 編曲者別 - %{name}
+      subtitle: 編曲者別 - %{category}
   artists:
     index:
       title: アーティスト別
@@ -40,6 +41,7 @@ ja:
       no_artist: アーティストが見つかりません
     show:
       title: アーティスト別 - %{name}
+      subtitle: アーティスト別 - %{category}
   circles:
     index:
       title: サークル別
@@ -47,6 +49,7 @@ ja:
       no_circle: サークルが見つかりません
     show:
       title: サークル別 - %{name}
+      subtitle: サークル別 - %{category}
   events:
     index:
       title: イベント別
@@ -59,11 +62,13 @@ ja:
       no_lyricist: 作詞者が見つかりません
     show:
       title: 作詞者別 - %{name}
+      subtitle: 作詞者別 - %{category}
   original_songs:
     index:
       title: 原曲別
     show:
       title: 原曲別 - %{song_title}
+      subtitle: 原曲別 - %{original_title}
   sessions:
     new:
       login_title: 東方編曲録 にログイン
@@ -100,3 +105,4 @@ ja:
       no_vocalist: ボーカリストが見つかりません
     show:
       title: ボーカリスト別 - %{name}
+      subtitle: ボーカリスト別 - %{category}
