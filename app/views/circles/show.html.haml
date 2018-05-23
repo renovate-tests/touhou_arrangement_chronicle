@@ -1,3 +1,28 @@
 - content_for :title do
   = t('.title', name: @circle.name_ja)
 = render 'layouts/hero', title: @circle.name_ja, subtitle: t('.subtitle', category: t("category.#{@circle.category}"))
+
+%span
+  .columns
+    .column.is-11
+      - @circle.discographies.each do |discography|
+        .box
+          %article.media
+            .media-left
+              %figure.image.is-64x64
+                = image_tag "http://via.placeholder.com/300x300"
+            .media-content
+              .content
+                .has-text-weight-bold= discography.title_ja
+                = discography&.release_event
+              %nav.level.is-mobile
+                .level-left
+                  %a.level-item
+                    %span.icon.is-small
+                      %i.far.fa-folder-open.has-text-dark
+                  %a.level-item
+                    %span.icon.is-small
+                      %i.far.fa-star.has-text-dark
+                  %a.level-item
+                    %span.icon.is-small
+                      %i.far.fa-heart.has-text-dark
