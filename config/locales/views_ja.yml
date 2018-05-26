@@ -55,6 +55,20 @@ ja:
       title: イベント別
       event_series: シリーズ別
       date: 日付別
+      series_title: シリーズ名
+      year: 年別
+    show:
+      title: イベント別 - %{title}
+      subtitle: イベント別
+    series:
+      show:
+        title: イベント別 - %{series_title}
+        subtitle: イベント別 - シリーズ別
+    date:
+      show:
+        title: イベント別 - %{year}年
+        subtitle: イベント別 - 日付別
+        year: "%{year}年"
   lyricists:
     index:
       title: 作詞者別

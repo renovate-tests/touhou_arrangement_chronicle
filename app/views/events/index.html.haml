@@ -13,9 +13,11 @@
       .panel
         %header.panel-heading
           %p
-            = t('.event_series')
+            = t('.series_title')
         - @event_series.each do |series|
-          .panel-block
+          = link_to events_series_path(series_title: series&.title_ja&.tr("/", "／")), class: 'panel-block' do
+            %span.panel-icon
+              %i.fa.fa-angle-right
             = series.title_ja
 
 %span{ "v-if": "menu === 'date'" }
@@ -24,9 +26,11 @@
       .panel
         %header.panel-heading
           %p
-            = t('.date')
+            = t('.year')
         - @event_years.each do |event_year|
-          .panel-block
+          = link_to events_date_path(year: event_year), class: 'panel-block' do
+            %span.panel-icon
+              %i.fa.fa-angle-right
             = event_year
 
 = content_for :javascript do
