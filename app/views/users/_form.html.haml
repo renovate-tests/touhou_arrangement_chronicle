@@ -26,5 +26,7 @@
       %p.help.is-danger
         - @user.errors.full_messages_for(:password).each do |error|
           = error
+  .field
+    = recaptcha_tags
   .actions
     = f.submit t('common.user_signup'), class: 'button is-primary is-large is-fullwidth'
