@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Authentication', type: :system do
-  pending '以下、ペンディング'
 
   let(:user) { User.create!(name: 'test_user001', email: 'example@example.com', password: 'password') }
   it 'ユーザー登録' do
