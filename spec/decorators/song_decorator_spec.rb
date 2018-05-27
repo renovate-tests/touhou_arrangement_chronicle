@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe SongDecorator do
+RSpec.describe SongDecorator do
   subject { song }
 
   let(:song) { Song.new.extend SongDecorator }

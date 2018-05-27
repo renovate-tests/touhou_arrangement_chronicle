@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe EventDecorator do
+RSpec.describe EventDecorator do
   subject { event }
 
   let(:event) { Event.new.extend EventDecorator }

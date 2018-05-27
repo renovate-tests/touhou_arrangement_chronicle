@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe DiscographyDecorator do
+RSpec.describe DiscographyDecorator do
   subject { discography }
 
   let(:discography) { Discography.new.extend DiscographyDecorator }
