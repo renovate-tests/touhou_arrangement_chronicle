@@ -1,0 +1,14 @@
+- content_for :title do
+  = t('.title', series_title: @event_series&.title_ja)
+= render 'layouts/hero', title: @event_series&.title_ja, subtitle: t('.subtitle')
+.columns
+  .column.is-11
+    .panel
+      %header.panel-heading
+        %p
+          = @event_series&.title_ja
+      - @events.each do |event|
+        = link_to event.event_url, class: 'panel-block' do
+          %span.panel-icon
+            %i.fa.fa-angle-right
+          = event&.display_title

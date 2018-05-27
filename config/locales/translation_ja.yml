@@ -239,6 +239,7 @@ ja:
   category: &category
     symbol: 記号
     number: 数字
+    kana: かな(ひらがな・カタカナ)
     hiragana: ひらがな
     katakana: カタカナ
     kanji: 漢字
@@ -249,7 +250,7 @@ ja:
     category:
       <<: *category
 
-  original:
+  original: &original
     original_type:
       pc98: PC-98作品
       windows: Windows作品
@@ -258,7 +259,7 @@ ja:
       commercial_books: 商業書籍
       other: その他
 
-  circle:
+  circle: &circle
     category:
       <<: *category
     circle_type:
@@ -266,3 +267,9 @@ ja:
       general: 一般
       union: 合同
       enterprise: 企業
+
+  enums:
+    original:
+      <<: *original
+    circle:
+      <<: *circle

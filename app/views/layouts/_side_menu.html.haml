@@ -10,20 +10,20 @@
     General
   %ul.menu-list
     %li
-      %a= t('.original_song')
+      = link_to t('.original_song'), original_songs_path, { class: current_class?(original_songs_path) }
     %li
-      %a= t('.event')
+      = link_to t('.event'), events_path, { class: current_class?(events_path) }
     %li
-      %a= t('.circle')
+      = link_to t('.circle'), circles_path, { class: current_class?(circles_path) }
     %li
-      %a= t('.artist')
+      = link_to t('.artist'), artists_path, { class: current_class?(artists_path) }
       %ul
         %li
-          %a= t('.vocalist')
+          = link_to t('.vocalist'), vocalists_path, { class: current_class?(vocalists_path) }
         %li
-          %a= t('.arranger')
+          = link_to t('.arranger'), arrangers_path, { class: current_class?(arrangers_path) }
         %li
-          %a= t('.lyricist')
+          = link_to t('.lyricist'), lyricists_path, { class: current_class?(lyricists_path) }
   - if current_user
     %p.menu-label
       Administrator

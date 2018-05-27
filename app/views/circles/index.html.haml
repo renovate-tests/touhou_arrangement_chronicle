@@ -1,0 +1,46 @@
+- content_for :title do
+  = t('.title')
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - Category::DISPLAY_KIND.each do |category|
+      - category_i18n = t("category.#{category}")
+      %li{ "v-bind:class": "category === '#{category}' ? 'is-active':''","v-on:click": "setCategory('#{category}', '#{category_i18n}')" }
+        %a= t("category.#{category}")
+
+.tabs{ "v-if": "category === 'kana'" }
+  %ul
+    - Category::DISPLAY_KANA_LIST.each do |kana|
+      %li{ "v-bind:class": "detail_category === '#{kana}' ? 'is-active':''","v-on:click": "setDetailCategory('#{kana}')" }
+        %a= kana
+
+.tabs{ "v-if": "category === 'alphabet'" }
+  %ul
+    - Category::ALPHABET_LIST.each do |alphabet|
+      %li{ "v-bind:class": "detail_category === '#{alphabet}' ? 'is-active':''","v-on:click": "setDetailCategory('#{alphabet}')" }
+        %a= alphabet
+
+%span
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %span{ "v-if": "category === 'alphabet'" }
+            %p
+              {{ category_i18n + " - " + detail_category }}
+          %span{ "v-else-if": "category === 'kana'" }
+            %p
+              {{ category_i18n + " - " + detail_category }}
+              = t('.column')
+          %span{ "v-else": true }
+            %p
+              {{ category_i18n }}
+        .panel-block{ "v-if": "circles.length == 0" }
+          = t(".no_circle")
+        %a.panel-block{ "v-for": "circle in circles", "v-bind:href": "circle.url" }
+          %span.panel-icon
+            %i.fa.fa-angle-right
+          {{ circle.name_ja }}
+
+= content_for :javascript do
+  = javascript_pack_tag 'circles/index'

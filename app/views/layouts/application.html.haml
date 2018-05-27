@@ -15,11 +15,9 @@
         .side_menu
           .box
             = render 'layouts/side_menu'
-      .column
-        .content
-          %section.section
-            = render 'shared/notification'
-            = yield
+      #app.column
+        = render 'shared/notification'
+        = yield
     %footer.footer
       = render 'layouts/footer'
     = javascript_include_tag 'application'

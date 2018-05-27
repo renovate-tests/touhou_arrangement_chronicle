@@ -41,6 +41,26 @@ class OriginalSong < ApplicationRecord
   validates :track_number, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
   before_save :set_code
 
+  class << self
+    def all_includes
+      includes(
+        :original,
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            :discography,
+            :event,
+            { lyricists: [:artist] },
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+      )
+    end
+  end
+
   private
 
     def set_code

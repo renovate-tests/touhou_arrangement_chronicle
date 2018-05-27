@@ -9,3 +9,10 @@
 
 console.log('Hello World from Webpacker')
 import '../stylesheets/application';
+import fontawesome from '@fortawesome/fontawesome'
+import solid from '@fortawesome/fontawesome-free-solid'
+import regular from '@fortawesome/fontawesome-free-regular'
+import brands from '@fortawesome/fontawesome-free-brands'
+
+fontawesome.library.add(solid, regular, brands)
+fontawesome.dom.i2svg()

@@ -6,6 +6,7 @@ ja:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "..."
+
   layouts:
     header:
       home: ホーム
@@ -25,12 +26,82 @@ ja:
       arranger: 編曲者別
       lyricist: 作詞者別
       admin_panel: 管理画面
+  arrangers:
+    index:
+      title: 編曲者別
+      column: 行
+      no_arranger: 編曲者が見つかりません
+    show:
+      title: 編曲者別 - %{name}
+      subtitle: 編曲者別 - %{category}
+  artists:
+    index:
+      title: アーティスト別
+      column: 行
+      no_artist: アーティストが見つかりません
+    show:
+      title: アーティスト別 - %{name}
+      subtitle: アーティスト別 - %{category}
+  circles:
+    index:
+      title: サークル別
+      column: 行
+      no_circle: サークルが見つかりません
+    show:
+      title: サークル別 - %{name}
+      subtitle: サークル別 - %{category}
+  events:
+    index:
+      title: イベント別
+      event_series: シリーズ別
+      date: 日付別
+      series_title: シリーズ名
+      year: 年別
+    show:
+      title: イベント別 - %{title}
+      subtitle: イベント別
+    series:
+      show:
+        title: イベント別 - %{series_title}
+        subtitle: イベント別 - シリーズ別
+    date:
+      show:
+        title: イベント別 - %{year}年
+        subtitle: イベント別 - 日付別
+        year: "%{year}年"
+  lyricists:
+    index:
+      title: 作詞者別
+      column: 行
+      no_lyricist: 作詞者が見つかりません
+    show:
+      title: 作詞者別 - %{name}
+      subtitle: 作詞者別 - %{category}
+  original_songs:
+    index:
+      title: 原曲別
+    show:
+      title: 原曲別 - %{song_title}
+      subtitle: 原曲別 - %{original_title}
   sessions:
     new:
       login_title: 東方編曲録 にログイン
     form:
       name_or_email: ユーザー名または、メールアドレス
       password: パスワード
+  shared:
+    songs:
+      circle_name: サークル名
+      song_title: 曲名
+      discography_title: ディスコグラフィ
+      vocalists: ボーカリスト
+      composers: 作曲者
+      arrangers: 編曲者
+      rearrangers: 再編曲者
+      lyricists: 作詞者
+      original_songs: 原曲
+      event_title: イベント名
+      release_date: 頒布日
   users:
     form:
       name: ユーザー名
@@ -41,3 +112,11 @@ ja:
     new:
       welcome_message: 東方編曲録へようこそ！
       start_message: 新規登録(無料)して利用を開始しましょう。
+  vocalists:
+    index:
+      title: ボーカリスト別
+      column: 行
+      no_vocalist: ボーカリストが見つかりません
+    show:
+      title: ボーカリスト別 - %{name}
+      subtitle: ボーカリスト別 - %{category}

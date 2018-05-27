@@ -1,0 +1,37 @@
+- content_for :title do
+  = t('.title')
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - %i(event_series date).each do |menu|
+      %li{ "v-bind:class": "menu === '#{menu}' ? 'is-active':''","v-on:click": "setMenu('#{menu}')" }
+        %a= t(".#{menu}")
+
+%span{ "v-if": "menu === 'event_series'" }
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %p
+            = t('.series_title')
+        - @event_series.each do |series|
+          = link_to events_series_path(series_title: series&.title_ja&.tr("/", "／")), class: 'panel-block' do
+            %span.panel-icon
+              %i.fa.fa-angle-right
+            = series.title_ja
+
+%span{ "v-if": "menu === 'date'" }
+  .columns
+    .column.is-11
+      .panel
+        %header.panel-heading
+          %p
+            = t('.year')
+        - @event_years.each do |event_year|
+          = link_to events_date_path(year: event_year), class: 'panel-block' do
+            %span.panel-icon
+              %i.fa.fa-angle-right
+            = event_year
+
+= content_for :javascript do
+  = javascript_pack_tag 'events/index'

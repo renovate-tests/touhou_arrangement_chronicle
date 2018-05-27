@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_06_151619) do
+ActiveRecord::Schema.define(version: 2018_05_14_144927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -110,6 +110,18 @@ ActiveRecord::Schema.define(version: 2018_05_06_151619) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_series_id"], name: "index_events_on_event_series_id"
+  end
+
+  create_table "friendly_id_slugs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug", null: false
+    t.uuid "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "lyricists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

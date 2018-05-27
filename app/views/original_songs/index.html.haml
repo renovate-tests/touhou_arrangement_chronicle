@@ -1,0 +1,34 @@
+- content_for :title do
+  = t('.title')
+= render 'layouts/hero', title: t('.title')
+.tabs
+  %ul
+    - %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
+      %li{ "v-bind:class": "type === '#{type}' ? 'is-active':''","v-on:click": "setOriginalType('#{type}')" }
+        %a= t("original.original_type.#{type}")
+- %i(windows pc98 zuns_music_collection akyus_untouched_score commercial_books other).each do |type|
+  %span{ "v-if": "type === '#{type}'" }
+    - @originals.select{|original| original.original_type == type.to_s }.each do |original|
+      - next if original.original_songs.all?{|original_song| original_song.is_duplicate }
+      .columns
+        .column.is-11
+          .panel
+            %header.panel-heading
+              %p
+                = original.title_ja
+            - original.original_songs.each do |original_song|
+              - next if original_song.is_duplicate
+              - if original_song.songs_count > 0
+                = link_to original_song_path(original_short_title: original.short_title_ja, original_song_title: original_song.title_ja), class: "panel-block" do
+                  %span.panel-icon
+                    %i.fa.fa-angle-right
+                  = original_song.title_ja
+                  &nbsp;
+                  %span.tag.is-rounded.is-success
+                    = original_song.songs_count
+              - else
+                .panel-block
+                  = original_song.title_ja
+
+= content_for :javascript do
+  = javascript_pack_tag 'original_songs/index'
