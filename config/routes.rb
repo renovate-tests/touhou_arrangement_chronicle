@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/original_songs/:original_short_title/:original_song_title', to: 'original_songs#show', as: :original_song, original_song_title: %r{[^\/]+}
 
   get '/events', to: 'events#index'
+  post '/events', to: 'events#create'
+  get '/events/new', to: 'events#new'
   get '/events/series/:series_title', to: 'events/series#show', as: 'events_series', series_title: %r{[^\/]+}
   get '/events/series/:series_title/:title', to: 'events#show', as: 'events_series_show', series_title: %r{[^\/]+}, title: %r{[^\/]+}
   get '/events/series/:series_title/:title/:days', to: 'events#show', as: 'events_series_days_show', series_title: %r{[^\/]+}, title: %r{[^\/]+}

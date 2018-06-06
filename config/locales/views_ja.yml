@@ -57,6 +57,15 @@ ja:
       date: 日付別
       series_title: シリーズ名
       year: 年別
+    new:
+      title: イベント新規作成
+    form:
+      series_title: シリーズ名
+      event_title: イベント名
+      display_title: 表示イベント名
+      times: 開催回数
+      days: 日目
+      date: 開催日
     show:
       title: イベント別 - %{title}
       subtitle: イベント別

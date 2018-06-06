@@ -1,0 +1,15 @@
+- content_for :title do
+  = t('.title')
+.columns
+  .column.is-11
+    .hero
+      .hero-body
+        .level
+          .level-left
+            .level-item
+              %h1.title
+                = t('.title')
+    = render 'form', event_form: @event_form
+
+= content_for :javascript do
+  = javascript_pack_tag 'events/event_form'
