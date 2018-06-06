@@ -1,0 +1,73 @@
+= form_with(model: event_form, url: events_path, local: true) do |f|
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :series_title, class: 'label' do
+        = t('.series_title')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          = f.text_field :series_title, list: "series-title", "v-model": "series_title", class: 'input', required: true
+          %datalist#series-title
+            - @series.each do |series|
+              %option= series.title_ja
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :title, class: 'label' do
+        = t('.event_title')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          = f.text_field :title, "v-model": "title", class: 'input', required: true
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :display_title, class: 'label' do
+        = t('.display_title')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          = f.text_field :display_title, ":value": "title", class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :times, class: 'label' do
+        = t('.times')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          = f.number_field :times, class: 'input'
+  .field.is-horizontal{ "v-show": "series_title === 'コミックマーケット'" }
+    .field-label.is-normal
+    .field-body
+      .field
+        .control
+          .select
+            = f.select :days, [1, 2, 3]
+          = t('.days')
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :date, class: 'label' do
+        = t('.date')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          %datepicker{ ":language": 'language', name: 'event_form[date]', format: 'yyyy/MM/dd', "input-class": 'input', required: true }
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        = recaptcha_tags(noscript: false)
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        .control
+          = f.submit t('common.create'), class: 'button is-primary'

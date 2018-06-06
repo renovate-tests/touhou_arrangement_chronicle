@@ -5,7 +5,7 @@
 %span
   .columns
     .column.is-11
-      - @event.discographies.each do |discography|
+      - @event&.discographies&.each do |discography|
         .box
           %article.media
             .media-left

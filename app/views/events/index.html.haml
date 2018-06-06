@@ -1,15 +1,26 @@
 - content_for :title do
   = t('.title')
-= render 'layouts/hero', title: t('.title')
-.tabs
-  %ul
-    - %i(event_series date).each do |menu|
-      %li{ "v-bind:class": "menu === '#{menu}' ? 'is-active':''","v-on:click": "setMenu('#{menu}')" }
-        %a= t(".#{menu}")
+.columns
+  .column.is-11
+    .hero
+      .hero-body
+        .level
+          .level-left
+            .level-item
+              %h1.title
+                = t('.title')
+          .level-right
+            .level-item
+              - if current_user
+                = link_to events_new_path, class: 'button is-primary' do
+                  = t('common.add')
+    .tabs
+      %ul
+        - %i(event_series date).each do |menu|
+          %li{ "v-bind:class": "menu === '#{menu}' ? 'is-active':''","v-on:click": "setMenu('#{menu}')" }
+            %a= t(".#{menu}")
 
-%span{ "v-if": "menu === 'event_series'" }
-  .columns
-    .column.is-11
+    %span{ "v-if": "menu === 'event_series'" }
       .panel
         %header.panel-heading
           %p
@@ -20,9 +31,7 @@
               %i.fa.fa-angle-right
             = series.title_ja
 
-%span{ "v-if": "menu === 'date'" }
-  .columns
-    .column.is-11
+    %span{ "v-if": "menu === 'date'" }
       .panel
         %header.panel-heading
           %p

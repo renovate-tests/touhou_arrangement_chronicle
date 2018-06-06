@@ -105,7 +105,7 @@ ja:
         date: 開催日
 
       event_series:
-        event: :activerecord.models.event
+        events: :activerecord.models.event
         title_en: タイトル(英名)
         title_ja: タイトル
         display_order: 表示順

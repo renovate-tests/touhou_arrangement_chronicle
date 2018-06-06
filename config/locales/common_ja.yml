@@ -11,3 +11,6 @@ ja:
     login_with_twitter: Twitterアカウントでログイン
     signup_with_twitter: Twitterアカウントで登録
     logout: ログアウト
+    required: 必須
+    add: 新規作成
+    create: 登録

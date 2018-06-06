@@ -12,7 +12,7 @@ class EventSeriesDashboard < Administrate::BaseDashboard
     title_ja: Field::String,
     title_en: Field::String,
     display_order: Field::Number,
-    event: Field::HasMany,
+    events: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,7 +25,7 @@ class EventSeriesDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :title_ja,
     :display_order,
-    :event,
+    :events,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,7 +35,7 @@ class EventSeriesDashboard < Administrate::BaseDashboard
     :title_ja,
     :title_en,
     :display_order,
-    :event,
+    :events,
     :created_at,
     :updated_at,
   ].freeze
