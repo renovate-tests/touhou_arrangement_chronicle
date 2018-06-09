@@ -5,7 +5,6 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
     %title= content_for?(:title) ? t('common.page_title', title: yield(:title)) : t('common.app_fullname')
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_pack_tag 'application'
   %body
     %header

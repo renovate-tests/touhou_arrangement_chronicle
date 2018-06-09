@@ -1,6 +1,19 @@
 - content_for :title do
   = t('.title')
-= render 'layouts/hero', title: t('.title')
+.columns
+  .column.is-11
+    .hero
+      .hero-body
+        .level
+          .level-left
+            .level-item
+              %h1.title
+                = t('.title')
+          .level-right
+            .level-item
+              - if current_user
+                = link_to new_circle_path, class: 'button is-primary' do
+                  = t('common.add')
 .tabs
   %ul
     - Category::DISPLAY_KIND.each do |category|
