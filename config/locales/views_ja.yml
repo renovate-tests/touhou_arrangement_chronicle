@@ -47,6 +47,16 @@ ja:
       title: サークル別
       column: 行
       no_circle: サークルが見つかりません
+    new:
+      title: サークル新規作成
+    form:
+      name_ja: サークル名
+      name_en: サークル名(英字)
+      circle_type: サークル種別
+      site_url: サイトURL
+      blog_url: ブログURL
+      note_ja: ノート
+      note_en: ノート(英字)
     show:
       title: サークル別 - %{name}
       subtitle: サークル別 - %{category}
