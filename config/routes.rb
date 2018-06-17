@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   get '/events/date/:year/:title', to: 'events#show', as: 'events_date_show', year: /\d{4}/, title: %r{[^\/]+}
   get '/events/date/:year/:title/:days', to: 'events#show', as: 'events_date_days_show', year: /\d{4}/, title: %r{[^\/]+}
 
-  resources :circles, only: %i[index new create show], param: :name, name: %r{[^\/]+}
+  resources :circles, only: %i[index new create show], param: :name, name: %r{[^\/]+} do
+    resources :discographies, only: %i[index show], module: 'circles', param: :title, title: %r{[^\/]+}
+    resources :songs, only: %i[index], module: 'circles'
+  end
   resources :artists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :arrangers, only: %i[index show], param: :name, name: %r{[^\/]+}

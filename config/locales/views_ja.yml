@@ -58,8 +58,26 @@ ja:
       note_ja: ノート
       note_en: ノート(英字)
     show:
-      title: サークル別 - %{name}
+      title: サークル別 - %{name} - 情報
       subtitle: サークル別 - %{category}
+      discographies_count: ディスコグラフィ数
+      songs_count: 曲数
+      events_count: イベント数
+    discographies:
+      index:
+        title: サークル別 - %{name} - ディスコグラフィ一覧
+        subtitle: サークル別 - %{category}
+      show:
+        title: "%{title} - %{name}"
+        discography_title: タイトル
+        circle_name: サークル
+        event_name: 頒布イベント
+        release_date: 頒布日
+        track_list: トラックリスト
+    songs:
+      index:
+        title: サークル別 - %{name} - 曲一覧
+        subtitle: サークル別 - %{category}
   events:
     index:
       title: イベント別

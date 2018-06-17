@@ -1,0 +1,36 @@
+- content_for :title do
+  = t('.title', name: @circle.name_ja)
+= render 'layouts/hero', title: @circle.name_ja, subtitle: t('.subtitle', category: t("category.#{@circle.category}"))
+
+.tabs
+  %ul
+    %li
+      = link_to t('common.information'), circle_path(name: @circle.name_ja)
+    %li.is-active
+      = link_to t('common.discographies')
+    %li
+      = link_to t('common.songs'), circle_songs_path(circle_name: @circle.name_ja)
+
+.columns
+  .column.is-11
+    - @circle.discographies.each do |discography|
+      .box
+        %article.media
+          .media-left
+            %figure.image.is-64x64
+              = image_tag "http://via.placeholder.com/300x300"
+          .media-content
+            .content
+              .has-text-weight-bold= link_to discography.title_ja, circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja), class: 'has-text-dark'
+              = discography&.release_event
+            %nav.level.is-mobile
+              .level-left
+                %a.level-item
+                  %span.icon.is-small
+                    %i.far.fa-folder-open.has-text-dark
+                %a.level-item
+                  %span.icon.is-small
+                    %i.far.fa-star.has-text-dark
+                %a.level-item
+                  %span.icon.is-small
+                    %i.far.fa-heart.has-text-dark
