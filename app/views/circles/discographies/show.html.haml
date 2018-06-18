@@ -1,61 +1,63 @@
 - content_for :title do
   = t('.title', name: @discography&.circle&.name_ja, title: @discography&.title_ja)
-= render 'layouts/hero', title: @discography&.title_ja, subtitle: @discography&.circle&.name_ja
-
-.columns
-  .column.is-11
+.section
+  .content
     .columns
-      .column.is-5
-        .has-text-right
-          = image_tag "http://via.placeholder.com/300x300"
-      .column
-        %table.table.is-fullwidth.is-size-5
-          %tbody
-            %tr
-              %th
-                = t('.discography_title')
-              %td
-                = @discography&.title_ja
-            %tr
-              %th
-                = t('.circle_name')
-              %td
-                = @discography&.circle&.name_ja
-            %tr
-              %th
-                = t('.event_name')
-              %td
-                = @discography&.event&.title_ja
-            %tr
-              %th
-                = t('.release_date')
-              %td
-                - if @discography&.release_date
-                  = l(@discography&.release_date)
-    .section
-      .content
-        %h2= t('.track_list')
-        %table.table.is-size-5
-          %tbody
-            - @discography.songs.sort_by{ |song| song.track_number }.each do |song|
-              %tr
-                %th.has-text-right
-                  = "#{song.track_number}."
-                %td
-                  .has-text-weight-semibold
-                    = song.title_ja
-                  - if song.vocalists.present?
-                    .is-size-6
-                      = "ボーカリスト: #{song.vocalists_name}"
-                  - if song.arrangers.present?
-                    .is-size-6
-                      = "編曲： #{song.arrangers_name}"
-                  - if song.composers.present?
-                    .is-size-6
-                      = "作曲： #{song.composers_name}"
-                  - if song.lyricists.present?
-                    .is-size-6
-                      = "作詞： #{song.lyricists_name}"
-                  - if song.original_songs.present?
-                    .is-size-6
-                      = "原曲： #{song.original_songs_title}"
+      .column.is-11
+        .columns
+          .column.is-5
+            .has-text-right
+              = image_tag "http://via.placeholder.com/300x300"
+          .column
+            %table.table.is-fullwidth.is-size-5
+              %tbody
+                %tr
+                  %th
+                    = t('.discography_title')
+                  %td
+                    = @discography&.title_ja
+                %tr
+                  %th
+                    = t('.circle_name')
+                  %td
+                    = @discography&.circle&.name_ja
+                %tr
+                  %th
+                    = t('.event_name')
+                  %td
+                    = @discography&.event&.title_ja
+                %tr
+                  %th
+                    = t('.release_date')
+                  %td
+                    - if @discography&.release_date
+                      = l(@discography&.release_date)
+
+    %table.table.is-size-6
+      %tbody
+        %tr
+          %th
+          %td
+            .title.is-size-5= t('.track_list')
+        - @discography.songs.sort_by{ |song| song.track_number }.each do |song|
+          %tr
+            %th.has-text-right
+              = "#{song.track_number}."
+            %td
+              .has-text-weight-semibold
+                = song.title_ja
+              - if song.vocalists.present?
+                .is-size-6
+                  = "ボーカリスト: #{song.vocalists_name}"
+              - if song.arrangers.present?
+                .is-size-6
+                  = "編曲： #{song.arrangers_name}"
+              - if song.composers.present?
+                .is-size-6
+                  = "作曲： #{song.composers_name}"
+              - if song.lyricists.present?
+                .is-size-6
+                  = "作詞： #{song.lyricists_name}"
+              - if song.original_songs.present?
+                .is-size-6
+                  = "原曲： #{song.original_songs_title}"
