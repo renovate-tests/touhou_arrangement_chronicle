@@ -13,24 +13,31 @@
 
 .columns
   .column.is-11
-    - @circle.discographies.each do |discography|
-      .box
-        %article.media
-          .media-left
-            %figure.image.is-64x64
-              = image_tag "http://via.placeholder.com/300x300"
-          .media-content
-            .content
-              .has-text-weight-bold= link_to discography.title_ja, circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja), class: 'has-text-dark'
-              = discography&.release_event
-            %nav.level.is-mobile
-              .level-left
-                %a.level-item
-                  %span.icon.is-small
-                    %i.far.fa-folder-open.has-text-dark
-                %a.level-item
-                  %span.icon.is-small
-                    %i.far.fa-star.has-text-dark
-                %a.level-item
-                  %span.icon.is-small
-                    %i.far.fa-heart.has-text-dark
+    .columns.is-multiline
+      - @circle.discographies.each do |discography|
+        .column.is-3
+          .card
+            .card-image
+              %figure.image.is-square
+                = link_to circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja) do
+                  = image_tag "http://via.placeholder.com/300x300"
+            = link_to circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja) do
+              .card-content
+                .media-content
+                  %p.title.is-6
+                    = discography.title_ja
+                  %p.subtitle.is-7
+                    = discography&.release_event
+            .card-footer
+              .card-footer-item
+                %nav.level.is-mobile
+                  .level-left
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-folder-open.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-star.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-heart.has-text-dark
