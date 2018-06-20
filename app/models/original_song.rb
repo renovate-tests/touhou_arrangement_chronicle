@@ -34,6 +34,7 @@ class OriginalSong < ApplicationRecord
   scope :duplicate, -> { where(is_duplicate: true) }
   scope :not_duplicate, -> { where(is_duplicate: false) }
   scope :order_by_track_number_asc, -> { order("track_number ASC") }
+  scope :group_by_title, -> { reorder(:code).group(:code, :title_ja) }
 
   validates :title_ja, presence: true
   validates :original_code, presence: true

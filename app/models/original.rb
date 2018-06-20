@@ -34,6 +34,7 @@ class Original < ApplicationRecord
     dependent: :destroy
 
   scope :order_by_code_asc, -> { order("code ASC") }
+  scope :group_by_short_title, -> { group(:code, :short_title_ja).reorder(:code) }
 
   validates :code, presence: true
   validates :title_ja, presence: true
