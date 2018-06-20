@@ -21,6 +21,7 @@ class CirclesController < ApplicationController
 
   def show(name)
     @circle = Circle.includes(discographies: [:event]).find_by(name_ja: name.tr('／', '/'))
+    render 'circles/discographies/index'
   end
 
   private

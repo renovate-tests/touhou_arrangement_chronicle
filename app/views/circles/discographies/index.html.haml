@@ -4,8 +4,6 @@
 
 .tabs
   %ul
-    %li
-      = link_to t('common.information'), circle_path(name: @circle.name_ja)
     %li.is-active
       = link_to t('common.discographies')
     %li
@@ -14,7 +12,7 @@
 .columns
   .column.is-11
     .columns.is-multiline
-      - @circle.discographies.each do |discography|
+      - @circle.discographies.sort_by{|d| d.release_date }.reverse.each do |discography|
         .column.is-3
           .card
             .card-image

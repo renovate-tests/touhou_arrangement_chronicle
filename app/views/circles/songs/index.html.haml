@@ -7,8 +7,6 @@
     .tabs
       %ul
         %li
-          = link_to t('common.information'), circle_path(name: @circle.name_ja)
-        %li
           = link_to t('common.discographies'), circle_discographies_path(circle_name: @circle.name_ja)
         %li.is-active
           = link_to t('common.songs'), circle_songs_path(circle_name: @circle.name_ja)
