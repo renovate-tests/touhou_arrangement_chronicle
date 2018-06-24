@@ -13,6 +13,10 @@ module SongDecorator
     arrangers&.map {|a| a.name_ja }.join(", ")
   end
 
+  def rearrangers_name
+    rearrangers&.map {|a| a.name_ja }.join(", ")
+  end
+
   def composers_list
     if composers.present?
       safe_join(composers&.map {|c| c.name_ja }, tag.br)

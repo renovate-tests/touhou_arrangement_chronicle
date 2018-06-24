@@ -74,6 +74,12 @@ ja:
         event_name: 頒布イベント
         release_date: 頒布日
         track_list: トラックリスト
+        vocalists: ボーカリスト： %{vocalists}
+        arrangers: 編曲： %{arrangers}
+        rearrangers: 再編曲： %{rearrangers}
+        composers: 作曲： %{composers}
+        lyricists: 作詞： %{lyricists}
+        original_songs: 原曲： %{original_songs}
     songs:
       index:
         title: サークル別 - %{name} - 曲一覧
