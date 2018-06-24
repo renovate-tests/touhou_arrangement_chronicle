@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :circles, only: %i[index new create show], param: :name, name: %r{[^\/]+} do
     resources :discographies, only: %i[index show], module: 'circles', param: :title, title: %r{[^\/]+}
     resources :songs, only: %i[index], module: 'circles'
+    resources :statistics, only: %i[index], module: 'circles'
   end
   resources :artists, only: %i[index show], param: :name, name: %r{[^\/]+}
   resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+}
@@ -41,6 +42,7 @@ Rails.application.routes.draw do
       resources :vocalists, only: %i[index]
       resources :arrangers, only: %i[index]
       resources :lyricists, only: %i[index]
+      resources :originals_count, only: %i[index]
     end
   end
 
