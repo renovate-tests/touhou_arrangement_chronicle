@@ -1,4 +1,14 @@
 - content_for :title do
   = t('.title', name: @arranger.name_ja)
 = render 'layouts/hero', title: @arranger.name_ja, subtitle: t('.subtitle', category: t("category.#{@arranger.category}"))
-= render 'shared/songs', songs: @arranger.songs
+
+.columns
+  .column.is-11
+    .tabs
+      %ul
+        %li.is-active
+          = link_to t('common.songs'), arranger_path(name: @arranger.name_ja)
+        %li
+          = link_to t('common.statistics'), arranger_statistics_path(arranger_name: @arranger.name_ja)
+
+    = render 'shared/songs', songs: @arranger.songs

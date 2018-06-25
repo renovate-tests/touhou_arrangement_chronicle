@@ -1,0 +1,39 @@
+- content_for :title do
+  = t('.title', name: @arranger.name_ja)
+= render 'layouts/hero', title: @arranger.name_ja, subtitle: t('.subtitle', category: t("category.#{@arranger.category}"))
+
+.columns
+  .column.is-11
+    .tabs
+      %ul
+        %li
+          = link_to t('common.songs'), arranger_path(name: @arranger.name_ja)
+        %li.is-active
+          = link_to t('common.statistics'), arranger_statistics_path(arranger_name: @arranger.name_ja)
+
+    .tile.is-ancestor.has-text-centered
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.circles_count')
+          %p.title
+            = @arranger&.circles&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.discographies_count')
+          %p.title
+            = @arranger&.discographies&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.songs_count')
+          %p.title
+            = @arranger&.songs&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.events_count')
+          %p.title
+            = @arranger&.events&.distinct&.count.to_i
+    = render 'shared/graph', object: @arranger

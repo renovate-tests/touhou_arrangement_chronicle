@@ -1,0 +1,39 @@
+- content_for :title do
+  = t('.title', name: @vocalist.name_ja)
+= render 'layouts/hero', title: @vocalist.name_ja, subtitle: t('.subtitle', category: t("category.#{@vocalist.category}"))
+
+.columns
+  .column.is-11
+    .tabs
+      %ul
+        %li
+          = link_to t('common.songs'), vocalist_path(name: @vocalist.name_ja)
+        %li.is-active
+          = link_to t('common.statistics'), vocalist_statistics_path(vocalist_name: @vocalist.name_ja)
+
+    .tile.is-ancestor.has-text-centered
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.circles_count')
+          %p.title
+            = @vocalist&.circles&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.discographies_count')
+          %p.title
+            = @vocalist&.discographies&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.songs_count')
+          %p.title
+            = @vocalist&.songs&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.events_count')
+          %p.title
+            = @vocalist&.events&.distinct&.count.to_i
+    = render 'shared/graph', object: @vocalist

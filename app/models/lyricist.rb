@@ -18,12 +18,22 @@
 #
 
 class Lyricist < ApplicationRecord
-  include ArtistModule
-
   has_many :song_lyricists, dependent: :destroy
   has_many :songs, through: :song_lyricists
+  has_many :arrangers, through: :songs
+  has_many :circles, through: :songs
+  has_many :composers, through: :songs
+  has_many :discographies, through: :songs
+  has_many :events, through: :songs
+  has_many :original_songs, through: :songs
+  has_many :originals, through: :original_songs
+  has_many :rearrangers, through: :songs
+  has_many :vocalists, through: :songs
 
   belongs_to :artist
+
+  include ArtistModule
+  include OriginalSongModule
 
   class << self
     def all_includes
