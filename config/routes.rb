@@ -31,9 +31,15 @@ Rails.application.routes.draw do
     resources :statistics, only: %i[index], module: 'circles'
   end
   resources :artists, only: %i[index show], param: :name, name: %r{[^\/]+}
-  resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+}
-  resources :arrangers, only: %i[index show], param: :name, name: %r{[^\/]+}
-  resources :lyricists, only: %i[index show], param: :name, name: %r{[^\/]+}
+  resources :vocalists, only: %i[index show], param: :name, name: %r{[^\/]+} do
+    resources :statistics, only: %i[index], module: 'vocalists'
+  end
+  resources :arrangers, only: %i[index show], param: :name, name: %r{[^\/]+} do
+    resources :statistics, only: %i[index], module: 'arrangers'
+  end
+  resources :lyricists, only: %i[index show], param: :name, name: %r{[^\/]+} do
+    resources :statistics, only: %i[index], module: 'lyricists'
+  end
 
   namespace :api, { format: :json } do
     namespace :v1 do

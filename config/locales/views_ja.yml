@@ -32,8 +32,12 @@ ja:
       column: 行
       no_arranger: 編曲者が見つかりません
     show:
-      title: 編曲者別 - %{name}
+      title: 編曲者別 - %{name} - 曲一覧
       subtitle: 編曲者別 - %{category}
+    statistics:
+      index:
+        title: 編曲者別 - %{name} - 統計情報
+        subtitle: 編曲者別 - %{category}
   artists:
     index:
       title: アーティスト別
@@ -60,9 +64,6 @@ ja:
     show:
       title: サークル別 - %{name} - 情報
       subtitle: サークル別 - %{category}
-      discographies_count: ディスコグラフィ数
-      songs_count: 曲数
-      events_count: イベント数
     discographies:
       index:
         title: サークル別 - %{name} - ディスコグラフィ一覧
@@ -88,9 +89,6 @@ ja:
       index:
         title: サークル別 - %{name} - 統計情報
         subtitle: サークル別 - %{category}
-        discographies_count: ディスコグラフィ数
-        songs_count: 曲数
-        events_count: イベント数
   events:
     index:
       title: イベント別
@@ -125,8 +123,12 @@ ja:
       column: 行
       no_lyricist: 作詞者が見つかりません
     show:
-      title: 作詞者別 - %{name}
+      title: 作詞者別 - %{name} - 曲一覧
       subtitle: 作詞者別 - %{category}
+    statistics:
+      index:
+        title: 作詞者別 - %{name} - 統計情報
+        subtitle: 作詞者別 - %{category}
   original_songs:
     index:
       title: 原曲別
@@ -175,5 +177,9 @@ ja:
       column: 行
       no_vocalist: ボーカリストが見つかりません
     show:
-      title: ボーカリスト別 - %{name}
+      title: ボーカリスト別 - %{name} - 曲一覧
       subtitle: ボーカリスト別 - %{category}
+    statistics:
+      index:
+        title: ボーカリスト別 - %{name} - 統計情報
+        subtitle: ボーカリスト別 - %{category}

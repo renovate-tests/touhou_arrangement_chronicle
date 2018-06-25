@@ -17,19 +17,19 @@
       .tile.is-parent
         %article.tile.is-child.box
           %p.subtitle
-            = t('.discographies_count')
+            = t('common.discographies_count')
           %p.title
             = @circle&.discographies&.count.to_i
       .tile.is-parent
         %article.tile.is-child.box
           %p.subtitle
-            = t('.songs_count')
+            = t('common.songs_count')
           %p.title
             = @circle&.songs&.count.to_i
       .tile.is-parent
         %article.tile.is-child.box
           %p.subtitle
-            = t('.events_count')
+            = t('common.events_count')
           %p.title
             = @circle&.events&.distinct&.count.to_i
     = render 'shared/graph', object: @circle
