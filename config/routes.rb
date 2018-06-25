@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  get '/login', to: 'sessions#new', as: :new_session
-  post '/login', to: 'sessions#create', as: :login
   delete '/logout', to: 'sessions#destroy', as: :logout
 
   get '/oauth/callback', to: 'oauths#callback'
   post '/oauth/callback', to: 'oauths#callback'
   get '/oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
-
-  get '/signup', to: 'users#new', as: :new_user
-  post '/registration', to: 'users#create', as: :users
 
   get '/original_songs', to: 'original_songs#index'
   get '/original_songs/:original_short_title/:original_song_title', to: 'original_songs#show', as: :original_song, original_song_title: %r{[^\/]+}

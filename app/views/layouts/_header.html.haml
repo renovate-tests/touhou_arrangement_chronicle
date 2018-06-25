@@ -39,10 +39,8 @@
               = link_to t('common.logout'), logout_path, { method: 'delete', class: 'has-text-dark' }
       - else
         %span.navbar-item
-          = button_to t('common.user_signup'), new_user_path, { method: 'get', class: 'button is-success is-outlined' }
-        %span.navbar-item
-          = link_to login_path, { method: 'get' } do
-            %span
-              %i.fa.fa-user
+          = button_to auth_at_provider_path(provider: :twitter), { method: 'get', class: 'button is-info is-outlined' } do
+            %span.icon.is-medium
+              %i.fab.fa-twitter
             %span
               = t('common.login')
