@@ -1,0 +1,48 @@
+#statistics
+  .tile.is-ancestor
+    .tile.is-parent
+      %article.tile.is-child.box
+        %p.title.is-size-5
+          %i.far.fa-chart-bar
+          = t(".originals_original_songs")
+        .content
+          = hidden_field_tag 'object', object.class.name
+          = hidden_field_tag 'object_id', object.id
+          .select.is-fullwidth
+            = collection_select(:original_song, :title , object.originals.uniq.sort_by{|o| o.code }, :code, :title_ja, {prompt: t(".select_original")}, {id: "select_original", "v-model": "original_code", "@change": "getOriginalSongsCount()"})
+        .content
+          %column-chart{ ":data": "count", "label": "#{t("common.songs_count")}" }
+  .tile.is-ancestor
+    .tile.is-parent.is-6
+      %article.tile.is-child.box
+        %p.title.is-size-5
+          %i.fas.fa-chart-pie
+          = t(".windows")
+        .content
+          %pie-chart{ ":data": object.originals_count("windows").to_a, "label": "#{t("common.songs_count")}" }
+    .tile.is-parent.is-6
+      %article.tile.is-child.box
+        %p.title.is-size-5
+          %i.fas.fa-chart-pie
+          = t(".pc98")
+        .content
+          %pie-chart{ ":data": object.originals_count("pc98").to_a, "label": "#{t("common.songs_count")}" }
+  .tile.is-ancestor
+    .tile.is-parent.is-6
+      %article.tile.is-child.box
+        %p.title.is-size-5
+          %i.fas.fa-chart-pie
+          = t(".music_cd")
+        .content
+          %pie-chart{ ":data": object.originals_count(["zuns_music_collection", "akyus_untouched_score"]).to_a, "label": "#{t("common.songs_count")}" }
+    .tile.is-parent.is-6
+      %article.tile.is-child.box
+        %p.title.is-size-5
+          %i.fas.fa-chart-pie
+          = t(".books_other")
+        .content
+          %pie-chart{ ":data": object.originals_count(["commercial_books", "other"]).to_a, "label": "#{t("common.songs_count")}" }
+
+= content_for :javascript do
+  = javascript_include_tag "https://www.gstatic.com/charts/loader.js"
+  = javascript_pack_tag 'chartkick'

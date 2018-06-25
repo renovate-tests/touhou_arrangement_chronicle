@@ -21,11 +21,13 @@
 #
 
 class Circle < ApplicationRecord
-  include CategoryModule
-
   has_many :artists, inverse_of: :circle, dependent: :destroy
   has_many :discographies, inverse_of: :circle, dependent: :destroy
   has_many :songs, inverse_of: :circle, dependent: :destroy
+  has_many :events, through: :discographies
+
+  include CategoryModule
+  include OriginalSongModule
 
   validates :name_ja, presence: true
 
@@ -35,4 +37,26 @@ class Circle < ApplicationRecord
     union: 'union',
     enterprise: 'enterprise',
   }
+
+  class << self
+    def all_includes
+      includes(
+        discographies:
+          [
+            :event,
+          ],
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            { lyricists: [:artist] },
+            :discography,
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+      )
+    end
+  end
 end

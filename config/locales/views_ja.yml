@@ -58,8 +58,39 @@ ja:
       note_ja: ノート
       note_en: ノート(英字)
     show:
-      title: サークル別 - %{name}
+      title: サークル別 - %{name} - 情報
       subtitle: サークル別 - %{category}
+      discographies_count: ディスコグラフィ数
+      songs_count: 曲数
+      events_count: イベント数
+    discographies:
+      index:
+        title: サークル別 - %{name} - ディスコグラフィ一覧
+        subtitle: サークル別 - %{category}
+      show:
+        title: "%{title} - %{name}"
+        discography_title: タイトル
+        circle_name: サークル
+        event_name: 頒布イベント
+        release_date: 頒布日
+        track_list: トラックリスト
+        vocalists: ボーカリスト： %{vocalists}
+        arrangers: 編曲： %{arrangers}
+        rearrangers: 再編曲： %{rearrangers}
+        composers: 作曲： %{composers}
+        lyricists: 作詞： %{lyricists}
+        original_songs: 原曲： %{original_songs}
+    songs:
+      index:
+        title: サークル別 - %{name} - 曲一覧
+        subtitle: サークル別 - %{category}
+    statistics:
+      index:
+        title: サークル別 - %{name} - 統計情報
+        subtitle: サークル別 - %{category}
+        discographies_count: ディスコグラフィ数
+        songs_count: 曲数
+        events_count: イベント数
   events:
     index:
       title: イベント別
@@ -121,6 +152,13 @@ ja:
       original_songs: 原曲
       event_title: イベント名
       release_date: 頒布日
+    graph:
+      select_original: 原作を選択してください
+      originals_original_songs: 原作・原曲
+      windows: Windows作品
+      pc98: PC-98作品
+      music_cd: 音楽CD
+      books_other: 商業書籍・その他
   users:
     form:
       name: ユーザー名

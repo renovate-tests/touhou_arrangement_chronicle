@@ -25,4 +25,23 @@ class Discography < ApplicationRecord
   belongs_to :event, optional: true
 
   validates :title_ja, presence: true
+
+  class << self
+    def all_includes
+      includes(
+        :circle,
+        :event,
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            { lyricists: [:artist] },
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+      )
+    end
+  end
 end

@@ -1,0 +1,43 @@
+- content_for :title do
+  = t('.title', name: @circle.name_ja)
+= render 'layouts/hero', title: @circle.name_ja, subtitle: t('.subtitle', category: t("category.#{@circle.category}"))
+
+.tabs
+  %ul
+    %li.is-active
+      = link_to t('common.discographies')
+    %li
+      = link_to t('common.songs'), circle_songs_path(circle_name: @circle.name_ja)
+    %li
+      = link_to t('common.statistics'), circle_statistics_path(circle_name: @circle.name_ja)
+
+.columns
+  .column.is-11
+    .columns.is-multiline
+      - @circle.discographies.sort_by{|d| d.release_date }.reverse.each do |discography|
+        .column.is-3
+          .card
+            .card-image
+              %figure.image.is-square
+                = link_to circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja) do
+                  = image_tag "http://via.placeholder.com/300x300"
+            = link_to circle_discography_path(circle_name: @circle.name_ja, title: discography.title_ja) do
+              .card-content
+                .media-content
+                  %p.title.is-6
+                    = discography.title_ja
+                  %p.subtitle.is-7
+                    = discography&.release_event
+            .card-footer
+              .card-footer-item
+                %nav.level.is-mobile
+                  .level-left
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-folder-open.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-star.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-heart.has-text-dark
