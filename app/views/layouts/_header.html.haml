@@ -1,46 +1,57 @@
 %nav.navbar.is-light
-  .navbar-brand
-    = link_to t('common.app_name'), root_path, { class: 'navbar-item has-text-dark' }
-    .navbar-burger.burger{ data: { target: 'navbar-menu' } }
-      %span
-      %span
-      %span
-  #navbar-menu.navbar-menu
-    .navbar-start
-      = link_to root_path, { class: 'navbar-item has-text-dark' } do
+  .container.is-fluid
+    .navbar-brand
+      = link_to t('common.app_name'), root_path, { class: 'navbar-item has-text-dark' }
+      .navbar-burger.burger{ data: { target: 'navbar-menu' } }
         %span
-          %i.fa.fa-home
         %span
-          = t('.home')
-      = link_to '#', { class: 'navbar-item has-text-dark' } do
         %span
-          %i.fa.fa-info-circle
-        %span
-          = t('.about')
-    .navbar-end
-      - if current_user
-        %span.navbar-item.has-dropdown.is-hoverable
-          %a.navbar-link
-            = image_tag profile_image
-          .navbar-dropdown.is-right
-            .navbar-item
-              = "@#{current_user.name}"
-            %hr.navbar-divider
-            .navbar-item
-              = t('.profile')
-            .navbar-item
-              = t('.collections')
-            .navbar-item
-              = t('.favorite')
-            .navbar-item
-              = t('.my_list')
-            %hr.navbar-divider
-            .navbar-item
-              = link_to t('common.logout'), logout_path, { method: 'delete', class: 'has-text-dark' }
-      - else
-        %span.navbar-item
-          = button_to auth_at_provider_path(provider: :twitter), { method: 'get', class: 'button is-info is-outlined' } do
-            %span.icon.is-medium
-              %i.fab.fa-twitter
-            %span
-              = t('common.login')
+    #navbar-menu.navbar-menu
+      .navbar-end
+        - if current_user
+          .navbar-item.has-dropdown.is-hoverable
+            %a.navbar-link
+              = image_tag profile_image
+            .navbar-dropdown.is-right
+              .navbar-item
+                = "@#{current_user.name}"
+              %hr.navbar-divider
+              .navbar-item
+                %span.icon
+                  %i.fas.fa-user-circle
+                %span
+                  = t('.my_page')
+              .navbar-item
+                %span.icon
+                  %i.fas.fa-folder
+                %span
+                  = t('.collections')
+              .navbar-item
+                %span.icon
+                  %i.fas.fa-star
+                %span
+                  = t('.favorite')
+              .navbar-item
+                %span.icon
+                  %i.far.fa-list-alt
+                %span
+                  = t('.list')
+              %hr.navbar-divider
+              .navbar-item
+                %span.icon
+                  %i.fas.fa-cog
+                %span
+                  = t('.settings')
+              %hr.navbar-divider
+              = link_to logout_path, { method: 'delete', class: 'has-text-dark navbar-item' } do
+                %span.icon
+                  %i.fas.fa-sign-out-alt
+                %span
+                  = t('common.logout')
+        - else
+          .navbar-item
+            = button_to auth_at_provider_path(provider: :twitter), { method: 'get', class: 'button is-info is-outlined' } do
+              %span.icon.is-medium
+                %i.fab.fa-twitter
+              %span
+                = t('common.login')

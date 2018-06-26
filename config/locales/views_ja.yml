@@ -11,10 +11,11 @@ ja:
     header:
       home: ホーム
       about: About
-      profile: プロフィール
+      my_page: マイページ
       collections: コレクション
       favorite: お気に入り
-      my_list: マイリスト
+      list: リスト
+      settings: 設定
     side_menu:
       search: 検索
       detail_search: 詳細検索
