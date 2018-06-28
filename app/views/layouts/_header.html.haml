@@ -16,42 +16,42 @@
               .navbar-item
                 = "@#{current_user.name}"
               %hr.navbar-divider
-              .navbar-item
+              = link_to user_path(name: current_user.name), { class: 'navbar-item' } do
                 %span.icon
-                  %i.fas.fa-user-circle
+                  %i.mdi.mdi-18px.mdi-account-circle
                 %span
                   = t('.my_page')
               .navbar-item
                 %span.icon
-                  %i.fas.fa-folder
+                  %i.mdi.mdi-18px.mdi-folder
                 %span
                   = t('.collections')
               .navbar-item
                 %span.icon
-                  %i.fas.fa-star
+                  %i.mdi.mdi-18px.mdi-heart
                 %span
                   = t('.favorite')
               .navbar-item
                 %span.icon
-                  %i.far.fa-list-alt
+                  %i.mdi.mdi-18px.mdi-library-music
                 %span
                   = t('.list')
               %hr.navbar-divider
               .navbar-item
                 %span.icon
-                  %i.fas.fa-cog
+                  %i.mdi.mdi-18px.mdi-settings
                 %span
                   = t('.settings')
               %hr.navbar-divider
               = link_to logout_path, { method: 'delete', class: 'has-text-dark navbar-item' } do
                 %span.icon
-                  %i.fas.fa-sign-out-alt
+                  %i.mdi.mdi-18px.mdi-logout
                 %span
                   = t('common.logout')
         - else
           .navbar-item
             = button_to auth_at_provider_path(provider: :twitter), { method: 'get', class: 'button is-info is-outlined' } do
               %span.icon.is-medium
-                %i.fab.fa-twitter
+                %i.mdi.mdi-18px.mdi-twitter
               %span
                 = t('common.login')
