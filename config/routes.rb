@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get '/@:name', to: 'users#show', as: :user
   delete '/logout', to: 'sessions#destroy', as: :logout
 
   get '/oauth/callback', to: 'oauths#callback'

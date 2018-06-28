@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    render layout: 'user_page'
+  end
+
   private
 
     def user_params

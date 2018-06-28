@@ -1,0 +1,13 @@
+- content_for :title do
+  = "@#{current_user.name}"
+%section.section
+  .columns
+    .column.is-2
+      .tile.is-ancestor
+        .tile.is-vertical
+          .tile
+            %figure.is-1by1
+              = image_tag profile_image
+          .tile
+            %h3.is-size-4= "@#{current_user.name}"
+    .column
