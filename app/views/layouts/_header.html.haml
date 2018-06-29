@@ -11,7 +11,7 @@
         - if current_user
           .navbar-item.has-dropdown.is-hoverable
             %a.navbar-link
-              = image_tag profile_image
+              = image_tag profile_image, class: 'rounded-1'
             .navbar-dropdown.is-right
               .navbar-item
                 = "@#{current_user.name}"
@@ -35,7 +35,7 @@
                 %span.icon
                   %i.mdi.mdi-18px.mdi-library-music
                 %span
-                  = t('.list')
+                  = t('.mylist')
               %hr.navbar-divider
               .navbar-item
                 %span.icon

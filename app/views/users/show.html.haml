@@ -2,12 +2,22 @@
   = "@#{current_user.name}"
 %section.section
   .columns
-    .column.is-2
+    .column.is-3
       .tile.is-ancestor
         .tile.is-vertical
           .tile
             %figure.is-1by1
-              = image_tag profile_image
+              = image_tag profile_image, size: '230x230', class: 'rounded-2'
           .tile
             %h3.is-size-4= "@#{current_user.name}"
     .column
+      .tabs
+        %ul
+          %li.is-active
+            = link_to t('common.orverview'), '#'
+          %li
+            = link_to t('common.collections'), '#'
+          %li
+            = link_to t('common.favorite'), '#'
+          %li
+            = link_to t('common.mylist'), '#'
