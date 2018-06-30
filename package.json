@@ -11,6 +11,7 @@
     "bulma": "^0.7.0",
     "bulma-extensions": "^1.0.14",
     "font-awesome": "^4.7.0",
+    "mdi": "^2.2.43",
     "qs": "^6.5.2",
     "vue": "^2.5.16",
     "vue-chartkick": "^0.4.0",

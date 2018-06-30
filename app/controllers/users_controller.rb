@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show(name)
+    @user = User.find_by!(name: name)
+    render layout: 'user_page'
+  end
+
   private
 
     def user_params

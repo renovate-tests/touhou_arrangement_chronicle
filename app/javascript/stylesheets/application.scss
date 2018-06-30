@@ -1,6 +1,9 @@
 @import '~bulma/bulma';
 @import '~bulma-extensions/dist/bulma-extensions.min';
 
+$mdi-font-path: '~mdi/fonts/';
+@import '~mdi/scss/materialdesignicons';
+
 html {
   height: 100%;
 }
@@ -9,6 +12,10 @@ body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+#main.container{
+  flex: 1;
 }
 
 #main.content {
@@ -21,4 +28,12 @@ body{
 
 .side_menu {
   margin: 12px;
+}
+
+.rounded-1 {
+  border-radius: 3px;
+}
+
+.rounded-2 {
+  border-radius: 6px;
 }

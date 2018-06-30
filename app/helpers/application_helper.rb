@@ -12,6 +12,10 @@ module ApplicationHelper
     current_user.image_path || current_user.gravatar_url(default: 'mm')
   end
 
+  def avatar_image
+    @user.image_path || @user.gravatar_url(default: 'mm')
+  end
+
   def current_class?(path)
     (request.path == path) ? 'is-active' : ''
   end
