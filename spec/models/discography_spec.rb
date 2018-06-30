@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Discography, type: :model do
   describe 'has_many' do
     it { is_expected.to have_many(:songs) }
+    it { is_expected.to have_many(:collections) }
+    it { is_expected.to have_many(:users) }
   end
 
   describe 'belongs_to' do

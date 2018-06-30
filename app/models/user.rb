@@ -26,6 +26,10 @@ class User < ApplicationRecord
 
   has_many :artists, inverse_of: :user, dependent: :destroy
   has_many :authentications, dependent: :destroy
+
+  has_many :collections, dependent: :destroy
+  has_many :discographies, through: :collections
+
   accepts_nested_attributes_for :authentications
 
   validates :name, presence: true
