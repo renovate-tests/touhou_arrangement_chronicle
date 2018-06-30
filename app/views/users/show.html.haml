@@ -1,15 +1,15 @@
 - content_for :title do
-  = "@#{current_user.name}"
+  = "@#{@user.name}"
 %section.section
   .columns
-    .column.is-3
+    .column.is-2
       .tile.is-ancestor
         .tile.is-vertical
           .tile
             %figure.is-1by1
-              = image_tag profile_image, size: '230x230', class: 'rounded-2'
+              = image_tag avatar_image, size: '180x180', class: 'rounded-2'
           .tile
-            %h3.is-size-4= "@#{current_user.name}"
+            %h3.is-size-6= "@#{@user.name}"
     .column
       .tabs
         %ul

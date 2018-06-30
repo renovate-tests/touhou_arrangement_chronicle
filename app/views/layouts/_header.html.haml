@@ -37,7 +37,7 @@
                 %span
                   = t('.mylist')
               %hr.navbar-divider
-              .navbar-item
+              = link_to settings_account_path, { class: 'navbar-item' } do
                 %span.icon
                   %i.mdi.mdi-18px.mdi-settings
                 %span

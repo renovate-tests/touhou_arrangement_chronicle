@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def show(name)
+    @user = User.find_by!(name: name)
     render layout: 'user_page'
   end
 

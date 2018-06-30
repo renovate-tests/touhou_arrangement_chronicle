@@ -1,0 +1,23 @@
+%section.section
+  .columns
+    .column.is-3
+      %nav.panel
+        .panel-heading
+          .title.is-size-6= t('.account_name', name: current_user.name)
+        = link_to settings_account_path, { class: 'panel-block is-active' } do
+          %span.panel-icon
+            %i.mdi.mdi-18px.mdi-account
+          = t('.account')
+    .column
+      %nav.panel
+        .panel-heading.has-background-danger
+          .title.is-size-6.has-text-white
+            %span
+              %i.fas.fa-trash-alt
+            %span
+              = t('.account_delete')
+        .panel-block
+          .content
+            %p= t('.delete_description')
+            = link_to settings_account_path, { data: { confirm: t('.confirm') }, method: :delete, class: 'button is-danger is-outlined' } do
+              .has-text-weight-bold= t('.delete')

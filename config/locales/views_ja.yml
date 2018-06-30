@@ -142,6 +142,15 @@ ja:
     form:
       name_or_email: ユーザー名または、メールアドレス
       password: パスワード
+  settings:
+    account:
+      index:
+        account_name: "@%{name} アカウント"
+        account: アカウント
+        account_delete: アカウント削除
+        delete_description: 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+        delete: アカウントを削除する
+        confirm: "一度アカウントを削除すると、二度と元に戻せません。\n本当に削除しますか？"
   shared:
     songs:
       circle_name: サークル名
