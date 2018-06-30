@@ -25,4 +25,9 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
   end
+
+  describe 'has_many' do
+    it { is_expected.to have_many(:collections) }
+    it { is_expected.to have_many(:discographies) }
+  end
 end
