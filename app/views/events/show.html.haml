@@ -2,27 +2,42 @@
   = t('.title', title: @event&.title)
 = render 'layouts/hero', title: @event&.title, subtitle: t('.subtitle')
 
-%span
-  .columns
-    .column.is-11
+.tabs
+  %ul
+    %li.is-active
+      = link_to t('common.discographies')
+    %li
+      = link_to t('common.songs'), '#'
+    %li
+      = link_to t('common.statistics'), '#'
+
+.columns
+  .column.is-11
+    .columns.is-multiline
       - @event&.discographies&.each do |discography|
-        .box
-          %article.media
-            .media-left
-              %figure.image.is-64x64
-                = image_tag "http://via.placeholder.com/300x300"
-            .media-content
-              .content
-                .has-text-weight-bold= discography.title_ja
-                = discography&.circle&.name_ja
-              %nav.level.is-mobile
-                .level-left
-                  %a.level-item
-                    %span.icon.is-small
-                      %i.far.fa-folder-open.has-text-dark
-                  %a.level-item
-                    %span.icon.is-small
-                      %i.far.fa-star.has-text-dark
-                  %a.level-item
-                    %span.icon.is-small
-                      %i.far.fa-heart.has-text-dark
+        .column.is-3
+          .card
+            .card-image
+              %figure.image.is-square
+                = link_to '#' do
+                  = image_tag "http://via.placeholder.com/300x300"
+            = link_to '#' do
+              .card-content
+                .media-content
+                  %p.title.is-6
+                    = discography.title_ja
+                  %p.subtitle.is-7
+                    = discography&.circle&.name_ja
+            .card-footer
+              .card-footer-item
+                %nav.level.is-mobile
+                  .level-left
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-folder-open.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-star.has-text-dark
+                    %a.level-item
+                      %span.icon.is-small
+                        %i.far.fa-heart.has-text-dark
