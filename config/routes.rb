@@ -19,11 +19,34 @@ Rails.application.routes.draw do
   get '/events/new', to: 'events#new'
   get '/events/series/:series_title', to: 'events/series#show', as: 'events_series', series_title: %r{[^\/]+}
   get '/events/series/:series_title/:title', to: 'events#show', as: 'events_series_show', series_title: %r{[^\/]+}, title: %r{[^\/]+}
-  get '/events/series/:series_title/:title/:days', to: 'events#show', as: 'events_series_days_show', series_title: %r{[^\/]+}, title: %r{[^\/]+}
+  get '/events/series/:series_title/:event_title/:circle_name/:discography_title', to: 'events/discographies#show',
+                                                                                   as: 'events_series_discography_show',
+                                                                                   series_title: %r{[^\/]+},
+                                                                                   event_title: %r{[^\/]+},
+                                                                                   circle_name: %r{[^\/]+},
+                                                                                   discography_title: %r{[^\/]+}
+  get '/events/series/:series_title/:title-:days', to: 'events#show', as: 'events_series_days_show', series_title: %r{[^\/]+}, title: %r{[^\/]+}
+  get '/events/series/:series_title/:event_title-:days/:circle_name/:discography_title', to: 'events/discographies#show',
+                                                                                         as: 'events_series_days_discography_show',
+                                                                                         series_title: %r{[^\/]+},
+                                                                                         event_title: %r{[^\/]+},
+                                                                                         circle_name: %r{[^\/]+},
+                                                                                         discography_title: %r{[^\/]+}
   get '/events/date/:year', to: 'events/date#show', as: 'events_date', year: /\d{4}/
   get '/events/date/:year/:title', to: 'events#show', as: 'events_date_show', year: /\d{4}/, title: %r{[^\/]+}
-  get '/events/date/:year/:title/:days', to: 'events#show', as: 'events_date_days_show', year: /\d{4}/, title: %r{[^\/]+}
-
+  get '/events/date/:year/:event_title/:circle_name/:discography_title', to: 'events/discographies#show',
+                                                                         as: 'events_date_discography_show',
+                                                                         year: /\d{4}/,
+                                                                         event_title: %r{[^\/]+},
+                                                                         circle_name: %r{[^\/]+},
+                                                                         discography_title: %r{[^\/]+}
+  get '/events/date/:year/:title-:days', to: 'events#show', as: 'events_date_days_show', year: /\d{4}/, title: %r{[^\/]+}
+  get '/events/date/:year/:event_title-:days/:circle_name/:discography_title', to: 'events/discographies#show',
+                                                                               as: 'events_date_days_discography_show',
+                                                                               year: /\d{4}/,
+                                                                               event_title: %r{[^\/]+},
+                                                                               circle_name: %r{[^\/]+},
+                                                                               discography_title: %r{[^\/]+}
   resources :circles, only: %i[index new create show], param: :name, name: %r{[^\/]+} do
     resources :discographies, only: %i[index show], module: 'circles', param: :title, title: %r{[^\/]+}
     resources :songs, only: %i[index], module: 'circles'
