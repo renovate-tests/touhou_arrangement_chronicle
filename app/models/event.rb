@@ -24,10 +24,18 @@
 class Event < ApplicationRecord
   has_many :discographies, inverse_of: :event, dependent: :destroy
   has_many :songs, inverse_of: :event, dependent: :destroy
+  has_many :arrangers, through: :songs
+  has_many :circles, through: :songs
+  has_many :composers, through: :songs
+  has_many :lyricists, through: :songs
+  has_many :rearrangers, through: :songs
+  has_many :vocalists, through: :songs
 
   belongs_to :event_series
 
   delegate :title_ja, :title_en, to: :event_series, prefix: true, allow_nil: true
+
+  include OriginalSongModule
 
   validates :title_ja, presence: true
   validates :display_title_ja, presence: true
@@ -47,7 +55,7 @@ class Event < ApplicationRecord
             { rearrangers: [:artist] },
             { vocalists: [:artist] },
           ],
-        )
+      )
     end
   end
 end

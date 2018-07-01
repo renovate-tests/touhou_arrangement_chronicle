@@ -46,4 +46,20 @@ module EventDecorator
       end
     end
   end
+
+  def event_statistics_url(year = nil)
+    if year
+      if title_ja.include?("コミックマーケット") && days > 1
+        events_date_days_statistics_path(year: year, title: title_ja, days: days)
+      else
+        events_date_statistics_path(year: year, title: title_ja)
+      end
+    else
+      if title_ja.include?("コミックマーケット") && days > 1
+        events_series_days_statistics_path(series_title: event_series&.title_ja, title: title_ja, days: days)
+      else
+        events_series_statistics_path(series_title: event_series&.title_ja, title: title_ja)
+      end
+    end
+  end
 end

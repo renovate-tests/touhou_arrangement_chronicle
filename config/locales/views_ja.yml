@@ -122,6 +122,11 @@ ja:
       index:
         title: イベント別 - %{title} - 曲一覧
         subtitle: イベント別
+    statistics:
+      index:
+        title: イベント別 - %{title} - 統計情報
+        subtitle: イベント別
+
   lyricists:
     index:
       title: 作詞者別

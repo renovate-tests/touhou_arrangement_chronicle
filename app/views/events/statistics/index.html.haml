@@ -1,0 +1,36 @@
+- content_for :title do
+  = t('.title', title: @event&.title)
+= render 'layouts/hero', title: @event&.title, subtitle: t('.subtitle')
+
+.columns
+  .column.is-11
+    .tabs
+      %ul
+        %li
+          = link_to t('common.discographies'), @event&.event_url(params[:year])
+        %li
+          = link_to t('common.songs'), @event&.event_songs_url(params[:year])
+        %li.is-active
+          = link_to t('common.statistics'), @event&.event_statistics_url(params[:year])
+
+    .tile.is-ancestor.has-text-centered
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.discographies_count')
+          %p.title
+            = @event&.discographies&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.songs_count')
+          %p.title
+            = @event&.songs&.distinct&.count.to_i
+      .tile.is-parent
+        %article.tile.is-child.box
+          %p.subtitle
+            = t('common.circles_count')
+          %p.title
+            = @event&.circles&.distinct&.count.to_i
+
+    = render 'shared/graph', object: @event
