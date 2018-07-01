@@ -5,9 +5,9 @@
 .tabs
   %ul
     %li.is-active
-      = link_to t('common.discographies')
+      = link_to t('common.discographies'), @event&.event_url(params[:year])
     %li
-      = link_to t('common.songs'), '#'
+      = link_to t('common.songs'), @event&.event_songs_url(params[:year])
     %li
       = link_to t('common.statistics'), '#'
 

@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   end
 
   def show(title, series_title = nil, year = nil)
-    if series_title == "コミックマーケット"
+    if title.include?("コミックマーケット")
       title, days = title.split('-')
     end
     days = days.presence || 1

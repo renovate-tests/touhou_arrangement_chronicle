@@ -1,0 +1,14 @@
+- content_for :title do
+  = t('.title', title: @event&.title)
+= render 'layouts/hero', title: @event&.title, subtitle: t('.subtitle')
+
+.tabs
+  %ul
+    %li
+      = link_to t('common.discographies'), @event&.event_url(params[:year])
+    %li.is-active
+      = link_to t('common.songs'), @event&.event_songs_url(params[:year])
+    %li
+      = link_to t('common.statistics'), '#'
+
+= render 'shared/songs', songs: @event.songs

@@ -31,4 +31,23 @@ class Event < ApplicationRecord
 
   validates :title_ja, presence: true
   validates :display_title_ja, presence: true
+
+  class << self
+    def all_includes
+      includes(
+        :discographies,
+        songs:
+          [
+            { arrangers: [:artist] },
+            :circle,
+            { composers: [:artist] },
+            { lyricists: [:artist] },
+            :discography,
+            :original_songs,
+            { rearrangers: [:artist] },
+            { vocalists: [:artist] },
+          ],
+        )
+    end
+  end
 end

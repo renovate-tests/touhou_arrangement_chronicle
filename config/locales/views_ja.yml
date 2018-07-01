@@ -118,6 +118,10 @@ ja:
         title: イベント別 - %{year}年
         subtitle: イベント別 - 日付別
         year: "%{year}年"
+    songs:
+      index:
+        title: イベント別 - %{title} - 曲一覧
+        subtitle: イベント別
   lyricists:
     index:
       title: 作詞者別
