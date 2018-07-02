@@ -24,7 +24,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def show(title, series_title = nil, year = nil, days = 1)
+  def show(title, series_title = nil, year = nil)
+    if title.include?("コミックマーケット")
+      title, days = title.split('-')
+    end
+    days = days.presence || 1
     @event = Event.includes(:event_series, discographies: :circle).find_by(title_ja: title.tr('／', '/'), days: days)
   end
 

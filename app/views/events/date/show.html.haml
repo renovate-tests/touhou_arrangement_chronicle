@@ -8,7 +8,7 @@
         %p
           = t('.year', year: @year)
       - @events.each do |event|
-        = link_to event.event_date_url(@year), class: 'panel-block' do
+        = link_to event.event_url(@year), class: 'panel-block' do
           %span.panel-icon
             %i.fa.fa-angle-right
           = event&.display_title
