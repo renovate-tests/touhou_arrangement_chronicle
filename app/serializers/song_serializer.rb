@@ -1,5 +1,5 @@
 class SongSerializer < ApplicationSerializer
-  attributes :title_ja, :title_en, :track_number, :length, :bpm
+  attributes :id, :title_ja, :title_en, :track_number, :length, :bpm
   attributes :vocalists, :composers, :arrangers, :rearrangers, :lyricists, :original_songs
   attributes :circle, :discography, :event
 

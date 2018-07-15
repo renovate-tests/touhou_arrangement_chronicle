@@ -52,6 +52,7 @@ class Circle < ApplicationRecord
             { composers: [:artist] },
             { lyricists: [:artist] },
             :discography,
+            :event,
             :original_songs,
             { rearrangers: [:artist] },
             { vocalists: [:artist] },
