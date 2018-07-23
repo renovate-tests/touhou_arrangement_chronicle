@@ -11,7 +11,7 @@
                 = t('.title')
           .level-right
             .level-item
-              - if current_user
+              - if logged_in?
                 = link_to new_circle_path, class: 'button is-primary' do
                   = t('common.add')
 .tabs

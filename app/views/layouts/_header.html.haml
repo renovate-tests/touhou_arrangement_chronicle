@@ -8,7 +8,7 @@
         %span
     #navbar-menu.navbar-menu
       .navbar-end
-        - if current_user
+        - if logged_in?
           .navbar-item.has-dropdown.is-hoverable
             %a.navbar-link
               = image_tag profile_image, class: 'rounded-1'
