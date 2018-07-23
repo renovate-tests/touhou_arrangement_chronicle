@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    redirect_back_or_to(root_path) if current_user
+    redirect_back_or_to(root_path) if logged_in?
     render :new, layout: 'authentication'
   end
 
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if current_user
+    if logged_in?
       logout
       redirect_to(root_path, notice: "ログアウトしました")
     else
