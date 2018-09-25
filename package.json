@@ -9,7 +9,7 @@
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
     "bulma": "^0.7.0",
-    "bulma-extensions": "^1.0.14",
+    "bulma-extensions": "^3.0.0",
     "font-awesome": "^4.7.0",
     "mdi": "^2.2.43",
     "qs": "^6.5.2",
