@@ -1239,9 +1239,9 @@ chalk@^2.0.1, chalk@^2.4.1:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chartkick@^2.3.6:
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/chartkick/-/chartkick-2.3.6.tgz#a507c54da7d117e66c9a9c5309f7ecccc2d28b51"
+chartkick@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/chartkick/-/chartkick-3.0.1.tgz#f325041bfc15f5d18074d4803549efc3751ccd81"
 
 chokidar@^2.0.0, chokidar@^2.0.2:
   version "2.0.3"
@@ -6023,11 +6023,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-chartkick@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/vue-chartkick/-/vue-chartkick-0.4.0.tgz#51c96bb1514bbcd5f41ee7388450c1b0ab6cc7f5"
+vue-chartkick@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/vue-chartkick/-/vue-chartkick-0.5.0.tgz#3ede6a3042e5436f82228b89886f867a0d1dbc14"
   dependencies:
-    chartkick "^2.3.6"
+    chartkick "^3.0.0"
     deep-equal "^1.0.1"
     deepmerge "^2.1.1"
 
