@@ -6,6 +6,10 @@ inherit_gem:
     # uncomment if use rspec cops
     - "config/rspec.yml"
 
+RSpec/DescribedClass:
+  Exclude:
+    - 'spec/decorators/**_spec.rb'
+
 AllCops:
   TargetRubyVersion: 2.5
   # uncomment if use rails cops
