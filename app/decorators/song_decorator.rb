@@ -10,23 +10,23 @@ module SongDecorator
   end
 
   def arrangers_name
-    arrangers&.map {|a| a.name_ja }.join(", ")
+    arrangers&.map {|a| a.name_ja }&.join(", ")
   end
 
   def rearrangers_name
-    rearrangers&.map {|a| a.name_ja }.join(", ")
+    rearrangers&.map {|a| a.name_ja }&.join(", ")
   end
 
   def composers_list
     if composers.present?
       safe_join(composers&.map {|c| c.name_ja }, tag.br)
     else
-      safe_join(original_songs&.map {|os| os.composer }.uniq, tag.br)
+      safe_join(original_songs&.map {|os| os.composer }&.uniq, tag.br)
     end
   end
 
   def composers_name
-    composers&.map {|c| c.name_ja }.join(", ")
+    composers&.map {|c| c.name_ja }&.join(", ")
   end
 
   def lyricists_list
@@ -34,7 +34,7 @@ module SongDecorator
   end
 
   def lyricists_name
-    lyricists&.map {|l| l.name_ja }.join(", ")
+    lyricists&.map {|l| l.name_ja }&.join(", ")
   end
 
   def rearrangers_list
@@ -46,7 +46,7 @@ module SongDecorator
   end
 
   def vocalists_name
-    vocalists&.map {|v| v.name_ja }.join(", ")
+    vocalists&.map {|v| v.name_ja }&.join(", ")
   end
 
   def original_songs_list
@@ -54,6 +54,6 @@ module SongDecorator
   end
 
   def original_songs_title
-    original_songs&.map {|os| os.title_ja }.join(", ")
+    original_songs&.map {|os| os.title_ja }&.join(", ")
   end
 end
