@@ -1,0 +1,33 @@
+%aside.menu
+  %p.menu-label
+    Search
+  %ul.menu-list
+    %li
+      %a= t('.search')
+    %li
+      %a= t('.detail_search')
+  %p.menu-label
+    General
+  %ul.menu-list
+    %li
+      = link_to t('.original_song'), original_songs_path, { class: current_class?(original_songs_path) }
+    %li
+      = link_to t('.event'), events_path, { class: current_class?(events_path) }
+    %li
+      = link_to t('.circle'), circles_path, { class: current_class?(circles_path) }
+    %li
+      = link_to t('.artist'), artists_path, { class: current_class?(artists_path) }
+      %ul
+        %li
+          = link_to t('.vocalist'), vocalists_path, { class: current_class?(vocalists_path) }
+        %li
+          = link_to t('.arranger'), arrangers_path, { class: current_class?(arrangers_path) }
+        %li
+          = link_to t('.lyricist'), lyricists_path, { class: current_class?(lyricists_path) }
+  - if logged_in?
+    %p.menu-label
+      Administrator
+    %ul.menu-list
+      %li
+        = link_to t('.admin_panel'), admin_root_path
+

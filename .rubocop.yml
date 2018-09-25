@@ -16,3 +16,10 @@ Style/StringLiterals:
 
 AlignParameters:
   EnforcedStyle: with_fixed_indentation
+
+Rails/OutputSafety:
+  Exclude:
+    - 'config/application.rb'
+
+Metrics/PerceivedComplexity:
+  Max: 10

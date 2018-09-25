@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: composers
+#
+#  id          :uuid             not null, primary key
+#  artist_id   :uuid             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  songs_count :integer          default(0), not null
+#
+# Indexes
+#
+#  index_composers_on_artist_id  (artist_id) UNIQUE
+#
+# Foreign Keys
+#
+#  fk_rails_...  (artist_id => artists.id)
+#
+
+class Composer < ApplicationRecord
+  include ArtistModule
+
+  has_many :song_composers, dependent: :destroy
+  has_many :songs, through: :song_composers
+
+  belongs_to :artist
+end

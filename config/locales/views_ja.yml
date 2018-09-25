@@ -1,0 +1,204 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
+
+  layouts:
+    header:
+      home: ホーム
+      about: About
+      my_page: マイページ
+      collections: コレクション
+      favorite: お気に入り
+      mylist: マイリスト
+      settings: 設定
+    side_menu:
+      search: 検索
+      detail_search: 詳細検索
+      original_song: 原曲別
+      event: イベント別
+      circle: サークル別
+      artist: アーティスト別
+      vocalist: ボーカリスト別
+      arranger: 編曲者別
+      lyricist: 作詞者別
+      admin_panel: 管理画面
+  arrangers:
+    index:
+      title: 編曲者別
+      column: 行
+      no_arranger: 編曲者が見つかりません
+    show:
+      title: 編曲者別 - %{name} - 曲一覧
+      subtitle: 編曲者別 - %{category}
+    statistics:
+      index:
+        title: 編曲者別 - %{name} - 統計情報
+        subtitle: 編曲者別 - %{category}
+  artists:
+    index:
+      title: アーティスト別
+      column: 行
+      no_artist: アーティストが見つかりません
+    show:
+      title: アーティスト別 - %{name}
+      subtitle: アーティスト別 - %{category}
+  circles:
+    index:
+      title: サークル別
+      column: 行
+      no_circle: サークルが見つかりません
+    new:
+      title: サークル新規作成
+    form:
+      name_ja: サークル名
+      name_en: サークル名(英字)
+      circle_type: サークル種別
+      site_url: サイトURL
+      blog_url: ブログURL
+      note_ja: ノート
+      note_en: ノート(英字)
+    show:
+      title: サークル別 - %{name} - 情報
+      subtitle: サークル別 - %{category}
+    discographies:
+      index:
+        title: サークル別 - %{name} - ディスコグラフィ一覧
+        subtitle: サークル別 - %{category}
+      show:
+        title: "%{title} - %{name}"
+        discography_title: タイトル
+        circle_name: サークル
+        event_name: 頒布イベント
+        release_date: 頒布日
+        track_list: トラックリスト
+        vocalists: ボーカリスト： %{vocalists}
+        arrangers: 編曲： %{arrangers}
+        rearrangers: 再編曲： %{rearrangers}
+        composers: 作曲： %{composers}
+        lyricists: 作詞： %{lyricists}
+        original_songs: 原曲： %{original_songs}
+    songs:
+      index:
+        title: サークル別 - %{name} - 曲一覧
+        subtitle: サークル別 - %{category}
+    statistics:
+      index:
+        title: サークル別 - %{name} - 統計情報
+        subtitle: サークル別 - %{category}
+  events:
+    index:
+      title: イベント別
+      event_series: シリーズ別
+      date: 日付別
+      series_title: シリーズ名
+      year: 年別
+    new:
+      title: イベント新規作成
+    form:
+      series_title: シリーズ名
+      event_title: イベント名
+      display_title: 表示イベント名
+      times: 開催回数
+      days: 日目
+      date: 開催日
+    show:
+      title: イベント別 - %{title}
+      subtitle: イベント別
+    series:
+      show:
+        title: イベント別 - %{series_title}
+        subtitle: イベント別 - シリーズ別
+    date:
+      show:
+        title: イベント別 - %{year}年
+        subtitle: イベント別 - 日付別
+        year: "%{year}年"
+    songs:
+      index:
+        title: イベント別 - %{title} - 曲一覧
+        subtitle: イベント別
+    statistics:
+      index:
+        title: イベント別 - %{title} - 統計情報
+        subtitle: イベント別
+
+  lyricists:
+    index:
+      title: 作詞者別
+      column: 行
+      no_lyricist: 作詞者が見つかりません
+    show:
+      title: 作詞者別 - %{name} - 曲一覧
+      subtitle: 作詞者別 - %{category}
+    statistics:
+      index:
+        title: 作詞者別 - %{name} - 統計情報
+        subtitle: 作詞者別 - %{category}
+  original_songs:
+    index:
+      title: 原曲別
+    show:
+      title: 原曲別 - %{song_title}
+      subtitle: 原曲別 - %{original_title}
+  sessions:
+    new:
+      login_title: 東方編曲録 にログイン
+    form:
+      name_or_email: ユーザー名または、メールアドレス
+      password: パスワード
+  settings:
+    account:
+      index:
+        account_name: "@%{name} アカウント"
+        account: アカウント
+        account_delete: アカウント削除
+        delete_description: 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+        delete: アカウントを削除する
+        confirm: "一度アカウントを削除すると、二度と元に戻せません。\n本当に削除しますか？"
+  shared:
+    songs:
+      circle_name: サークル名
+      song_title: 曲名
+      discography_title: ディスコグラフィ
+      vocalists: ボーカリスト
+      composers: 作曲者
+      arrangers: 編曲者
+      rearrangers: 再編曲者
+      lyricists: 作詞者
+      original_songs: 原曲
+      event_title: イベント名
+      release_date: 頒布日
+    graph:
+      select_original: 原作を選択してください
+      originals_original_songs: 原作・原曲
+      windows: Windows作品
+      pc98: PC-98作品
+      music_cd: 音楽CD
+      books_other: 商業書籍・その他
+  users:
+    form:
+      name: ユーザー名
+      name_help: ユーザー名は%{min}文字以上%{max}文字以内で、半角英字・数字・-(ハイフン)・.(ピリオド)が使えます。
+      email: メールアドレス
+      password: パスワード
+      password_help: パスワードは%{min}文字以上%{max}文字以内で、半角英字・数字・記号が使えます。
+    new:
+      welcome_message: 東方編曲録へようこそ！
+      start_message: 新規登録(無料)して利用を開始しましょう。
+  vocalists:
+    index:
+      title: ボーカリスト別
+      column: 行
+      no_vocalist: ボーカリストが見つかりません
+    show:
+      title: ボーカリスト別 - %{name} - 曲一覧
+      subtitle: ボーカリスト別 - %{category}
+    statistics:
+      index:
+        title: ボーカリスト別 - %{name} - 統計情報
+        subtitle: ボーカリスト別 - %{category}

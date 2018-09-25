@@ -1,0 +1,11 @@
+.columns
+  .column.is-11
+    #songs
+      %v-client-table{ ":columns": "columns", ":data": ActiveModel::Serializer::CollectionSerializer.new(songs).to_json, ":options": "options" }
+        %span{ "slot": 'vocalists', "slot-scope": 'props', "v-cloak": true } {{props.row.vocalists.join('\n')}}
+        %span{ "slot": 'arrangers', "slot-scope": 'props', "v-cloak": true } {{props.row.arrangers.join('\n')}}
+        %span{ "slot": 'lyricists', "slot-scope": 'props', "v-cloak": true } {{props.row.lyricists.join('\n')}}
+        %span{ "slot": 'original_songs', "slot-scope": 'props', "v-cloak": true } {{props.row.original_songs.join('\n')}}
+
+= content_for :javascript do
+  = javascript_pack_tag 'songs_list_ja'

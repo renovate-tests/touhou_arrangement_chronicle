@@ -1,0 +1,32 @@
+- provide :title, t('common.user_signup')
+.columns.is-mobile.is-centered.is-hidden-desktop
+  .column
+    %p.is-size-3.has-text-centered= t('.welcome_message')
+    %p.is-size-6.has-text-centered= t('.start_message')
+    %hr
+    = link_to auth_at_provider_path(provider: :twitter), class: 'button is-large is-fullwidth is-info' do
+      %span.icon.is-medium
+        %i.fab.fa-twitter
+      %span
+        = t('common.signup_with_twitter')
+    %hr
+    = link_to t('common.login'), login_path
+    .is-divider{ data: { content: 'OR' } }
+    = render 'form'
+.columns.is-desktop.is-centered.is-hidden-touch
+  .column.is-two-thirds
+    %p.is-size-3.has-text-centered= t('.welcome_message')
+    %p.is-size-5.has-text-centered= t('.start_message')
+    %hr
+    .columns
+      .column
+        = link_to auth_at_provider_path(provider: :twitter), class: 'button is-large is-fullwidth is-info' do
+          %span.icon.is-medium
+            %i.fab.fa-twitter
+          %span
+            = t('common.signup_with_twitter')
+        .is-divider
+          = link_to t('common.login'), login_path
+      .is-divider-vertical{ data: { content: 'OR' } }
+      .column
+        = render 'form'

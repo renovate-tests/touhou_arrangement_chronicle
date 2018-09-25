@@ -3,19 +3,23 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
-    %title TouhouArrangementChronicle
+    %title= content_for?(:title) ? t('common.page_title', title: yield(:title)) : t('common.app_fullname')
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body
     %header
-      %nav.navbar.is-light
-        .navbar-brand
-          %span.navbar-item
-            東方編曲録
-        .navbar-end
-          %span.navbar-item
-            %a.fa.fa-user{:href => "#"} ログイン
-    = yield
+      = render 'layouts/header'
+    #main.columns
+      .column.is-narrow.is-hidden-touch
+        .side_menu
+          .box
+            = render 'layouts/side_menu'
+      #app.column
+        = render 'shared/notification'
+        = yield
+    %footer.footer
+      = render 'layouts/footer'
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
+    = javascript_pack_tag 'navbar-burger'
+    = yield :javascript

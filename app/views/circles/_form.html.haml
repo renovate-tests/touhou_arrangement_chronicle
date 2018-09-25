@@ -1,0 +1,75 @@
+= form_with(model: circle, url: circles_path, local: true) do |f|
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :name_ja, class: 'label' do
+        = t('.name_ja')
+        %span.tag.is-danger
+          = t('common.required')
+    .field-body
+      .field
+        .control
+          = f.text_field :name_ja, class: 'input', required: true
+        - if circle.errors.full_messages_for(:name_ja)
+          %p.help.is-danger
+            - circle.errors.full_messages_for(:name_ja).each do |error|
+              = error
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :name_en, class: 'label' do
+        = t('.name_en')
+    .field-body
+      .field
+        .control
+          = f.text_field :name_en, class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :circle_type, class: 'label' do
+        = t('.circle_type')
+    .field-body
+      .field
+        .control.is-expanded
+          .select
+            = f.select :circle_type, Circle.circle_types_i18n.except(:originator).keys.map {|k| [Circle.circle_types_i18n[k], k]}
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :site_url, class: 'label' do
+        = t('.site_url')
+    .field-body
+      .field
+        .control
+          = f.text_field :site_url, class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :blog_url, class: 'label' do
+        = t('.blog_url')
+    .field-body
+      .field
+        .control
+          = f.text_field :blog_url, class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :note_ja, class: 'label' do
+        = t('.note_ja')
+    .field-body
+      .field
+        .control
+          = f.text_area :note_ja, class: 'textarea'
+  .field.is-horizontal
+    .field-label.is-normal
+      = f.label :note_en, class: 'label' do
+        = t('.note_en')
+    .field-body
+      .field
+        .control
+          = f.text_area :note_en, class: 'textarea'
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        = recaptcha_tags(noscript: false)
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        .control
+          = f.submit t('common.create'), class: 'button is-primary'

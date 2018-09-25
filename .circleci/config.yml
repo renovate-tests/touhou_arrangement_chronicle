@@ -43,5 +43,18 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+      - run:
+          name: Google Chrome Version?
+          command: google-chrome --version
+
+      - run:
+          name: ChromeDriver Version?
+          command: chromedriver -v
+
       - run: bundle exec rubocop --parallel
+
+      - run:
+          name: Start ChromeDriver
+          command: chromedriver &
+
       - run: bundle exec rake

@@ -1,0 +1,30 @@
+ja:
+  common:
+    app_name: 東方編曲録
+    sub_title: Arrangement Chronicle
+    app_fullname: 東方編曲録　〜 Arrangement Chronicle
+    page_title: "%{title} | 東方編曲録"
+    circle_name: 迷い家の白猫
+    songs_count: 曲数
+    information: 情報
+    discographies: ディスコグラフィ一覧
+    songs: 曲一覧
+    statistics: 統計情報
+    circles_count: サークル数
+    discographies_count: ディスコグラフィ数
+    songs_count: 曲数
+    events_count: イベント数
+    circles_count: サークル数
+    orverview: 概要
+    collections: コレクション
+    favorite: お気に入り
+    mylist: マイリスト
+    signup: 新規登録
+    user_signup: ユーザー登録
+    login: ログイン
+    login_with_twitter: Twitterアカウントでログイン
+    signup_with_twitter: Twitterアカウントで登録
+    logout: ログアウト
+    required: 必須
+    add: 新規作成
+    create: 登録

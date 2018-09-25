@@ -1,0 +1,14 @@
+- content_for :title do
+  = t('.title', name: @lyricist.name_ja)
+= render 'layouts/hero', title: @lyricist.name_ja, subtitle: t('.subtitle', category: t("category.#{@lyricist.category}"))
+
+.columns
+  .column.is-11
+    .tabs
+      %ul
+        %li.is-active
+          = link_to t('common.songs'), lyricist_path(name: @lyricist.name_ja)
+        %li
+          = link_to t('common.statistics'), lyricist_statistics_path(lyricist_name: @lyricist.name_ja)
+
+    = render 'shared/songs', songs: @lyricist.songs

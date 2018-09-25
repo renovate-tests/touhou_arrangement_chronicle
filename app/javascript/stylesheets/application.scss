@@ -1,1 +1,73 @@
 @import '~bulma/bulma';
+@import '~bulma-extensions/dist/bulma-extensions.min';
+
+$mdi-font-path: '~mdi/fonts/';
+@import '~mdi/scss/materialdesignicons';
+
+html {
+  height: 100%;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+#main.container{
+  flex: 1;
+}
+
+#main.content {
+  flex: 1;
+}
+
+#main.columns {
+  flex: 1;
+}
+
+.side_menu {
+  margin: 12px;
+}
+
+.rounded-1 {
+  border-radius: 3px;
+}
+
+.rounded-2 {
+  border-radius: 6px;
+}
+
+.VueTables__search-field {
+  display: flex;
+}
+
+.VueTables__limit-field {
+  display: flex;
+}
+
+.VueTables__columns-dropdown-wrapper{
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+
+#songs > div > div.table-responsive > table > tbody > tr > td {
+  white-space: pre-wrap;
+}
