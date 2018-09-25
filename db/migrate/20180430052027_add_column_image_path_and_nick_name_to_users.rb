@@ -1,6 +1,8 @@
 class AddColumnImagePathAndNickNameToUsers < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :image_path, :string
-    add_column :users, :nick_name, :string
+    change_table :users, bulk: true do |t|
+      t.string :image_path
+      t.string :nick_name
+    end
   end
 end

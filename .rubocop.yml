@@ -9,7 +9,7 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 2.5
   # uncomment if use rails cops
-  TargetRailsVersion: 5.1
+  TargetRailsVersion: 5.2
 
 Style/StringLiterals:
   Enabled: false
