@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe Original, type: :model do
   describe 'enums' do
     it {
-      is_expected.to define_enum_for(:original_type).with_values(pc98: 'pc98',
-                                                                 windows: 'windows',
-                                                                 zuns_music_collection: 'zuns_music_collection',
-                                                                 akyus_untouched_score: 'akyus_untouched_score',
-                                                                 commercial_books: 'commercial_books',
-                                                                 other: 'other').backed_by_column_of_type(:string)
+      expect(subject).to define_enum_for(:original_type).with_values(pc98: 'pc98',
+                                                                     windows: 'windows',
+                                                                     zuns_music_collection: 'zuns_music_collection',
+                                                                     akyus_untouched_score: 'akyus_untouched_score',
+                                                                     commercial_books: 'commercial_books',
+                                                                     other: 'other').backed_by_column_of_type(:string)
     }
   end
 
