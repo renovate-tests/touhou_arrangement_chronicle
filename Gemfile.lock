@@ -134,7 +134,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffaker (2.10.0)
     ffi (1.9.25)
-    friendly_id (5.2.4)
+    friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     gimei (0.3.0)
       romaji
@@ -150,7 +150,7 @@ GEM
       activesupport (>= 4.0.1)
       hamlit (>= 1.2.0)
       railties (>= 4.0.1)
-    i18n (1.2.0)
+    i18n (1.3.0)
       concurrent-ruby (~> 1.0)
     i18n_generators (2.2.0)
       activerecord (>= 3.0.0)
