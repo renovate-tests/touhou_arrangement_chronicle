@@ -138,7 +138,7 @@ GEM
       activerecord (>= 4.0.0)
     gimei (0.3.0)
       romaji
-    globalid (0.4.1)
+    globalid (0.4.2)
       activesupport (>= 4.2.0)
     gravtastic (3.2.6)
     hamlit (2.9.2)
