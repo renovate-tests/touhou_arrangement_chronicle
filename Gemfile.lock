@@ -134,7 +134,7 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffaker (2.11.0)
-    ffi (1.10.0)
+    ffi (1.11.0)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     gimei (0.3.0)
