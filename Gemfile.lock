@@ -332,7 +332,7 @@ GEM
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     smarter_csv (1.2.6)
-    sorcery (0.13.0)
+    sorcery (0.14.0)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
       oauth2 (~> 1.0, >= 0.8.0)
