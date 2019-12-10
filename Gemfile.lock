@@ -132,7 +132,7 @@ GEM
       railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-    ffaker (2.11.0)
+    ffaker (2.13.0)
     ffi (1.11.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
